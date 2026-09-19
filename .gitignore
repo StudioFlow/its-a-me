@@ -1,5 +1,2 @@
-# Local tooling & Claude Code config
-/.claude/
-
 # Source data / personal assets (not part of the deployed site)
 /resources/
