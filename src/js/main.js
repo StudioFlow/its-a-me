@@ -6,7 +6,15 @@
   });
 
   // ---- Scroll reveal ----
-  const revealTargets = document.querySelectorAll('.reveal, .reveal-line');
+  const heroTargets = document.querySelectorAll('.hero .reveal, .hero .reveal-line');
+  const revealTargets = document.querySelectorAll(
+    ':is(.reveal, .reveal-line):not(.hero *)'
+  );
+
+  // Hero is the first view: play its entrance on load rather than waiting for intersection
+  requestAnimationFrame(() =>
+    requestAnimationFrame(() => heroTargets.forEach((el) => el.classList.add('is-visible')))
+  );
 
   if (reduceMotion || !('IntersectionObserver' in window)) {
     revealTargets.forEach((el) => el.classList.add('is-visible'));
@@ -15,7 +23,10 @@
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            const el = entry.target.matches('.line-mask')
+              ? entry.target.querySelector('.reveal-line')
+              : entry.target;
+            el.classList.add('is-visible');
             observer.unobserve(entry.target);
           }
         });
@@ -23,7 +34,8 @@
       { threshold: 0.2, rootMargin: '0px 0px -8% 0px' }
     );
 
-    revealTargets.forEach((el) => observer.observe(el));
+    // A .reveal-line starts fully clipped by its .line-mask, so it can never intersect: observe the mask instead
+    revealTargets.forEach((el) => observer.observe(el.closest('.line-mask') ?? el));
   }
 
   // ---- Nav hide on scroll down, show on scroll up ----

@@ -102,7 +102,193 @@
 }
 
 .hero__content {
-  padding-top: var(--space-3xl);
+  padding-block: var(--space-2xl);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+/* ---- Hero credential (portrait as a verified ID) ---- */
+.credential {
+  --pad: var(--space-sm);
+  position: relative;
+  padding: var(--pad);
+  background: oklch(0.19 0.016 250 / 0.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: 0 30px 80px -30px oklch(0.08 0.02 250 / 0.9);
+}
+
+.credential__head,
+.credential__data,
+.credential__status {
+  font-size: var(--text-overline);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.credential__head {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-tertiary);
+  padding-bottom: var(--pad);
+}
+
+.credential__frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--bg-inset);
+}
+
+.credential__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  filter: brightness(0.78) contrast(1.1);
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 45%, black 55%, oklch(0 0 0 / 0.55) 100%);
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 45%, black 55%, oklch(0 0 0 / 0.55) 100%);
+}
+
+/* Tinted monochrome: the `color` blend takes the overlay's hue/chroma, keeping the photo's luminance */
+.credential__frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: oklch(0.45 0.035 240);
+  mix-blend-mode: color;
+  transition: opacity var(--dur-lg) var(--ease-out);
+}
+
+/* Reticle corners */
+.credential__frame::before {
+  --c: var(--accent);
+  --l: 18px;
+  --w: 1.5px;
+  content: "";
+  position: absolute;
+  inset: 10px;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--c), var(--c)) top left / var(--l) var(--w),
+    linear-gradient(var(--c), var(--c)) top left / var(--w) var(--l),
+    linear-gradient(var(--c), var(--c)) top right / var(--l) var(--w),
+    linear-gradient(var(--c), var(--c)) top right / var(--w) var(--l),
+    linear-gradient(var(--c), var(--c)) bottom left / var(--l) var(--w),
+    linear-gradient(var(--c), var(--c)) bottom left / var(--w) var(--l),
+    linear-gradient(var(--c), var(--c)) bottom right / var(--l) var(--w),
+    linear-gradient(var(--c), var(--c)) bottom right / var(--w) var(--l);
+  background-repeat: no-repeat;
+  opacity: 0.85;
+}
+
+.credential__beam {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  height: 30%;
+  background: linear-gradient(180deg, transparent, var(--accent-muted) 70%, var(--accent) 100%);
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.credential.is-visible .credential__beam {
+  animation: credential-scan 1.6s var(--ease-in-out) 0.5s both;
+}
+
+.credential__data {
+  display: grid;
+  gap: 6px;
+  padding-block: var(--pad);
+  border-bottom: 1px dashed var(--border-strong);
+}
+
+.credential__data div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.credential__data dt {
+  color: var(--text-tertiary);
+}
+
+.credential__data dd {
+  color: var(--text-secondary);
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.credential__status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--pad);
+}
+
+.credential__verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  opacity: 0;
+  transform: scale(0.85);
+  transform-origin: left center;
+}
+
+.credential.is-visible .credential__verified {
+  animation: credential-verified var(--dur-md) var(--ease-spring) 2s both;
+}
+
+.credential__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-muted);
+}
+
+.credential__alg {
+  color: var(--text-disabled);
+}
+
+@media (hover: hover) {
+  .credential:hover .credential__frame::after {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero__content {
+    grid-template-columns: 1fr;
+    padding-bottom: var(--space-2xl);
+  }
+
+  .credential {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    grid-template-areas:
+      "head head"
+      "frame data"
+      "status status";
+    column-gap: var(--space-sm);
+    max-width: 420px;
+  }
+
+  .credential__head { grid-area: head; }
+  .credential__frame { grid-area: frame; }
+  .credential__data { grid-area: data; align-content: center; border-bottom: 0; }
+  .credential__status { grid-area: status; border-top: 1px dashed var(--border-strong); }
+
+  .credential__frame::before {
+    --l: 10px;
+    inset: 6px;
+  }
 }
 
 .hero__title {
@@ -225,6 +411,12 @@
   height: 100%;
   background: var(--accent);
   animation: scroll-line 2s var(--ease-in-out) infinite;
+}
+
+@media (max-width: 900px) {
+  .hero__scroll-hint {
+    display: none;
+  }
 }
 
 /* ============ STATS ============ */
