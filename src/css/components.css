@@ -24,14 +24,22 @@
   font-weight: 700;
   font-size: var(--text-label);
   letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.nav__mark-dot {
-  color: var(--accent);
+.nav__avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px var(--border-strong);
 }
 
 .nav__links {
   display: flex;
+  align-items: center;
   gap: var(--space-lg);
 }
 
@@ -45,12 +53,40 @@
   color: var(--text-primary);
 }
 
+.nav__icon {
+  display: inline-flex;
+  padding-left: var(--space-lg);
+  border-left: 1px solid var(--border-strong);
+}
+
+.nav__icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.nav__links .nav__icon:hover {
+  color: var(--accent);
+}
+
 @media (max-width: 640px) {
   .nav__links {
     gap: var(--space-md);
   }
   .nav__links a {
     font-size: var(--text-overline);
+  }
+  .nav__icon {
+    padding-left: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__links a:not(.nav__icon) {
+    display: none;
+  }
+  .nav__icon {
+    padding-left: 0;
+    border-left: 0;
   }
 }
 
