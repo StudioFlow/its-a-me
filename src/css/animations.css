@@ -1,0 +1,72 @@
+/* ============ Reveal on scroll ============ */
+.reveal,
+.reveal-line {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-lg) var(--ease-out), transform var(--dur-lg) var(--ease-out);
+  transition-delay: calc(var(--d, 0) * 90ms);
+}
+
+.reveal-line {
+  transform: translateY(100%);
+}
+
+.reveal.is-visible,
+.reveal-line.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ Keyframes ============ */
+@keyframes scan {
+  0%, 100% { transform: translateY(-60%); opacity: 0; }
+  50% { transform: translateY(160%); opacity: 1; }
+}
+
+@keyframes scroll-line {
+  0% { top: -100%; }
+  60%, 100% { top: 100%; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - var(--space-md))); }
+}
+
+@keyframes ring-rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes node-ping {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+/* ============ Reduced motion ============ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .reveal,
+  .reveal-line {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__scanline,
+  .hero__scroll-line::after {
+    animation: none;
+    opacity: 0;
+  }
+
+  .marquee__track {
+    animation: none;
+  }
+
+  .marquee {
+    overflow-x: auto;
+  }
+}

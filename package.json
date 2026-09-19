@@ -1,0 +1,20 @@
+{
+  "name": "its-a-me",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/StudioFlow/its-a-me#readme",
+  "bugs": {
+    "url": "https://github.com/StudioFlow/its-a-me/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StudioFlow/its-a-me.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

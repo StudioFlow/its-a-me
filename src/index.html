@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floryan Daniels — IAM Architect &amp; Security Tech Lead</title>
+<meta name="description" content="Floryan Daniels — IAM Architect &amp; Backend/Security Tech Lead. 18+ years designing identity systems, OAuth2/OIDC platforms, and zero-downtime architecture. Based in Bordeaux, France.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<div class="progress-bar" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<header class="nav" data-nav>
+  <a href="#top" class="nav__mark">FD<span class="nav__mark-dot">.</span></a>
+  <nav class="nav__links">
+    <a href="#about">About</a>
+    <a href="#focus">Focus</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="hero__scanline" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <p class="overline reveal">IAM Architect — Security Tech Lead</p>
+      <h1 class="hero__title">
+        <span class="line-mask"><span class="line-inner reveal-line" style="--d:0">FLORYAN</span></span>
+        <span class="line-mask"><span class="line-inner reveal-line" style="--d:1">DANIELS</span></span>
+      </h1>
+      <p class="hero__subhead reveal" style="--d:2">I design identity systems that don't go down.</p>
+      <ul class="hero__meta reveal" style="--d:3">
+        <li><span class="mono">18+</span> yrs engineering</li>
+        <li aria-hidden="true">·</li>
+        <li>Bordeaux, France</li>
+        <li aria-hidden="true">·</li>
+        <li>Open to remote / hybrid</li>
+      </ul>
+      <div class="hero__actions reveal" style="--d:4">
+        <a class="btn" href="#contact">
+          <span>Get in touch</span>
+        </a>
+        <a class="link-underline" href="#about">See the work<span aria-hidden="true"> ↓</span></a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats container" aria-label="Career metrics">
+    <div class="metric-card reveal">
+      <span class="metric-card__number"><span class="metric-card__value mono" data-counter data-target="18">0</span><span class="metric-card__suffix mono">+</span></span>
+      <span class="metric-card__label">Years engineering</span>
+    </div>
+    <div class="metric-card reveal" style="--d:1">
+      <span class="metric-card__number"><span class="metric-card__value mono" data-counter data-target="100">0</span><span class="metric-card__suffix mono">+</span></span>
+      <span class="metric-card__label">Microservices in production</span>
+    </div>
+    <div class="metric-card reveal" style="--d:2">
+      <span class="metric-card__number"><span class="metric-card__value mono">2016</span></span>
+      <span class="metric-card__label">Building IAM systems since</span>
+    </div>
+    <div class="metric-card reveal" style="--d:3">
+      <span class="metric-card__number"><span class="metric-card__value mono">2008</span></span>
+      <span class="metric-card__label">Writing code since</span>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="container about__grid">
+      <div class="about__label reveal">
+        <p class="overline">Who I Am</p>
+      </div>
+      <div class="about__body">
+        <h2 class="h2 reveal">Identity is the front door.<br>I make sure it holds.</h2>
+        <p class="body-lg reveal" style="--d:1">
+          Today, I'm IAM Architect &amp; Backend/Security Tech Lead at Lectra, where I design — and continuously
+          evolve, from the ground up — the IDM/IDP platform at the core of Lectra Cloud: over
+          <strong>100 highly available microservices</strong> serving the entire R&amp;D organization.
+        </p>
+        <p class="body-lg reveal" style="--d:2">
+          Beyond the architecture itself, I act as a technical referent for identity and access management —
+          guiding R&amp;D teams through the OAuth2 and OIDC flows they rely on every day, and translating IAM
+          stakes into value that non-technical stakeholders can act on.
+        </p>
+        <p class="body-lg reveal" style="--d:3">
+          I see that transmission role as just as critical as the technical design work itself.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOCUS (bento) ============ -->
+  <section class="section-full" id="focus">
+    <div class="container">
+      <p class="overline reveal">What Drives Me</p>
+      <h2 class="h2 reveal" style="--d:1">Eight things I care about, in no particular order</h2>
+    </div>
+    <div class="bento container">
+      <article class="bento__card reveal">
+        <span class="bento__num mono">01</span>
+        <h3>Architecture &amp; Resilience</h3>
+        <p>Designing IAM architectures with security and zero-downtime as hard constraints, not aspirations.</p>
+      </article>
+      <article class="bento__card reveal" style="--d:1">
+        <span class="bento__num mono">02</span>
+        <h3>Production Operations</h3>
+        <p>Running IAM platforms in production: incident management, operational continuity, hardening.</p>
+      </article>
+      <article class="bento__card reveal" style="--d:2">
+        <span class="bento__num mono">03</span>
+        <h3>OAuth2 &amp; Beyond</h3>
+        <p>Securing flows on OAuth2, with fluency across OIDC, SSO, MFA, federation, delegation, token exchange.</p>
+      </article>
+      <article class="bento__card reveal" style="--d:3">
+        <span class="bento__num mono">04</span>
+        <h3>API Design</h3>
+        <p>Production-ready APIs — GraphQL federation — built to hold up under load and over time.</p>
+      </article>
+      <article class="bento__card reveal" style="--d:4">
+        <span class="bento__num mono">05</span>
+        <h3>AI-Augmented Engineering</h3>
+        <p>Exploring how AI reshapes business value and everyday engineering practice.</p>
+      </article>
+      <article class="bento__card reveal" style="--d:5">
+        <span class="bento__num mono">06</span>
+        <h3>Fast Feedback Loops</h3>
+        <p>Trunk-based development, CI/CD pipeline design, DORA-guided delivery.</p>
+      </article>
+      <article class="bento__card reveal" style="--d:6">
+        <span class="bento__num mono">07</span>
+        <h3>Developer Experience</h3>
+        <p>Monorepo, DDD, semantic-release, Renovate, feature flipping, observability.</p>
+      </article>
+      <article class="bento__card reveal" style="--d:7">
+        <span class="bento__num mono">08</span>
+        <h3>DevOps as Culture</h3>
+        <p>Keeping DevOps a genuine culture of collaboration — not a label on a job title.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ AI PRACTICE ============ -->
+  <section class="ai-practice">
+    <div class="container ai-practice__inner">
+      <p class="overline reveal">AI In Daily Practice</p>
+      <p class="ai-practice__statement reveal" style="--d:1">The game has fundamentally changed.</p>
+      <p class="body-lg ai-practice__body reveal" style="--d:2">
+        I use AI across every stage of the workflow — architecture, specs, API design, coding, testing,
+        refactoring, documentation, debugging, code review. Learning to collaborate effectively with these
+        tools is, today, as structurally important as mastering CI/CD was ten years ago.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ STACK (marquee) ============ -->
+  <section class="stack" id="stack">
+    <div class="container">
+      <p class="overline reveal">Favorite Stacks</p>
+    </div>
+    <div class="marquee" data-marquee>
+      <div class="marquee__track">
+        <span class="tag mono">JS/TypeScript</span>
+        <span class="tag mono">Shell</span>
+        <span class="tag mono">Express</span>
+        <span class="tag mono">Fastify</span>
+        <span class="tag mono">GraphQL</span>
+        <span class="tag mono">Yoga</span>
+        <span class="tag mono">Apollo Federation</span>
+        <span class="tag mono">Prisma</span>
+        <span class="tag mono">RabbitMQ</span>
+        <span class="tag mono">PostgreSQL</span>
+        <span class="tag mono">MongoDB</span>
+        <span class="tag mono">Redis</span>
+        <span class="tag mono">Auth0</span>
+        <span class="tag mono">Linux</span>
+        <span class="tag mono">Docker</span>
+        <span class="tag mono">Kubernetes</span>
+        <span class="tag mono">Microsoft Azure Cloud</span>
+        <span class="tag mono">Ansible</span>
+        <span class="tag mono">Git</span>
+        <span class="tag mono">pnpm</span>
+        <span class="tag mono">Turborepo</span>
+        <span class="tag mono">turborepo-remote-cache</span>
+        <span class="tag mono">Renovate</span>
+        <span class="tag mono">Syncpack</span>
+        <span class="tag mono">Splunk</span>
+        <span class="tag mono">Atlassian (Jira, Confluence)</span>
+        <span class="tag mono">Copilot</span>
+        <span class="tag mono">Claude</span>
+      </div>
+      <div class="marquee__track" aria-hidden="true">
+        <span class="tag mono">JS/TypeScript</span>
+        <span class="tag mono">Shell</span>
+        <span class="tag mono">Express</span>
+        <span class="tag mono">Fastify</span>
+        <span class="tag mono">GraphQL</span>
+        <span class="tag mono">Yoga</span>
+        <span class="tag mono">Apollo Federation</span>
+        <span class="tag mono">Prisma</span>
+        <span class="tag mono">RabbitMQ</span>
+        <span class="tag mono">PostgreSQL</span>
+        <span class="tag mono">MongoDB</span>
+        <span class="tag mono">Redis</span>
+        <span class="tag mono">Auth0</span>
+        <span class="tag mono">Linux</span>
+        <span class="tag mono">Docker</span>
+        <span class="tag mono">Kubernetes</span>
+        <span class="tag mono">Microsoft Azure Cloud</span>
+        <span class="tag mono">Ansible</span>
+        <span class="tag mono">Git</span>
+        <span class="tag mono">pnpm</span>
+        <span class="tag mono">Turborepo</span>
+        <span class="tag mono">turborepo-remote-cache</span>
+        <span class="tag mono">Renovate</span>
+        <span class="tag mono">Syncpack</span>
+        <span class="tag mono">Splunk</span>
+        <span class="tag mono">Atlassian (Jira, Confluence)</span>
+        <span class="tag mono">Copilot</span>
+        <span class="tag mono">Claude</span>
+      </div>
+    </div>
+    <p class="container stack__note reveal">No stack loyalty — pragmatism over dogma. The right tool for the right job.</p>
+  </section>
+
+  <!-- ============ EXPERIENCE (timeline) ============ -->
+  <section class="experience section-full" id="experience">
+    <div class="container">
+      <p class="overline reveal">Where I've Been</p>
+      <h2 class="h2 reveal" style="--d:1">Eighteen years, five chapters.</h2>
+    </div>
+    <div class="container timeline">
+
+      <article class="xp xp--current reveal">
+        <div class="xp__period">
+          <span class="xp__years mono">2016 — Now</span>
+          <span class="xp__duration">9 yrs 11 mos</span>
+        </div>
+        <div class="xp__body">
+          <div class="xp__head">
+            <h3 class="xp__role">Senior Cloud Engineer — Tech Lead IAM &amp; Cloud CyberSecurity</h3>
+            <p class="xp__company">Lectra <span class="xp__place">Cestas, France</span></p>
+          </div>
+          <p class="xp__summary">
+            Tech Lead Backend IAM &amp; CyberSecurity within Lectra Cloud R&amp;D. I design and continuously
+            evolve, from the ground up, the IDM/IDP platform securing 100+ highly available microservices —
+            and support the entire R&amp;D community on OAuth2/OIDC.
+          </p>
+          <ul class="xp__points">
+            <li>IAM architecture design — authentication &amp; authorization platform</li>
+            <li>AI agent &amp; MCP server authentication via Token Exchange (RFC 8693 / OBO)</li>
+            <li>Cloud back-offices for account &amp; RBAC access management</li>
+            <li>Cross-team R&amp;D support: OAuth2 upskilling, architecture reviews</li>
+          </ul>
+          <ul class="xp__tags">
+            <li class="mono">Node.js</li>
+            <li class="mono">TypeScript</li>
+            <li class="mono">Apollo Federation</li>
+            <li class="mono">PostgreSQL</li>
+            <li class="mono">Redis</li>
+            <li class="mono">Kubernetes</li>
+            <li class="mono">Azure</li>
+            <li class="mono">Auth0 / Okta</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="xp reveal">
+        <div class="xp__period">
+          <span class="xp__years mono">2015 — 2016</span>
+          <span class="xp__duration">1 yr 5 mos</span>
+        </div>
+        <div class="xp__body">
+          <div class="xp__head">
+            <h3 class="xp__role">Software Quality Architect</h3>
+            <p class="xp__company">Orange <span class="xp__place">Pessac, France · via Néo-Soft</span></p>
+          </div>
+          <p class="xp__summary">
+            Cross-functional technical referent within the Software Quality methods &amp; tools unit —
+            spreading DevOps practices and building internal tooling.
+          </p>
+          <ul class="xp__points">
+            <li>Active in Orange Software Quality working groups: CI/CD, SonarQube</li>
+            <li>Guided project teams on automation solutions; reliability &amp; robustness audits</li>
+            <li>Built a "Forges as a Service" admin web portal (Jenkins + SonarQube)</li>
+          </ul>
+          <ul class="xp__tags">
+            <li class="mono">Java 8</li>
+            <li class="mono">Spring</li>
+            <li class="mono">JHipster</li>
+            <li class="mono">AngularJS</li>
+            <li class="mono">Jenkins</li>
+            <li class="mono">SonarQube</li>
+            <li class="mono">Ansible</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="xp reveal">
+        <div class="xp__period">
+          <span class="xp__years mono">2013 — 2015</span>
+          <span class="xp__duration">2 yrs 1 mo</span>
+        </div>
+        <div class="xp__body">
+          <div class="xp__head">
+            <h3 class="xp__role">Software Engineer — J2EE Maintenance &amp; Performance</h3>
+            <p class="xp__company">Lectra <span class="xp__place">Cestas, France · via Néo-Soft</span></p>
+          </div>
+          <p class="xp__summary">
+            Performance R&amp;D on the FIP integration platform at the core of the Lectra PLM —
+            a high-load n-tier architecture.
+          </p>
+          <ul class="xp__points">
+            <li>Analyzed &amp; optimized execution time of strategic FIP services</li>
+            <li>Scalability studies: user-load objectives, application profiling</li>
+            <li>Identified CPU / memory / I/O bottlenecks and shipped the fixes</li>
+          </ul>
+          <ul class="xp__tags">
+            <li class="mono">Java</li>
+            <li class="mono">JBoss</li>
+            <li class="mono">Spring</li>
+            <li class="mono">EJB3</li>
+            <li class="mono">Hibernate</li>
+            <li class="mono">Oracle</li>
+            <li class="mono">YourKit</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="xp reveal">
+        <div class="xp__period">
+          <span class="xp__years mono">2011 — 2013</span>
+          <span class="xp__duration">2 yrs 1 mo</span>
+        </div>
+        <div class="xp__body">
+          <div class="xp__head">
+            <h3 class="xp__role">Software Engineer — J2EE Designer</h3>
+            <p class="xp__company">La Banque Postale <span class="xp__place">Gradignan, France · via Geos-Informatique</span></p>
+          </div>
+          <p class="xp__summary">
+            Experienced designer/developer, quickly extended to technical leadership and application
+            piloting within the shared development center (CDM EPA).
+          </p>
+          <ul class="xp__points">
+            <li>Application piloting between business (MOA) and ATOS delivery</li>
+            <li>Technical mentoring; requirements, feasibility, estimation, documentation</li>
+            <li>Technical migrations: JDK, DISFE framework, WAS 6.1 → 7</li>
+          </ul>
+          <ul class="xp__tags">
+            <li class="mono">Java</li>
+            <li class="mono">Spring 2</li>
+            <li class="mono">EJB 2</li>
+            <li class="mono">DB2</li>
+            <li class="mono">CICS</li>
+            <li class="mono">WebSphere</li>
+            <li class="mono">LDAP</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="xp reveal">
+        <div class="xp__period">
+          <span class="xp__years mono">2008 — 2011</span>
+          <span class="xp__duration">3 yrs 1 mo</span>
+        </div>
+        <div class="xp__body">
+          <div class="xp__head">
+            <h3 class="xp__role">Software Engineer — J2EE Designer</h3>
+            <p class="xp__company">Crédit Agricole Aquitaine <span class="xp__place">Gradignan, France · via Ausy / AtlantiCA</span></p>
+          </div>
+          <p class="xp__summary">
+            Fast progression from junior developer to technical referent to project lead within a
+            ten-person team, on the BAM online banking portal.
+          </p>
+          <ul class="xp__points">
+            <li>Evolutions &amp; maintenance of the BAM customer banking portal</li>
+            <li>New account overview, portal redesign, screen security &amp; certification</li>
+            <li>RIB → SEPA migration; technical mentoring &amp; agile project piloting</li>
+          </ul>
+          <ul class="xp__tags">
+            <li class="mono">Java</li>
+            <li class="mono">Spring 2</li>
+            <li class="mono">Hibernate</li>
+            <li class="mono">SQL Server</li>
+            <li class="mono">Tomcat</li>
+            <li class="mono">JavaScript</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION & CERTIFICATIONS ============ -->
+  <section class="credentials" id="education">
+    <div class="container">
+      <p class="overline reveal">Papers &amp; Proof</p>
+      <h2 class="h2 reveal" style="--d:1">Education &amp; certifications.</h2>
+    </div>
+    <div class="container credentials__grid">
+
+      <div class="credentials__col reveal">
+        <p class="credentials__col-title mono">/ Education</p>
+        <ul class="credentials__list">
+          <li class="cred">
+            <span class="cred__meta mono">2005 — 2007</span>
+            <div class="cred__body">
+              <h3 class="cred__title">Master's in Computer Science</h3>
+              <p class="cred__sub">Specialization in Bio-Informatics</p>
+              <p class="cred__org">Université Victor Segalen — Bordeaux 2</p>
+            </div>
+          </li>
+          <li class="cred">
+            <span class="cred__meta mono">2002 — 2005</span>
+            <div class="cred__body">
+              <h3 class="cred__title">Bachelor's in Cell Biology &amp; Physiology</h3>
+              <p class="cred__sub">Biologie Cellulaire et Physiologie</p>
+              <p class="cred__org">Université Victor Segalen — Bordeaux 2</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="credentials__col reveal" style="--d:1">
+        <p class="credentials__col-title mono">/ Certifications</p>
+        <ul class="credentials__list">
+          <li class="cred cred--cert">
+            <span class="cred__badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" />
+                <path d="M8.5 13.5 7 21l5-3 5 3-1.5-7.5" />
+              </svg>
+            </span>
+            <div class="cred__body">
+              <h3 class="cred__title">Professional Scrum Master™ I</h3>
+              <p class="cred__sub">PSM I</p>
+              <p class="cred__org">Scrum.org</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ SIDE PROJECT ============ -->
+  <section class="side-project">
+    <div class="container side-project__grid">
+      <div class="side-project__visual reveal" aria-hidden="true">
+        <svg class="node-diagram" viewBox="0 0 240 240" fill="none">
+          <g class="node-diagram__lines" stroke="currentColor" stroke-width="1">
+            <line x1="100" y1="140" x2="165" y2="95" />
+            <line x1="100" y1="140" x2="50" y2="55" />
+            <line x1="100" y1="140" x2="40" y2="160" />
+            <line x1="100" y1="140" x2="55" y2="95" />
+            <line x1="100" y1="140" x2="95" y2="210" />
+            <line x1="165" y1="95" x2="150" y2="40" />
+            <line x1="165" y1="95" x2="210" y2="70" />
+            <line x1="165" y1="95" x2="215" y2="155" />
+            <line x1="165" y1="95" x2="170" y2="205" />
+            <line x1="50" y1="55" x2="55" y2="95" />
+            <line x1="215" y1="155" x2="170" y2="205" />
+          </g>
+          <circle class="node-diagram__ring" cx="100" cy="140" r="30" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 8" opacity="0.5" />
+          <circle class="node-diagram__ping" cx="100" cy="140" r="8" />
+          <circle class="node-diagram__hub" cx="100" cy="140" r="8" />
+          <circle class="node-diagram__node node-diagram__node--alt" cx="165" cy="95" r="7" />
+          <circle class="node-diagram__node node-diagram__node--a" cx="50" cy="55" r="5" />
+          <circle class="node-diagram__node node-diagram__node--b node-diagram__node--alt" cx="150" cy="40" r="5" />
+          <circle class="node-diagram__node node-diagram__node--c" cx="210" cy="70" r="5" />
+          <circle class="node-diagram__node node-diagram__node--d node-diagram__node--alt" cx="215" cy="155" r="6" />
+          <circle class="node-diagram__node node-diagram__node--e" cx="170" cy="205" r="5" />
+          <circle class="node-diagram__node node-diagram__node--f node-diagram__node--alt" cx="95" cy="210" r="6" />
+          <circle class="node-diagram__node node-diagram__node--g" cx="40" cy="160" r="5" />
+          <circle class="node-diagram__node node-diagram__node--h node-diagram__node--alt" cx="55" cy="95" r="5" />
+        </svg>
+      </div>
+      <div class="side-project__body">
+        <p class="overline reveal">On The Side</p>
+        <h2 class="h2 reveal" style="--d:1">Fada-Domotics</h2>
+        <p class="body-lg reveal" style="--d:2">
+          A full home-automation system, and a monorepo playground where I use AI to move faster across
+          stacks I don't touch at work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="container contact__inner">
+      <p class="overline reveal">Get In Touch</p>
+      <h2 class="contact__title reveal" style="--d:1">Let's talk architecture,<br>security, or DevEx.</h2>
+      <a class="contact__email mono reveal" style="--d:2" href="mailto:floryan.daniels@gmail.com">floryan.daniels@gmail.com</a>
+      <p class="contact__meta reveal" style="--d:3">
+        Bordeaux, Nouvelle-Aquitaine, France — remote / hybrid friendly.<br>
+        English works, though French is my strongest language.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <span>© <span data-year></span> Floryan Daniels</span>
+    <a href="#top" class="link-underline">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
