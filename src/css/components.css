@@ -873,7 +873,7 @@
 }
 
 .xp__company .xp__place::before {
-  content: "— ";
+  content: "· ";
   color: var(--text-disabled);
 }
 
