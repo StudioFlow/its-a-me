@@ -1059,3 +1059,502 @@
   color: var(--text-tertiary);
   font-size: var(--text-body-sm);
 }
+
+/* ============ INTROSPECT TRIGGERS ============ */
+/* Any element carrying data-introspect. JS strips the ones with no matching <template>. */
+
+/* Inline entities read as tokens, not as text: the shape is the affordance, not the colour */
+.entity {
+  position: relative;
+  display: inline-block;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  /* the chip eats most of its own padding back, so it barely shifts the line
+     while still leaving the adjacent punctuation outside its edge */
+  margin-inline: -0.1em;
+  padding: 0.08em 0.28em;
+  border-radius: 3px;
+  background: var(--accent-muted);
+  box-shadow: inset 0 -1px 0 0 oklch(0.80 0.15 195 / 0.55);
+  transition: background var(--dur-sm) ease, color var(--dur-sm) ease, box-shadow var(--dur-sm) ease;
+}
+
+/* Arrival flash: a scan pass over the token, opacity and transform only */
+.entity::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 5px;
+  background: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hover sweep, left to right */
+.entity::after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  bottom: 0;
+  height: 1px;
+  background: var(--accent-strong);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-md) var(--ease-out);
+}
+
+.entity:hover,
+.entity:focus-visible {
+  color: var(--text-primary);
+  background: var(--accent-active);
+  box-shadow: inset 0 -1px 0 0 var(--accent-strong);
+}
+
+.entity:hover::after,
+.entity:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.entity:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.entity.is-lit::before {
+  animation: entity-lit 1s var(--ease-out) calc(400ms + var(--s, 0) * 90ms) both;
+}
+
+/* Pills: the accent border marks them at rest, even while the marquee is moving */
+.tag.entity {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  margin-inline: 0;
+  padding: 0.6em 1.2em;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent-muted);
+  color: var(--text-primary);
+  box-shadow: none;
+  transition: color var(--dur-sm) ease, border-color var(--dur-sm) ease, background var(--dur-sm) ease;
+}
+
+.tag.entity::after {
+  content: none;
+}
+
+.tag.entity::before {
+  content: "";
+  position: static;
+  inset: auto;
+  width: 5px;
+  height: 5px;
+  margin-right: 0.7em;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.8;
+  transition: opacity var(--dur-sm) ease, box-shadow var(--dur-sm) ease;
+}
+
+.tag.entity:hover,
+.tag.entity:focus-visible {
+  color: var(--text-primary);
+  border-color: var(--accent-strong);
+  background: var(--accent-active);
+  box-shadow: none;
+}
+
+.tag.entity:hover::before,
+.tag.entity:focus-visible::before {
+  opacity: 1;
+  box-shadow: 0 0 0 3px var(--accent-muted);
+}
+
+.tag.entity.is-lit::before {
+  animation: tag-lit 1s var(--ease-out) calc(400ms + var(--s, 0) * 90ms) both;
+}
+
+/* Bento cards: the whole surface is the target, the [+] is the sign */
+.bento__card {
+  position: relative;
+}
+
+.card-trigger {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  border-radius: inherit;
+}
+
+.card-trigger::before {
+  content: "+";
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  line-height: 1;
+  color: var(--accent);
+  background: var(--accent-muted);
+  border-color: oklch(0.80 0.15 195 / 0.45);
+  transition: color var(--dur-sm) ease, border-color var(--dur-sm) ease, background var(--dur-sm) ease, transform var(--dur-md) var(--ease-spring);
+}
+
+.bento__card:hover .card-trigger::before,
+.card-trigger:focus-visible::before {
+  color: var(--bg-primary);
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: rotate(90deg);
+}
+
+.card-trigger.is-lit::before {
+  animation: card-lit 1s var(--ease-out) calc(400ms + var(--s, 0) * 90ms) both;
+}
+
+.card-trigger:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ============ INTROSPECT DIALOG ============ */
+.introspect {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+  color: var(--text-primary);
+}
+
+.introspect[open] {
+  display: grid;
+  place-items: center;
+  padding: var(--space-lg) var(--side-padding);
+}
+
+.introspect::backdrop {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 40%, oklch(0.15 0.014 250 / 0.55), oklch(0.09 0.012 250 / 0.92));
+  opacity: 0;
+  transition: opacity var(--dur-md) var(--ease-out), backdrop-filter var(--dur-md) var(--ease-out);
+}
+
+.introspect.is-open::backdrop {
+  opacity: 1;
+  backdrop-filter: blur(10px) saturate(120%);
+}
+
+.introspect__panel {
+  position: relative;
+  outline: none;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: min(760px, 100%);
+  max-height: min(86svh, 800px);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 40px 120px -24px oklch(0.06 0.01 250 / 0.9),
+    0 0 100px -50px var(--accent);
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity var(--dur-md) var(--ease-out), transform var(--dur-lg) var(--ease-out);
+  will-change: transform;
+}
+
+.introspect.is-open .introspect__panel {
+  opacity: 1;
+  transform: none;
+}
+
+.introspect__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 70% 0%, black, transparent 70%);
+  mask-image: radial-gradient(ellipse 90% 70% at 70% 0%, black, transparent 70%);
+  opacity: 0.7;
+}
+
+.introspect__panel::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: var(--space-xl);
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to top, var(--bg-surface), transparent);
+}
+
+.introspect__beam {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 22%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(180deg, transparent, var(--accent-muted) 55%, var(--accent) 94%, transparent);
+  mix-blend-mode: screen;
+}
+
+.introspect.is-open .introspect__beam {
+  animation: introspect-beam 900ms var(--ease-in-out) 140ms both;
+}
+
+.introspect__head {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-inset);
+  font-size: var(--text-overline);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.introspect__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--accent);
+}
+
+.introspect__status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 3px var(--accent-muted);
+}
+
+.introspect__route {
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.introspect__close {
+  margin-left: auto;
+  flex-shrink: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: var(--text-tertiary);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.35em 0.7em;
+  cursor: pointer;
+  transition: color var(--dur-sm) ease, border-color var(--dur-sm) ease;
+}
+
+.introspect__close:hover,
+.introspect__close:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.introspect__close:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.introspect__body {
+  padding: var(--space-lg) var(--space-lg) var(--space-xl);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  color: var(--text-secondary);
+}
+
+/* Decode sweep: each block wipes in left-to-right, staggered behind the beam */
+.introspect__body > * {
+  opacity: 0;
+  transform: translateY(12px);
+  clip-path: inset(0 100% 0 0);
+  transition:
+    opacity var(--dur-md) var(--ease-out),
+    transform var(--dur-lg) var(--ease-out),
+    clip-path var(--dur-lg) var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 70ms + 200ms);
+}
+
+.introspect.is-open .introspect__body > * {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0);
+}
+
+/* ---- Introspect content ---- */
+.introspect__kicker {
+  font-family: var(--font-mono);
+  font-size: var(--text-overline);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.introspect__title {
+  margin-top: var(--space-xs);
+  font-size: var(--text-h2);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.introspect__lede {
+  margin-top: var(--space-md);
+  font-size: var(--text-body-lg);
+  line-height: 1.6;
+}
+
+.introspect__body p {
+  max-width: 62ch;
+}
+
+.introspect__body > * + p {
+  margin-top: var(--space-md);
+}
+
+.introspect__body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.introspect__claims {
+  margin-top: var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.introspect__claims > div {
+  background: var(--bg-inset);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.introspect__claims dt {
+  font-family: var(--font-mono);
+  font-size: var(--text-overline);
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+}
+
+.introspect__claims dd {
+  margin: 2px 0 0;
+  font-size: var(--text-body-sm);
+  color: var(--text-primary);
+}
+
+.introspect__block {
+  margin-top: var(--space-lg);
+  padding-left: var(--space-md);
+  border-left: 2px solid var(--accent);
+}
+
+.introspect__block-title {
+  font-family: var(--font-mono);
+  font-size: var(--text-overline);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.introspect__block p {
+  margin-top: var(--space-xs);
+}
+
+.introspect__list {
+  margin-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.introspect__list li {
+  position: relative;
+  padding-left: var(--space-md);
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  max-width: 62ch;
+}
+
+.introspect__list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.introspect__foot {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.introspect__sig {
+  font-family: var(--font-mono);
+  font-size: var(--text-overline);
+  letter-spacing: 0.08em;
+  color: var(--text-disabled);
+}
+
+@media (max-width: 600px) {
+  .introspect[open] {
+    place-items: end center;
+    padding: 0;
+  }
+  .introspect__panel {
+    width: 100%;
+    max-height: 90svh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-bottom: 0;
+  }
+  .introspect__body {
+    padding: var(--space-md) var(--space-md) var(--space-xl);
+  }
+}

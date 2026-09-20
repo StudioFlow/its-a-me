@@ -106,6 +106,127 @@
     counters.forEach((el) => animateCounter(el));
   }
 
+  // ---- Introspect: focus-for-details dialogs ----
+  const dialog = document.querySelector('[data-introspect-dialog]');
+
+  if (dialog) {
+    const panel = dialog.querySelector('.introspect__panel');
+    const dialogBody = dialog.querySelector('[data-introspect-body]');
+    const route = dialog.querySelector('[data-introspect-route]');
+    const templateFor = (id) => document.querySelector(`template[data-entity="${CSS.escape(id)}"]`);
+
+    let lastTrigger = null;
+    let settle = null;
+
+    // A trigger with no matching <template> is not a trigger: strip it back to inert markup
+    const degrade = (el) => {
+      if (el.classList.contains('card-trigger')) {
+        el.remove();
+        return;
+      }
+      const span = document.createElement('span');
+      span.className = el.className.replace(/\bentity\b/g, '').trim();
+      span.innerHTML = el.innerHTML;
+      el.replaceWith(span);
+    };
+
+    const open = (trigger) => {
+      const id = trigger.dataset.introspect;
+      const tpl = templateFor(id);
+      if (!tpl || dialog.open) return;
+
+      lastTrigger = trigger;
+      route.textContent = `entity/${id}`;
+      dialogBody.replaceChildren(tpl.content.cloneNode(true));
+
+      const title = dialogBody.querySelector('.introspect__title');
+      if (title) title.id = 'introspect-title';
+      Array.from(dialogBody.children).forEach((child, i) => child.style.setProperty('--i', i));
+
+      dialogBody.scrollTop = 0;
+      document.documentElement.style.overflow = 'hidden';
+      dialog.showModal();
+
+      // The panel only has a box once it is in the top layer: grow it out of the word that was clicked
+      const t = trigger.getBoundingClientRect();
+      const p = panel.getBoundingClientRect();
+      panel.style.transformOrigin = `${t.left + t.width / 2 - p.left}px ${t.top + t.height / 2 - p.top}px`;
+
+      requestAnimationFrame(() => dialog.classList.add('is-open'));
+    };
+
+    const close = () => {
+      if (!dialog.open || settle) return;
+      dialog.classList.remove('is-open');
+
+      const finish = () => {
+        clearTimeout(settle);
+        panel.removeEventListener('transitionend', onEnd);
+        settle = null;
+        dialog.close();
+        dialogBody.replaceChildren();
+        document.documentElement.style.overflow = '';
+        lastTrigger?.focus({ preventScroll: true });
+      };
+
+      function onEnd(e) {
+        if (e.target === panel && e.propertyName === 'opacity') finish();
+      }
+
+      if (reduceMotion) {
+        finish();
+        return;
+      }
+
+      panel.addEventListener('transitionend', onEnd);
+      settle = setTimeout(finish, 700);
+    };
+
+    const live = [];
+
+    document.querySelectorAll('[data-introspect]').forEach((el) => {
+      if (!templateFor(el.dataset.introspect)) {
+        degrade(el);
+        return;
+      }
+      el.addEventListener('click', () => open(el));
+      live.push(el);
+    });
+
+    // Arrival scan: a resting colour is easy to miss, a one-shot flash is not.
+    // Triggers light up in sequence within their own section, once, as it comes into view.
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      const order = new Map();
+      live.forEach((el) => {
+        const section = el.closest('section') ?? document.body;
+        const i = order.get(section) ?? 0;
+        el.style.setProperty('--s', i % 8);
+        order.set(section, i + 1);
+      });
+
+      const scan = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-lit');
+            scan.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.6 }
+      );
+      live.forEach((el) => scan.observe(el));
+    }
+
+    dialog.addEventListener('cancel', (e) => {
+      e.preventDefault();
+      close();
+    });
+    dialog.addEventListener('click', (e) => {
+      if (!panel.contains(e.target)) close();
+    });
+    dialog.querySelector('[data-introspect-close]').addEventListener('click', close);
+  }
+
   // ---- Custom cursor dot (fine pointers, motion allowed) ----
   const cursor = document.querySelector('.cursor-dot');
   const canUseCursor =

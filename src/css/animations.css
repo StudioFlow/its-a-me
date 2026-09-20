@@ -45,6 +45,29 @@
   to { transform: translateX(calc(-100% - var(--space-md))); }
 }
 
+@keyframes introspect-beam {
+  0% { transform: translateY(-100%); opacity: 0; }
+  12% { opacity: 0.85; }
+  88% { opacity: 0.85; }
+  100% { transform: translateY(460%); opacity: 0; }
+}
+
+@keyframes entity-lit {
+  0% { opacity: 0; transform: scale(0.96); }
+  30% { opacity: 0.24; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+@keyframes tag-lit {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  30% { opacity: 1; transform: scale(1.7); }
+}
+
+@keyframes card-lit {
+  0%, 100% { transform: scale(1) rotate(0); }
+  30% { transform: scale(1.22) rotate(90deg); }
+}
+
 @keyframes ring-rotate {
   to { transform: rotate(360deg); }
 }
@@ -80,5 +103,22 @@
 
   .marquee {
     overflow-x: auto;
+  }
+
+  .introspect__beam {
+    animation: none;
+    opacity: 0;
+  }
+
+  .entity.is-lit::before,
+  .tag.entity.is-lit::before,
+  .card-trigger.is-lit::before {
+    animation: none;
+  }
+
+  .introspect__body > * {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
   }
 }

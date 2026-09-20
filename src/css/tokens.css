@@ -13,6 +13,7 @@
   --accent: oklch(0.80 0.15 195);
   --accent-strong: oklch(0.86 0.13 195);
   --accent-muted: oklch(0.80 0.15 195 / 0.12);
+  --accent-active: oklch(0.80 0.15 195 / 0.22);
   --accent-2: oklch(0.80 0.14 85);
 
   --border: oklch(0.96 0 0 / 0.09);

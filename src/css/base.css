@@ -9,6 +9,8 @@
 html {
   color-scheme: dark;
   scroll-behavior: smooth;
+  /* Reserved gutter: locking scroll when a dialog opens must not shift the layout */
+  scrollbar-gutter: stable;
 }
 
 @media (prefers-reduced-motion: reduce) {
