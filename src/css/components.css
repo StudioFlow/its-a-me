@@ -343,6 +343,28 @@
   display: block;
 }
 
+/* The name keeps getting rewritten with a Y: the claim is stamped over the real spelling, then fails to stick */
+.glyph-id {
+  position: relative;
+  display: inline-block;
+}
+
+/* Out of flow, so the stamp can be wider than the I it covers without displacing a single letter */
+.glyph-id__alt {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  opacity: 0;
+  color: transparent;
+  -webkit-text-stroke: 0.04em var(--accent-2);
+  user-select: none;
+  transform: translateX(-50%);
+}
+
+.fonts-ready .glyph-id__alt {
+  animation: glyph-id-alt 5.6s var(--ease-out) 1.2s infinite;
+}
+
 .hero__subhead {
   font-family: var(--font-display);
   font-size: var(--text-h3);

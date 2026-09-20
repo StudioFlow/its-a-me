@@ -23,6 +23,13 @@
   50% { transform: translateY(160%); opacity: 1; }
 }
 
+/* The Y is stamped over the I, holds long enough to register, then dissolves outward without ever taking space */
+@keyframes glyph-id-alt {
+  0%, 35.7% { opacity: 0; transform: translate(-50%, -0.05em); }
+  39.3%, 55.4% { opacity: 1; transform: translate(-50%, 0); }
+  62%, 100% { opacity: 0; transform: translate(-50%, -0.04em); }
+}
+
 @keyframes credential-scan {
   0% { transform: translateY(-100%); opacity: 0; }
   15% { opacity: 1; }
@@ -95,6 +102,10 @@
   .hero__scroll-line::after {
     animation: none;
     opacity: 0;
+  }
+
+  .fonts-ready .glyph-id__alt {
+    animation: none;
   }
 
   .marquee__track {

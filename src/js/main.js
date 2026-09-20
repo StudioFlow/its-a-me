@@ -5,6 +5,14 @@
     el.textContent = new Date().getFullYear();
   });
 
+  // ---- Glyph swap gate ----
+  // The Y->I swap translates by the two glyphs' measured advance widths, so it must not run against a fallback font
+  document.fonts.ready.then(() => {
+    if (document.fonts.check('600 1em "Space Grotesk"')) {
+      document.documentElement.classList.add('fonts-ready');
+    }
+  });
+
   // ---- Scroll reveal ----
   const heroTargets = document.querySelectorAll('.hero .reveal, .hero .reveal-line');
   const revealTargets = document.querySelectorAll(
