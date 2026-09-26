@@ -11,5 +11,5 @@ Status: accepted
 
 ## Consequences
 
-- Adding a third locale means adding one more catalog; English never gets one.
+- Adding a third locale means adding one more catalog (plus its toggle option and supported-locale entry); English never gets one.
 - Moving English into a catalog later requires re-extracting every translated element from the HTML.

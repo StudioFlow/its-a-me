@@ -12,7 +12,7 @@
   backdrop-filter: blur(16px) saturate(160%);
   background: oklch(0.15 0.014 250 / 0.55);
   border-bottom: 1px solid var(--border);
-  transition: transform var(--dur-md) var(--ease-out);
+  transition: transform var(--dur-md) var(--ease-out), opacity var(--dur-sm) var(--ease-out);
 }
 
 .nav--hidden {
@@ -46,7 +46,7 @@
 .nav__links a {
   font-size: var(--text-body-sm);
   color: var(--text-secondary);
-  transition: color var(--dur-sm) ease;
+  transition: color var(--dur-sm) ease, opacity var(--dur-sm) var(--ease-out);
 }
 
 .nav__links a:hover {
@@ -88,6 +88,89 @@
     padding-left: 0;
     border-left: 0;
   }
+}
+
+/* ============ LOCALE TOGGLE ============ */
+/* [EN] / FR: the accent brackets are the selection, and they travel to the locale you pick */
+.locale-toggle {
+  --cell: 44px;
+  display: grid;
+  grid-template-columns: var(--cell) 1ch var(--cell);
+  align-items: center;
+  /* 44px touch targets without growing the nav row */
+  margin-block: -9px;
+  padding-left: var(--space-xs);
+  /* Drawn rather than a border: it must match .nav__icon's short rule, not span the 44px targets */
+  background: linear-gradient(var(--border-strong), var(--border-strong)) left center / 1px 1.15rem no-repeat;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  letter-spacing: 0.06em;
+}
+
+.locale-toggle__option {
+  grid-row: 1;
+  block-size: var(--cell);
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: var(--text-tertiary);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: color var(--dur-sm) ease;
+}
+
+.locale-toggle__option[data-locale="en-US"] {
+  grid-column: 1;
+}
+
+.locale-toggle__option[data-locale="fr-FR"] {
+  grid-column: 3;
+}
+
+.locale-toggle__option:hover {
+  color: var(--text-secondary);
+}
+
+.locale-toggle__option[aria-pressed="true"] {
+  color: var(--text-primary);
+  cursor: default;
+}
+
+.locale-toggle__option:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: -8px;
+  border-radius: var(--radius-sm);
+}
+
+.locale-toggle__sep {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+  color: var(--text-disabled);
+}
+
+.locale-toggle__brackets {
+  grid-area: 1 / 1;
+  justify-self: center;
+  display: flex;
+  justify-content: space-between;
+  inline-size: 4.6ch;
+  color: var(--accent);
+  pointer-events: none;
+  transition: transform var(--dur-md) var(--ease-out);
+}
+
+.locale-toggle__brackets::before {
+  content: "[";
+}
+
+.locale-toggle__brackets::after {
+  content: "]";
+}
+
+.locale-toggle:has([data-locale="fr-FR"][aria-pressed="true"]) .locale-toggle__brackets {
+  transform: translateX(calc(var(--cell) + 1ch));
 }
 
 /* ============ PROGRESS BAR ============ */

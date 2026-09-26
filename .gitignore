@@ -1,2 +1,7 @@
 # Source data / personal assets (not part of the deployed site)
 /resources/
+
+# Dev tooling
+node_modules/
+test-results/
+playwright-report/

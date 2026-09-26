@@ -17,7 +17,7 @@ The profile is readable in `en-US` (default) and `fr-FR`. The locale is picked a
 
 1. Locale link: `?lang=en-US|fr-FR`. Applies to this visit only, never written to storage.
 2. Locale preference: `localStorage`, written only by the toggle. Every access wrapped in try/catch.
-3. `navigator.languages`: any `fr` / `fr-*` → `fr-FR`.
+3. `navigator.languages`: the first entry whose base language is supported decides (`fr`, `fr-*` → `fr-FR`; `en-*` → `en-US`), so `['en-GB', 'fr-FR']` stays English.
 4. `en-US`.
 
 ## Translation scope
@@ -35,14 +35,14 @@ The profile is readable in `en-US` (default) and `fr-FR`. The locale is picked a
 
 ## Runtime
 
-- `src/js/locale-boot.js`: classic, render-blocking `<script>` in `<head>` (not inline). It resolves the locale synchronously, sets `<html lang>`, and when the locale is `fr-FR` adds `i18n-pending` and injects `<link rel="preload" as="fetch" crossorigin href="i18n/fr-FR.json">`. It holds no other logic.
+- `src/js/locale-boot.js`: classic, render-blocking `<script>` in `<head>` (not inline). It resolves the locale synchronously, sets `<html lang>`, and when the locale is `fr-FR` adds `i18n-pending` and injects `<link rel="preload" as="fetch" crossorigin href="i18n/fr-FR.json">`. Its only other logic is a 3s fail-safe that reveals the English page if `i18n.js` never runs; once it fires, `i18n.js` keeps the page in English rather than painting French over it.
 - `src/js/i18n.js`: ES module. It loads the catalog, snapshots English, applies Translations, drives the toggle, writes the Locale preference, and exports `ready` (a Promise resolving once the initial locale is applied or has fallen back).
 - `src/js/main.js`: becomes `type="module"`, imports `i18n.js`, starts the hero entrance only after `ready`, and moves the introspect triggers to event delegation so swapped `innerHTML` keeps working.
 
 ## Motion
 
-- Locale switch: header and `<main>` fade to 0 over 150ms, content is swapped, then they fade back to 1 over 250ms. Only `opacity` is animated. Already-played reveals do not replay.
-- First load in `fr-FR`: `i18n-pending` holds the header and `<main>` at `opacity: 0`, the French is applied, then they fade in over 250ms, then the hero entrance starts. The toggle already shows `[FR]` when it appears. A ~1.5s safety timeout reveals the English page if the catalog fails to load.
+- Locale switch: `<main>` and the header's text links fade to 0 over 150ms, content is swapped, then they fade back to 1 over 250ms. The toggle itself does not fade, so its bracket slide stays visible. A catalog that does not answer within ~1.5s aborts the switch back to the current locale. Only `opacity` is animated. Already-played reveals do not replay.
+- First load in `fr-FR`: `i18n-pending` holds the header and `<main>` at `opacity: 0`, the French is applied, then they fade in over 250ms and the hero entrance starts with the fade. The toggle already shows `[FR]` when it appears. A ~1.5s safety timeout reveals the English page if the catalog fails to load.
 - `en-US` visitors: unchanged from today.
 - `prefers-reduced-motion`: instant swap, no fades.
 

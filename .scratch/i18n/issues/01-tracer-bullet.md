@@ -16,16 +16,16 @@ End-to-end localization mechanism, proven on the top of the page.
 
 ## Acceptance
 
-- [ ] A browser with `fr-*` first in its languages lands in French without any flash of English; header and `<main>` fade in, then the hero entrance plays.
-- [ ] A browser with any other language lands in English, with behavior identical to today.
-- [ ] `?lang=fr-FR` and `?lang=en-US` force the locale for that visit and write nothing to storage.
-- [ ] Toggle clicks switch the locale with the fade, persist the Locale preference, and survive a reload.
-- [ ] Toggling FR → EN → FR is lossless: English restored exactly from the snapshot.
-- [ ] `<html lang>`, `<title>` and `meta description` follow the locale.
-- [ ] Introspect dialogs still open from every trigger after a locale switch.
-- [ ] Catalog fetch failure: the English page is revealed within ~1.5s and the toggle shows EN.
-- [ ] `prefers-reduced-motion`: instant swap, no fade, no bracket slide.
-- [ ] The toggle is visible and usable at 360px width, and reachable by keyboard with correct `aria-pressed`.
-- [ ] Accented capitals are not clipped in the hero `.line-mask`s.
-- [ ] Works served from a subpath (`python3 -m http.server -d src`), all paths relative.
+- [x] A browser with `fr-*` first in its languages lands in French without any flash of English; header and `<main>` fade in, then the hero entrance plays.
+- [x] A browser with any other language lands in English, with behavior identical to today.
+- [x] `?lang=fr-FR` and `?lang=en-US` force the locale for that visit and write nothing to storage.
+- [x] Toggle clicks switch the locale with the fade, persist the Locale preference, and survive a reload.
+- [x] Toggling FR → EN → FR is lossless: English restored exactly from the snapshot.
+- [x] `<html lang>`, `<title>` and `meta description` follow the locale.
+- [x] Introspect dialogs still open from every trigger after a locale switch.
+- [x] Catalog fetch failure: the English page is revealed within ~1.5s and the toggle shows EN.
+- [x] `prefers-reduced-motion`: instant swap, no fade, no bracket slide.
+- [x] The toggle is visible and usable at 360px width, and reachable by keyboard with correct `aria-pressed`.
+- [x] Accented capitals are not clipped in the hero `.line-mask`s.
+- [x] Works served from a subpath (`python3 -m http.server -d src`), all paths relative.
 - [ ] Florian has reviewed the French copy.

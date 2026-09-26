@@ -1,0 +1,31 @@
+{
+  "head": {
+    "title": "Florian Daniels · Architecte IAM & Tech Lead Sécurité",
+    "description": "Florian Daniels, architecte IAM et tech lead backend/sécurité. Plus de 18 ans à concevoir des systèmes d’identité, des plateformes OAuth2/OIDC et des architectures sans interruption de service. Basé à Bordeaux."
+  },
+  "nav": {
+    "about": "À propos",
+    "focus": "Expertise",
+    "experience": "Expérience",
+    "education": "Formation",
+    "contact": "Contact",
+    "github": "StudioFlow sur GitHub",
+    "locale": "Langue"
+  },
+  "hero": {
+    "overline": "Architecte IAM · Spécialiste OAuth2 · Tech Lead Backend",
+    "subhead": "Je conçois et je construis des systèmes d’identité qui ne tombent pas.",
+    "years": "<span class=\"mono\">18+</span> ans d’ingénierie",
+    "remote": "Ouvert au télétravail / hybride",
+    "cta": "Me contacter",
+    "seeWork": "Voir le parcours<span aria-hidden=\"true\"> ↓</span>",
+    "portraitAlt": "Portrait de Florian Daniels"
+  },
+  "stats": {
+    "label": "Indicateurs de carrière",
+    "years": "Années d’ingénierie",
+    "microservices": "Microservices en production",
+    "iamSince": "Systèmes IAM depuis",
+    "codeSince": "Développeur depuis"
+  }
+}
