@@ -293,3 +293,53 @@ test.describe('Arrival scan for a French-speaking visitor', () => {
     await expect(lectra).toHaveClass(/\bis-lit\b/);
   });
 });
+
+test.describe('Introspect templates', () => {
+  test.use({ locale: 'en-US' });
+
+  test('a dialog opened before a switch reopens in the new locale, and back', async ({ page }) => {
+    const dialog = page.locator('[data-introspect-dialog]');
+    const lede = dialog.locator('.introspect__lede');
+    const openLectra = async () => {
+      await page.locator('.about [data-introspect="lectra"]').click();
+      await expect(dialog).toHaveAttribute('open', '');
+    };
+    // Closing leaves the page scrolled to the trigger, where the header is hidden
+    const closeAndSwitch = async (locale, subheadText) => {
+      await page.keyboard.press('Escape');
+      await expect(dialog).not.toHaveAttribute('open', '');
+      await page.evaluate(() => window.scrollTo(0, 0));
+      await toggleOption(page, locale).click();
+      await expect(subhead(page)).toHaveText(subheadText);
+    };
+
+    await page.goto('./');
+    await openLectra();
+    await expect(lede).toContainText('The world leader in its field');
+
+    await closeAndSwitch('fr-FR', FR.subhead);
+    await openLectra();
+    await expect(lede).toContainText('Le leader mondial de son domaine');
+    await expect(dialog.locator('.introspect__block-title')).toHaveText('Mon chapitre');
+    await expect(dialog.locator('.introspect__claims dt').first()).toHaveText('founded');
+    await expect(dialog.locator('.introspect__body strong')).toHaveText('Lectra Cloud');
+
+    await closeAndSwitch('en-US', EN.subhead);
+    await openLectra();
+    await expect(lede).toContainText('The world leader in its field');
+    await expect(dialog.locator('.introspect__block-title')).toHaveText('My chapter');
+  });
+
+  test('every template has a French Translation for its copy', async ({ page }) => {
+    await page.goto('./?lang=fr-FR');
+    await expect(subhead(page)).toHaveText(FR.subhead);
+
+    const untranslated = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('template[data-entity]'))
+        .filter((tpl) => !tpl.content.querySelector('.introspect__lede[data-i18n], .introspect__lede[data-i18n-html]'))
+        .map((tpl) => tpl.dataset.entity),
+    );
+    expect(await page.locator('template[data-entity]').count()).toBe(45);
+    expect(untranslated).toEqual([]);
+  });
+});

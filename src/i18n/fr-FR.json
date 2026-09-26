@@ -1,6 +1,6 @@
 {
   "head": {
-    "title": "Florian Daniels · Architecte IAM & Tech Lead Sécurité",
+    "title": "Florian Daniels · Architecte IAM & Tech Lead Backend",
     "description": "Florian Daniels, architecte IAM et tech lead backend/sécurité. Plus de 18 ans à concevoir des systèmes d’identité, des plateformes OAuth2/OIDC et des architectures sans interruption de service. Basé à Bordeaux."
   },
   "nav": {
@@ -14,7 +14,7 @@
   },
   "hero": {
     "overline": "Architecte IAM · Spécialiste OAuth2 · Tech Lead Backend",
-    "subhead": "Je conçois et je construis des systèmes d’identité qui ne tombent pas.",
+    "subhead": "Je conçois et je construis des systèmes d’identité robustes.",
     "years": "<span class=\"mono\">18+</span> ans d’ingénierie",
     "remote": "Ouvert au télétravail / hybride",
     "cta": "Me contacter",
@@ -31,13 +31,13 @@
   "about": {
     "label": "Qui je suis",
     "title": "L’identité, c’est la porte d’entrée.<br>Je veille à ce qu’elle tienne.",
-    "lede": "Aujourd’hui, je suis architecte IAM et Tech Lead backend/sécurité chez <span class=\"nowrap\"><button type=\"button\" class=\"entity\" data-introspect=\"lectra\">Lectra SA</button>.</span> J’ai construit de zéro la plateforme IDM/IDP au cœur de Lectra Cloud, et je continue de la faire évoluer : plus de <strong>100 microservices hautement disponibles</strong> au service de toute l’organisation R&D.",
-    "referent": "Au-delà de l’architecture, je suis référent technique en gestion des identités et des accès. J’accompagne les équipes R&D sur les flux OAuth2 et OIDC qu’elles utilisent au quotidien, et je traduis les enjeux IAM en valeur concrète pour les interlocuteurs non techniques.",
+    "lede": "Aujourd’hui, je suis architecte IAM et Tech Lead backend chez <span class=\"nowrap\"><button type=\"button\" class=\"entity\" data-introspect=\"lectra\">Lectra SA</button>.</span> Avec mon équipe, nous avons construit de zéro la plateforme IDM/IDP au cœur de Lectra Cloud, et je continue de la faire évoluer : plus de <strong>100 microservices hautement disponibles</strong> au service de toute l’organisation R&D.",
+    "referent": "Au-delà de l’architecture, je suis référent technique en gestion des identités et des accès. Garant de la plateforme, j’accompagne les équipes R&D sur les flux OAuth2 et OIDC qu’elles utilisent au quotidien, et je traduis les enjeux IAM en valeur concrète pour les interlocuteurs non techniques.",
     "transmission": "Ce rôle de transmission compte pour moi autant que la conception technique elle-même."
   },
   "focus": {
     "overline": "Ce qui me fait avancer",
-    "title": "Huit sujets qui me tiennent à cœur, sans ordre particulier",
+    "title": "Huit sujets qui me tiennent à cœur",
     "cards": {
       "01": {
         "title": "Architecture & résilience",
@@ -97,13 +97,13 @@
       "lectraCloud": {
         "period": "2016 → Aujourd’hui",
         "duration": "9 ans 11 mois",
-        "role": "Ingénieur cloud senior, Tech Lead IAM & cybersécurité cloud",
-        "summary": "Tech Lead Backend IAM & cybersécurité au sein de la R&D Lectra Cloud. Je conçois de zéro et fais évoluer en continu la plateforme IDM/IDP qui sécurise plus de 100 microservices hautement disponibles, et j’accompagne toute la communauté R&D sur OAuth2/OIDC.",
+        "role": "Ingénieur cloud senior, Tech Lead IAM cloud",
+        "summary": "Tech Lead Backend IAM au sein de la R&D Lectra Cloud. Je conçois de zéro et fais évoluer en continu la plateforme IDM/IDP qui sécurise plus de 100 microservices hautement disponibles, et j’accompagne toute la communauté R&D sur OAuth2/OIDC.",
         "points": [
           "Conception de l’architecture IAM de la plateforme d’authentification et d’autorisation",
           "Authentification des agents IA et des serveurs MCP via Token Exchange (RFC 8693 / OBO)",
-          "Back-offices cloud de gestion des comptes et des accès RBAC",
-          "Accompagnement transverse de la R&D : montée en compétence OAuth2, revues d’architecture"
+          "Back-offices cloud de gestion des comptes et des accès RBAC utilisateurs",
+          "Accompagnement transverse de la R&D : montée en compétence OAuth2, revues d’architecture et d'implémentation"
         ]
       },
       "orange": {
@@ -175,5 +175,457 @@
   },
   "dialog": {
     "close": "Fermer les détails"
+  },
+  "entity": {
+    "lectra": {
+      "kicker": "Industrie 4.0 · Cestas & Paris, France",
+      "lede": "Le leader mondial de son domaine : un industriel français de la tech qui conçoit les logiciels et les machines de découpe transformant un design en matière découpée, pour la mode, l’intérieur automobile et l’ameublement.",
+      "claims": {
+        "sector": "Industrie 4.0"
+      },
+      "body": "Lectra vend une chaîne intégrée : logiciels de CAO/PLM, services cloud et matériel de découpe connecté. Sa plateforme <strong>Lectra Cloud</strong> est l’endroit où cette chaîne est devenue un système distribué, et où chaque client, chaque machine et chaque service interne a besoin d’une identité avant de pouvoir faire quoi que ce soit.",
+      "block": {
+        "title": "Mon chapitre",
+        "body": "Deux passages. D’abord comme ingénieur performance J2EE sur la plateforme d’intégration FIP derrière le PLM (2013 → 2015), puis, depuis 2016, comme celui qui a conçu la plateforme IDM/IDP et en est toujours responsable : elle sécurise plus de 100 microservices dans tout Lectra Cloud."
+      },
+      "list": [
+        "Architecture d’authentification et d’autorisation de toute la plateforme cloud",
+        "Référent OAuth2/OIDC pour l’ensemble de la R&D",
+        "Token Exchange (RFC 8693) pour donner une vraie identité aux agents IA et aux serveurs MCP"
+      ],
+      "sig": "2013 → 2015 · 2016 → aujourd’hui"
+    },
+    "orange": {
+      "kicker": "Télécoms · Pessac, France",
+      "lede": "L’opérateur télécom historique français : fixe, mobile, entreprises. Derrière la marque grand public se trouve l’une des plus grandes organisations logicielles du pays, avec ses propres méthodes, ses propres forges, ses propres règles.",
+      "claims": {
+        "sector": "Télécoms"
+      },
+      "body": "À cette échelle, la qualité logicielle cesse d’être une habitude d’équipe pour devenir une institution : groupes de travail, outillage partagé, audits, un marché interne de l’infrastructure de build et d’analyse. C’est dans cette institution que j’ai passé quinze mois.",
+      "block": {
+        "title": "Mon chapitre",
+        "body": "Architecte qualité logicielle dans l’unité transverse méthodes & outils d’Orange France, à Pessac, comme consultant Néo-Soft. Mon travail n’était pas de livrer un produit, mais de rendre la livraison des autres équipes plus rapide et plus sûre, une équipe projet après l’autre."
+      },
+      "list": [
+        "Création du portail d’administration « Forges as a Service » qui provisionne Jenkins + SonarQube",
+        "Audits de fiabilité et de robustesse, puis les formations qui les ont fait durer",
+        "Le moment où le DevOps a cessé d’être pour moi une question d’outillage pour devenir une question de culture"
+      ]
+    },
+    "banque-postale": {
+      "kicker": "Banque de détail · Gradignan, France",
+      "lede": "La banque née de La Poste en 2006, bâtie sur les services financiers que la Poste assurait depuis des décennies, avec une mission de service public inscrite dans ses statuts.",
+      "claims": {
+        "sector": "Banque de détail"
+      },
+      "body": "Son informatique financière est installée à Gradignan, près de Bordeaux, dans un centre de développement mutualisé (CDM EPA) dont l’intitulé dit tout : <em>entretien du patrimoine applicatif</em>. Des applications plus anciennes que la banque elle-même, qui servent toujours des millions de comptes.",
+      "block": {
+        "title": "Mon chapitre",
+        "body": "Recruté comme concepteur/développeur confirmé, j’ai vu mon rôle s’élargir en quelques mois au leadership technique et au pilotage applicatif : l’intermédiaire entre le métier et le centre de réalisation ATOS, à traduire dans les deux sens."
+      },
+      "list": [
+        "Migrations techniques sur un patrimoine au long cours : JDK, framework DISFE, WebSphere 6.1 → 7",
+        "Exigences, faisabilité, chiffrage, et la documentation qui survit au projet",
+        "Ma première vraie leçon sur le legacy : la contrainte forte n’est presque jamais le code"
+      ]
+    },
+    "credit-agricole": {
+      "kicker": "Banque régionale · Nouvelle-Aquitaine",
+      "lede": "L’une des caisses régionales mutualistes qui forment ensemble le Crédit Agricole : coopérative, gouvernée localement, et assez grande pour faire tourner sa propre plateforme bancaire client.",
+      "claims": {
+        "model": "Coopérative",
+        "sector": "Banque de détail"
+      },
+      "body": "Le logiciel lui-même venait d’<strong>AtlantiCA</strong>, l’éditeur interne des caisses régionales de la façade atlantique, installé à Gradignan. C’est là que je travaillais, dans une équipe de dix personnes, sur le portail auquel les clients se connectaient vraiment.",
+      "block": {
+        "title": "Mon chapitre",
+        "body": "Mon premier poste, et la progression la plus rapide de ma carrière : développeur junior → référent technique → chef de projet en trois ans, sur BAM, le portail de banque en ligne pour la synthèse des comptes et les opérations bancaires du quotidien."
+      },
+      "list": [
+        "Nouvelle synthèse des comptes et refonte complète du portail client",
+        "Sécurisation des écrans et certification applicative : la sécurité comme exigence non négociable, pour la première fois",
+        "Migration RIB → SEPA, sur des comptes qui ne pouvaient pas être faux un seul jour"
+      ]
+    },
+    "neo-soft": {
+      "kicker": "ESN · France",
+      "lede": "Une entreprise de services du numérique française, basée à Rennes, avec des agences régionales dans tout l’ouest du pays, dont l’agence de Bordeaux qui m’a placé sur deux missions consécutives.",
+      "claims": {
+        "sector": "ESN"
+      },
+      "block": {
+        "title": "Mon chapitre",
+        "body": "Quatre ans sous leur bannière, dans deux contextes très différents : R&D performance J2EE chez Lectra, puis architecture qualité logicielle chez Orange. C’est la seconde mission qui m’a fait passer de l’écriture d’applications à la construction de l’outillage avec lequel les autres équipes livrent."
+      },
+      "sig": "2013 → 2016 · Lectra, puis Orange"
+    },
+    "geos-informatique": {
+      "kicker": "ESN · Bordeaux",
+      "lede": "Une ESN de la région bordelaise, le genre de petite structure où les personnes qui vous placent connaissent aussi de première main la stack technique du client.",
+      "block": {
+        "title": "Mon chapitre",
+        "body": "Deux ans sur une seule mission : concepteur/développeur dans le centre de développement mutualisé de La Banque Postale à Gradignan, un rôle qui s’est étendu au leadership technique et au pilotage applicatif bien au-delà de ce que prévoyait la fiche de mission."
+      }
+    },
+    "ausy": {
+      "kicker": "Conseil en ingénierie · France",
+      "lede": "Une société française de conseil en ingénierie et en informatique, historiquement tournée vers les secteurs de haute technologie. Rachetée par Randstad en 2017, elle fait aujourd’hui partie de Randstad Digital.",
+      "claims": {
+        "sector": "Ingénierie & IT"
+      },
+      "block": {
+        "title": "Mon chapitre",
+        "body": "Ma porte d’entrée. Ausy m’a placé chez AtlantiCA, l’éditeur logiciel du Crédit Agricole à Gradignan, pour les trois premières années de ma carrière : assez longtemps pour passer de développeur junior à chef de projet sans changer de bureau."
+      }
+    },
+    "bordeaux-2": {
+      "kicker": "Enseignement supérieur · Bordeaux",
+      "lede": "L’université bordelaise des sciences de la vie et de la santé : médecine, biologie, pharmacie, et l’informatique qui a grandi à leurs côtés. Elle n’existe plus sous ce nom : elle a rejoint l’Université de Bordeaux en 2014.",
+      "claims": {
+        "field": "Sciences de la vie & santé"
+      },
+      "body": "Parce que l’informatique y côtoyait la biologie plutôt que l’ingénierie, le cursus menait tout droit à la bio-informatique : données génomiques, algorithmes sur les séquences, et des problèmes où le domaine, désordonné, finissait toujours par l’emporter sur le modèle élégant.",
+      "block": {
+        "title": "Mon chapitre",
+        "body": "Cinq ans, deux directions. D’abord une licence de biologie cellulaire et physiologie, puis un master d’informatique spécialisé en bio-informatique : le pont qui a transformé une curiosité de biologiste en carrière logicielle."
+      },
+      "list": [
+        "Licence de biologie cellulaire et physiologie (2002 → 2005)",
+        "Master d’informatique, parcours bio-informatique (2005 → 2007)",
+        "L’habitude qui est restée : modéliser le système qu’on a réellement, pas celui qui arrangerait"
+      ]
+    },
+    "scrum-org": {
+      "kicker": "Organisme de certification · Scrum.org",
+      "lede": "L’organisation fondée par Ken Schwaber, co-auteur de Scrum, pour réunir en un seul lieu la définition du framework et ses évaluations. Le PSM I teste le Scrum Guide lui-même : le raisonnement empirique derrière les rôles, les événements et les artefacts, pas une recette de gestion de projet.",
+      "claims": {
+        "exam": "PSM I · évaluation ouverte",
+        "validity": "Sans renouvellement"
+      },
+      "body": "Pas de formation obligatoire ni de date d’expiration, et c’est la partie honnête du modèle. La certification atteste que vous savez ce que dit réellement le framework, et ne prétend rien quant à votre capacité à faire fonctionner une équipe.",
+      "block": {
+        "title": "Mon chapitre",
+        "body": "Je l’ai passée après des années de travail en équipes agiles, pas avant. Elle a surtout corrigé des choses que je croyais savoir : à quel point Scrum tient à la boucle de feedback, et à quel point il tient peu aux cérémonies."
+      }
+    },
+    "focus-01": {
+      "kicker": "Axe / 01",
+      "title": "Architecture & résilience",
+      "lede": "Une plateforme d’identité n’a pas de fenêtre de maintenance acceptable. Si elle tombe, plus rien d’autre ne fonctionne dans le cloud : chaque décision de conception se prend donc en pensant à la panne, pas au scénario nominal.",
+      "list": [
+        "Migrations de persistance menées en production sans interruption de service. Jamais de bascule big bang",
+        "Plus d’une fois, j’ai sacrifié la pureté du schéma à la disponibilité ; un chemin de lecture dénormalisé qui survit à un basculement de base vaut mieux qu’un chemin élégant qui n’y survit pas",
+        "Aujourd’hui, j’investirais plus tôt dans la répétition des pannes : les architectures qui ont tenu sont celles dont nous avions réellement déclenché les modes de défaillance, volontairement"
+      ]
+    },
+    "focus-02": {
+      "kicker": "Axe / 02",
+      "title": "Exploitation en production",
+      "lede": "Concevoir la plateforme et en répondre quand elle dysfonctionne, c’est le même métier. Porter la production garde une architecture honnête : on cesse de livrer des décisions qu’on n’aimerait pas déboguer à 3 h du matin.",
+      "list": [
+        "Instrumentation de bout en bout de la plateforme IAM (Prometheus, Grafana, Instana, Splunk) pour qu’un incident commence par un signal, pas par une supposition",
+        "Alerter sur les symptômes visibles par les utilisateurs plutôt que sur les métriques des composants : moins d’alertes, plus tardives, mais aucune qu’on puisse ignorer",
+        "Ce que je changerais : écrire le runbook pendant la conception de la fonctionnalité. Écrit après le premier incident, c’est déjà un postmortem"
+      ]
+    },
+    "focus-03": {
+      "kicker": "Axe / 03",
+      "title": "OAuth2 et au-delà",
+      "lede": "La spec est courte ; ses modes de défaillance, non. L’essentiel de ce que j’apporte tient aux questions autour : qui est le sujet, quelle est l’audience, que se passe-t-il quand le jeton survit à la raison pour laquelle il a été émis.",
+      "list": [
+        "Mise en production de tout l’éventail : PKCE, Client Credentials, Device Flow, Token Exchange, SSO, MFA, fédération OIDC et liaison de comptes, RBAC et TBAC",
+        "Garder le fournisseur d’identité dans son rôle de fournisseur, et le modèle d’autorisation dans notre propre domaine. Les fonctionnalités des éditeurs sont tentantes, mais les règles d’autorisation sont des règles métier",
+        "Ce que je ferais autrement : enseigner le modèle mental avant les flux. Les équipes qui comprennent l’audience et la délégation choisissent seules le bon grant ; celles à qui l’on donne une recette la recopient dans le mauvais contexte"
+      ]
+    },
+    "focus-04": {
+      "kicker": "Axe / 04",
+      "title": "Conception d’API",
+      "lede": "Une API est un contrat que l’on honorera pendant des années envers des consommateurs qu’on ne rencontrera jamais. Le travail de conception porte surtout sur ce qu’on refuse d’exposer, et sur la place laissée à la version qu’on ne peut pas prévoir.",
+      "list": [
+        "Construction d’une API GraphQL Partners hautement disponible, qui sert des données de référence critiques du cloud, fédérée en subgraphs avec Apollo Federation et Yoga",
+        "Aller au-delà de HTTP quand ça valait le coup : GraphQL sur AMQP pour les consommateurs internes, pour que la back-pressure et les retries soient l’affaire du transport, pas de chaque client",
+        "Ce que je changerais : fédérer plus tard. Découper un graphe avant que les frontières du domaine soient stabilisées, c’est s’offrir du couplage distribué, et les réunions de revue de schéma qui vont avec"
+      ]
+    },
+    "focus-05": {
+      "kicker": "Axe / 05",
+      "title": "Ingénierie augmentée par l’IA",
+      "lede": "La question intéressante n’est pas de savoir si l’IA écrit du code correct. Elle le fait. C’est ce qui se passe quand un agent doit agir pour le compte d’un utilisateur, et que l’identité doit répondre à une question qu’on ne lui avait jamais posée.",
+      "list": [
+        "Conception de l’authentification des agents et des serveurs MCP sur Token Exchange (RFC 8693, on-behalf-of) : un agent obtient une identité réelle, restreinte et auditable au lieu d’emprunter la session de quelqu’un",
+        "Faire passer l’adoption de l’usage individuel à une pratique collective outillée à l’échelle de l’équipe : des conventions partagées valent mieux que vingt workflows privés, même bons",
+        "Ce que je ferais autrement : traiter le contexte comme le livrable. L’écart entre un agent utile et un agent plausible ne tient presque jamais au modèle"
+      ]
+    },
+    "focus-06": {
+      "kicker": "Axe / 06",
+      "title": "Boucles de feedback courtes",
+      "lede": "La vitesse de livraison est une propriété de conception, pas un objectif de management. Chaque heure entre l’écriture d’une ligne et la découverte qu’elle était fausse se transforme en lots plus gros, en revues plus longues et en mises en production plus risquées.",
+      "list": [
+        "Passage de l’équipe au trunk-based development avec semantic-release : petits commits, intégration continue, un versioning auquel personne n’a à penser",
+        "Accepter les feature flags et la dette de nettoyage qu’ils créent, en échange de ne plus jamais maintenir de branche longue : un compromis que je referais à chaque fois",
+        "Ce que je surveille aujourd’hui : les métriques DORA comme diagnostic, jamais comme tableau des scores. Dès que le lead time devient une cible, quelqu’un optimise le chiffre au lieu de la boucle"
+      ]
+    },
+    "focus-07": {
+      "kicker": "Axe / 07",
+      "title": "Expérience développeur",
+      "lede": "Un développeur passe l’essentiel de sa journée à ne pas développer : attendre un build, chercher un responsable, deviner une convention. Cette friction est une surface de conception comme une autre, et elle se cumule à l’échelle de toute une organisation R&D.",
+      "list": [
+        "Monorepo Turborepo avec cache distant, frontières DDD, conventional commits, Renovate et Syncpack pour empêcher les dépendances de diverger",
+        "Choisir un monorepo en sachant exactement ce qu’il coûte (propriété de l’outillage, complexité de la CI), parce que l’alternative était un décalage de versions entre des dizaines de services",
+        "Ce que je ferais autrement : automatiser la convention plutôt que la documenter. Une règle qu’aucun pipeline n’applique est une règle qui tient jusqu’à la prochaine deadline"
+      ]
+    },
+    "focus-08": {
+      "kicker": "Axe / 08",
+      "title": "Le DevOps comme culture",
+      "lede": "En chemin, le DevOps est devenu un intitulé de poste, soit précisément ce qu’il avait été inventé pour empêcher. Ça n’a jamais été un rôle à recruter. C’est le refus de laisser un mur se dresser entre construire et exploiter.",
+      "list": [
+        "Chez Orange, quinze mois au sein de l’unité qualité logicielle à faire exactement cela : groupes de travail CI/CD, audits de fiabilité, formations Jenkins et SonarQube auprès des équipes projet",
+        "Appris que l’outillage est la moitié facile : un portail « Forges as a Service » ne change rien si les équipes derrière ne veulent pas du feedback que la forge leur renvoie",
+        "Ce que je ferais autrement : partir d’un problème que l’équipe ressent déjà, pas de la pratique que je veux diffuser. L’adoption suit le soulagement, jamais l’argumentation"
+      ]
+    },
+    "typescript": {
+      "kicker": "Langage",
+      "lede": "JavaScript est le runtime que tout le monde a déjà. TypeScript est la couche de types posée par-dessus, et elle disparaît entièrement à la compilation : les types ne coûtent rien à l’exécution et rapportent tout en revue de code.",
+      "body": "Son typage est structurel : une valeur correspond à une forme si elle en a l’allure, pas si elle hérite de la bonne classe. C’est exactement ainsi que les objets JavaScript circulent en pratique.",
+      "block": {
+        "body": "Un système de types qui n’existe que pendant l’écriture du code, c’est ce filet de sécurité rare que personne ne paie plus tard."
+      },
+      "sig": "Microsoft · compile vers JavaScript"
+    },
+    "shell": {
+      "kicker": "Automatisation",
+      "lede": "La plus ancienne interface programmable de toute machine Unix : un langage dont les primitives sont les processus, les pipes et les fichiers. bash et zsh sont les deux dialectes que la plupart des gens tapent réellement.",
+      "body": "Tout se compose via des flux de texte : c’est pour cela qu’un pipeline écrit en 1985 tourne encore aujourd’hui, et que tout outil qui respecte stdin et stdout rejoint l’écosystème gratuitement.",
+      "block": {
+        "body": "Rien d’autre ne colle cinq outils sans rapport en une seule ligne tout en fonctionnant encore dix ans plus tard."
+      }
+    },
+    "express": {
+      "kicker": "Framework web",
+      "lede": "Le framework HTTP minimaliste de Node.js, et pendant plus de dix ans celui par défaut. Routage, middlewares, et presque rien d’autre : tout le reste vient de l’écosystème construit autour.",
+      "body": "Sa signature de middleware est devenue un standard de fait, au point que d’autres frameworks implémentent encore une couche de compatibilité avec elle.",
+      "block": {
+        "body": "Ennuyeux, minuscule et partout : exactement ce qu’on attend de la couche qui répond à ses requêtes HTTP."
+      }
+    },
+    "fastify": {
+      "kicker": "Framework web",
+      "lede": "Un framework HTTP Node.js bâti sur un constat : la sérialisation et la validation sont le vrai goulet d’étranglement. Déclarez-les d’emblée en JSON Schema, et elles se compilent en fonctions rapides et spécialisées.",
+      "body": "Chaque plugin obtient son propre périmètre encapsulé : un plugin mal élevé ne peut pas faire fuiter ses décorateurs dans le reste de l’application.",
+      "block": {
+        "body": "Des routes schema-first font de la validation, de la documentation et du chemin rapide une seule et même déclaration."
+      }
+    },
+    "graphql": {
+      "kicker": "Langage de requête d’API",
+      "lede": "Un langage de requête et un système de types où le client déclare exactement les champs qu’il veut, et reçoit cette forme en retour. Un endpoint, un schéma, et pas de rituel de versioning.",
+      "body": "Le schéma est le contrat, et il est introspectable : documentation, outillage et génération de code client en découlent au lieu d’être maintenus à part.",
+      "block": {
+        "body": "Il sort des réunions le débat sur ce qu’un endpoint doit renvoyer, pour le confier à un système de types."
+      }
+    },
+    "graphql-yoga": {
+      "kicker": "Serveur GraphQL",
+      "lede": "Un serveur GraphQL tout équipé, bâti sur les objets standard Request et Response plutôt que sur un framework Node en particulier. Il tourne partout où l’on parle Fetch : Node, Bun, Deno, edge workers.",
+      "body": "Subscriptions, upload de fichiers, CORS, GraphiQL et le masquage d’erreurs qu’on veut en production sont activés par défaut : on les configure au lieu de les assembler.",
+      "block": {
+        "body": "Des valeurs par défaut sensées qu’on n’a pas à câbler, sur une base indépendante du runtime qu’on n’aura pas à réécrire."
+      }
+    },
+    "apollo-federation": {
+      "kicker": "Architecture GraphQL",
+      "lede": "Une spécification pour composer plusieurs services GraphQL déployés indépendamment en un seul graphe. Chaque subgraph possède sa part du schéma, et un routeur planifie chaque requête entre eux.",
+      "body": "Les entités en sont le mécanisme : un type déclaré avec une clé dans un subgraph peut être étendu de nouveaux champs par un autre, sans qu’aucune équipe touche au code de l’autre.",
+      "block": {
+        "body": "Un seul graphe pour les consommateurs, des déploiements séparés pour les équipes derrière."
+      }
+    },
+    "prisma": {
+      "kicker": "ORM / couche de données",
+      "lede": "Un ORM TypeScript qui génère son client à partir d’un fichier de schéma plutôt que de classes décorées. Résultat : une API de requête dont le type de retour change selon les champs sélectionnés.",
+      "body": "Les migrations sont générées depuis ce même schéma : la base et les types ne peuvent pas diverger en silence entre deux déploiements.",
+      "block": {
+        "body": "Une autocomplétion qui connaît les vraies colonnes de votre base vaut mieux que n’importe quel query builder astucieux."
+      },
+      "sig": "Prisma · moteurs en Rust"
+    },
+    "rabbitmq": {
+      "kicker": "Broker de messages",
+      "lede": "Un broker de messages construit autour d’AMQP. Les producteurs publient vers des exchanges, les bindings routent les messages vers des queues, et les consommateurs en accusent réception : c’est ce qui rend possibles de vraies garanties de livraison.",
+      "body": "Le routage vit dans la topologie du broker plutôt que dans le code applicatif : changer qui reçoit quoi devient un changement de configuration, pas un déploiement.",
+      "block": {
+        "body": "Quand un consommateur meurt en plein traitement, le message non acquitté retourne dans la queue au lieu de disparaître dans le vide."
+      },
+      "sig": "Bâti sur Erlang/OTP"
+    },
+    "postgresql": {
+      "kicker": "Base de données relationnelle",
+      "lede": "La base relationnelle qui n’a cessé de gagner en capacités sans jamais sacrifier la justesse : MVCC, DDL transactionnel, JSONB, recherche plein texte, fonctions de fenêtrage, et un système d’extensions.",
+      "body": "Ce modèle d’extensions explique pourquoi une seule instance Postgres peut crédiblement servir de document store, de file de jobs ou de base vectorielle avant qu’on ait besoin de faire tourner quoi que ce soit d’autre.",
+      "block": {
+        "body": "Trois décennies à prouver qu’ennuyeux, correct et gratuit l’emporte sur excitant."
+      },
+      "sig": "Open source · depuis 1996"
+    },
+    "mongodb": {
+      "kicker": "Base orientée documents",
+      "lede": "Une base orientée documents qui stocke des enregistrements BSON dans des collections, sans schéma imposé par défaut, avec un langage de requête lui-même exprimé en documents.",
+      "body": "Son pipeline d’agrégation est le vrai moteur : une suite d’étapes qui transforment les documents côté serveur, là où une base relationnelle sortirait jointures et sous-requêtes.",
+      "block": {
+        "body": "Quand les données sont vraiment irrégulières, ne pas imposer de schéma cesse d’être un raccourci pour devenir le bon modèle."
+      },
+      "sig": "MongoDB Inc. · documents BSON"
+    },
+    "redis": {
+      "kicker": "Stockage en mémoire",
+      "lede": "Un serveur de structures de données en mémoire, et pas seulement un cache : chaînes, hashes, sorted sets, streams et bitmaps, chacun manipulé par des commandes atomiques.",
+      "body": "La boucle de commandes principale est mono-thread à dessein, et c’est précisément pour cela que chaque opération est atomique sans aucun verrou côté appelant.",
+      "block": {
+        "body": "Une latence sous la milliseconde, plus des structures de données que vous réimplémenteriez mal dans votre propre code."
+      },
+      "sig": "En mémoire · cœur mono-thread"
+    },
+    "auth0": {
+      "kicker": "Plateforme d’identité",
+      "lede": "Un fournisseur d’identité hébergé, aujourd’hui intégré à Okta, qui implémente OAuth2 et OpenID Connect en tant que service : login, sessions, MFA, fédération sociale et entreprise, émission de jetons.",
+      "body": "Son modèle d’extensibilité compte plus que sa liste de fonctionnalités. Les Actions exécutent du code personnalisé au sein du pipeline de login, là où finissent par vivre les exigences qu’aucun éditeur n’avait anticipées.",
+      "block": {
+        "body": "L’authentification est un problème standard et épuisant ; acheter une implémentation correcte libère une équipe pour son vrai produit."
+      }
+    },
+    "linux": {
+      "kicker": "Système d’exploitation",
+      "lede": "Le noyau qui fait tourner presque tous les serveurs, conteneurs et instances cloud existants. Processus, namespaces, cgroups et interface du système de fichiers sont les primitives que tout ce qui se trouve au-dessus tient pour acquises.",
+      "body": "Les conteneurs sont moins une fonctionnalité Linux unique qu’une combinaison de plusieurs : namespaces pour l’isolation, cgroups pour les limites, systèmes de fichiers en union pour les images.",
+      "block": {
+        "body": "Presque tout le reste de cette liste est construit sur l’hypothèse qu’il existe."
+      },
+      "sig": "GPLv2 · depuis 1991"
+    },
+    "docker": {
+      "kicker": "Conteneurs",
+      "lede": "L’outil qui a rendu les conteneurs Linux utilisables : un format de build, un protocole de registry et un runtime, enveloppés dans une poignée de commandes dont un développeur se souvient vraiment.",
+      "body": "Les images sont faites de couches adressées par leur contenu : une couche de base partagée n’est téléchargée qu’une fois, et un rebuild ne réécrit que les couches dont les entrées ont changé.",
+      "block": {
+        "body": "Le même artefact tourne sur un laptop et en production, ce qui a mis fin à toute une catégorie de disputes."
+      }
+    },
+    "kubernetes": {
+      "kicker": "Orchestration",
+      "lede": "Un orchestrateur de conteneurs construit sur une boucle de contrôle. Vous déclarez l’état voulu, et des contrôleurs travaillent en continu pour que la réalité s’y conforme.",
+      "body": "Presque tout est un objet dans une API uniforme, et les custom resources permettent d’étendre cette API avec vos propres types : c’est ce qui explique la manière dont l’écosystème a grandi autour.",
+      "block": {
+        "body": "Déclarer un état cible et laisser un contrôleur converger est un bien meilleur marché que scripter chaque transition."
+      },
+      "sig": "CNCF · écrit en Go"
+    },
+    "azure": {
+      "kicker": "Plateforme cloud",
+      "lede": "Le cloud de Microsoft : calcul, bases de données managées, réseau, et la couche d’identité (Entra ID, anciennement Azure AD) sur laquelle la plupart des grandes organisations gèrent déjà leurs collaborateurs.",
+      "body": "Son argument le plus fort est rarement un service phare. C’est la continuité avec un existant déjà en place : annuaire, tenants, licences, conformité.",
+      "block": {
+        "body": "Quand le fournisseur d’identité de l’entreprise est déjà là, tout le reste démarre avec une intégration d’avance."
+      }
+    },
+    "ansible": {
+      "kicker": "Gestion de configuration",
+      "lede": "De l’automatisation sans agent. Ansible se connecte en SSH, exécute des modules sur la machine cible et décrit le résultat attendu dans des playbooks YAML. Rien à installer sur les hôtes gérés.",
+      "body": "Les modules sont écrits pour être idempotents : rejouer le même playbook converge vers le même état au lieu de dupliquer ses effets.",
+      "block": {
+        "body": "Une infrastructure décrite dans un fichier qu’un humain peut lire à voix haute pendant un incident."
+      },
+      "sig": "Red Hat · sans agent"
+    },
+    "git": {
+      "kicker": "Gestion de versions",
+      "lede": "Un stockage d’objets adressé par contenu, avec une interface de gestion de versions par-dessus. Les commits pointent vers des arbres, les arbres vers des blobs, et chaque objet est nommé par le hash de son propre contenu.",
+      "body": "Les branches ne sont que des pointeurs mobiles vers un commit : c’est pourquoi en créer une est instantané, et pourquoi toute une culture de collaboration s’est construite autour.",
+      "block": {
+        "body": "Des branches bon marché et un historique où toute altération se voit ont changé la façon dont les équipes travaillent ensemble plus qu’aucun processus."
+      }
+    },
+    "pnpm": {
+      "kicker": "Gestionnaire de paquets",
+      "lede": "Un gestionnaire de paquets Node qui stocke chaque version de paquet une seule fois dans un store global adressé par contenu, puis la lie en hard link dans les projets. Les installations sont rapides et l’espace disque cesse de croître avec le nombre de dépôts.",
+      "body": "Son organisation de node_modules est stricte : un paquet ne peut importer que ce qu’il a réellement déclaré, donc les dépendances fantômes échouent immédiatement plutôt que des mois plus tard sur la machine de quelqu’un d’autre.",
+      "block": {
+        "body": "Les dépendances non déclarées cassent d’abord sur votre machine, le seul endroit où casser est utile."
+      },
+      "sig": "MIT · store adressé par contenu"
+    },
+    "turborepo": {
+      "kicker": "Outillage monorepo",
+      "lede": "Un orchestrateur de build pour les monorepos JavaScript. Il lit le graphe de dépendances entre paquets, exécute les tâches dans le bon ordre et met en cache chaque sortie de tâche selon un hash de ses entrées.",
+      "body": "Un cache hit rejoue la sortie stockée au lieu de reconstruire : une tâche dont les entrées n’ont pas changé ne coûte pratiquement rien, en local comme en CI.",
+      "block": {
+        "body": "Ne reconstruire que ce qui a réellement changé fait tomber le principal argument contre les monorepos."
+      },
+      "sig": "Vercel · écrit en Rust"
+    },
+    "turborepo-remote-cache": {
+      "kicker": "Cache de build",
+      "lede": "Une implémentation open source de l’API de cache distant de Turborepo, auto-hébergeable sur votre propre stockage. Le cache cesse d’être propre à chaque machine : la CI et chaque développeur partagent les mêmes artefacts.",
+      "body": "Il parle le même protocole que le service hébergé : l’adopter ou s’en passer est un changement d’URL et de jeton, pas de workflow.",
+      "block": {
+        "body": "Le build qu’un collègue a déjà lancé est celui que personne ne devrait avoir à relancer."
+      },
+      "sig": "Communauté · MIT"
+    },
+    "renovate": {
+      "kicker": "Automatisation des dépendances",
+      "lede": "Un bot qui surveille vos manifestes et ouvre des pull requests quand les dépendances évoluent. Il couvre des dizaines d’écosystèmes, pas seulement npm, et reprend les release notes dans le corps de la pull request.",
+      "body": "Regroupement, planification et règles d’automerge relèvent de la configuration : le flux de mises à jour s’ajuste à ce qu’une équipe donnée est capable d’absorber.",
+      "block": {
+        "body": "Vingt petites mises à jour qui passent chacune la CI valent mieux qu’une mise à jour terrifiante un an plus tard."
+      }
+    },
+    "syncpack": {
+      "kicker": "Dépendances de monorepo",
+      "lede": "Un linter pour les versions de dépendances déclarées dans les package.json d’un monorepo. Il repère les plages de versions qui se contredisent et peut les réécrire à partir d’une source de vérité unique.",
+      "body": "Les politiques de versions sont déclarées une fois, puis appliquées en CI comme n’importe quelle règle de lint, au lieu d’être une convention dont on se souvient plus ou moins bien.",
+      "block": {
+        "body": "Deux paquets qui dépendent de deux versions de la même bibliothèque, c’est un bug qui n’apparaît qu’au pire moment."
+      },
+      "sig": "MIT · linter de monorepo"
+    },
+    "splunk": {
+      "kicker": "Observabilité",
+      "lede": "Une plateforme d’indexation des données machine : logs, métriques et événements venus de partout, interrogeables avec son propre langage de requête, SPL.",
+      "body": "Le modèle en pipeline de SPL, où chaque commande alimente la suivante, rapproche une investigation du travail dans un shell plus que de l’écriture de SQL.",
+      "block": {
+        "body": "En plein incident, pouvoir poser une question imprévue à six mois de logs vaut bien la facture d’ingestion."
+      }
+    },
+    "atlassian": {
+      "kicker": "Outils d’équipe",
+      "lede": "L’éditeur de Jira et Confluence : le suivi de tickets et un wiki d’équipe qui, à eux deux, contiennent l’essentiel de la mémoire écrite d’une organisation logicielle.",
+      "body": "La vraie substance de Jira, c’est le moteur de workflow et le langage de requête sous le tableau. Celle de Confluence n’est pas l’éditeur, mais le fait qu’une décision reste retrouvable des années plus tard.",
+      "block": {
+        "body": "Une équipe qui écrit pourquoi elle a décidé quelque chose fait mieux qu’une équipe qui ne le fait pas, quel que soit l’outil."
+      }
+    },
+    "copilot": {
+      "kicker": "Assistant IA",
+      "lede": "L’assistant de code de GitHub, intégré directement dans l’éditeur. Il complète à partir du fichier courant et des onglets ouverts, ce qui le rend le plus efficace sur le milieu répétitif d’une fonction.",
+      "body": "Ses suggestions dépendent du contexte pertinent déjà à l’écran : il se comporte moins comme une base de connaissances que comme une paire de mains très rapide.",
+      "block": {
+        "body": "Pour le boilerplate que vous alliez taper de toute façon, une suggestion en ligne sous le curseur est la boucle de feedback la plus courte qui soit."
+      },
+      "sig": "GitHub · dans l’éditeur"
+    },
+    "claude": {
+      "kicker": "Assistant IA",
+      "lede": "La famille de modèles de langage d’Anthropic, accessible via l’API, les applications ou Claude Code dans le terminal. Les longues fenêtres de contexte et l’usage d’outils lui permettent de travailler sur de vraies bases de code plutôt que sur des extraits.",
+      "body": "MCP, le Model Context Protocol, standardise la façon dont il accède aux outils et aux données externes : une intégration écrite une fois fonctionne avec tous les clients qui le parlent.",
+      "block": {
+        "body": "Un modèle capable de lire le vrai dépôt, de lancer les vrais tests et de garder tout cela en contexte cesse d’être de l’autocomplétion."
+      },
+      "sig": "Anthropic · MCP, long contexte"
+    }
   }
 }

@@ -28,7 +28,8 @@ Dark-systems aesthetic, fluid typography, buttery motion — deployed at the edg
 
 ## ✦ Why it's not just another CV page
 
-- **Zero dependencies.** No React, no build step, no bundler. Just HTML, CSS and a single vanilla JS file. It loads instantly and ages gracefully.
+- **Zero runtime dependencies.** No React, no build step, no bundler. Just HTML, CSS and a few vanilla ES modules. It loads instantly and ages gracefully.
+- **Bilingual.** `en-US` and `fr-FR`, picked from the browser and switchable from the header. English lives in the HTML, French in a JSON catalog; no flash of the wrong language.
 - **Design as a first-class concern.** Fluid `clamp()` type scale, an `oklch()` color system, tuned easing curves and motion that actually *means* something.
 - **Dark-systems art direction.** A cyber / identity-infrastructure vibe — grid overlays, scanlines, monospace accents — matching 18+ years in IAM & security.
 - **Accessible & performant.** Semantic markup, `prefers-reduced-motion` respected, 60fps animations that only touch `transform` and `opacity`.
@@ -55,8 +56,13 @@ its-a-me/
 │   │   ├── base.css        # resets & foundational styles
 │   │   ├── components.css  # section & component styling
 │   │   └── animations.css  # keyframes & motion
+│   ├── i18n/
+│   │   └── fr-FR.json      # French Translations (English stays in the HTML)
 │   └── js/
-│       └── main.js         # scroll progress, reveals, cursor dot
+│       ├── locale-boot.js  # resolves the locale before first paint
+│       ├── i18n.js         # applies Translations, drives the EN / FR toggle
+│       └── main.js         # scroll progress, reveals, cursor dot, introspect dialogs
+├── tests/                  # Playwright suite (dev only)
 ├── resources/              # PDF export & source assets
 └── .github/workflows/
     └── deploy-pages.yml    # CI → GitHub Pages
@@ -64,17 +70,25 @@ its-a-me/
 
 ## ✦ Run it locally
 
-No toolchain required — just serve the `src/` folder:
+No toolchain required — just serve the `src/` folder over HTTP:
 
 ```bash
-# Python
-python3 -m http.server -d src 8000
-
-# …or Node
-npx serve src
+npm start
 ```
 
-Then open **http://localhost:8000**.
+Then open **http://127.0.0.1:8080**.
+
+> Opening `src/index.html` directly (`file://`) shows a blank page: browsers block ES modules and `fetch` from `file://` origins.
+
+## ✦ Tests
+
+The Playwright suite covers locale resolution, the toggle, first paint in French and the introspect dialogs:
+
+```bash
+npm install
+npx playwright install chromium
+npm test
+```
 
 ## ✦ Deployment
 
