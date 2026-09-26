@@ -194,39 +194,42 @@ if (dialog) {
     settle = setTimeout(finish, 700);
   };
 
-  const live = [];
+  // Wait for the initial Translation: it re-renders inline triggers, and the scan must track the live ones
+  ready.then(() => {
+    const live = [];
 
-  document.querySelectorAll('[data-introspect]').forEach((el) => {
-    if (!templateFor(el.dataset.introspect)) {
-      degrade(el);
-      return;
-    }
-    live.push(el);
-  });
-
-  // Arrival scan: a resting colour is easy to miss, a one-shot flash is not.
-  // Triggers light up in sequence within their own section, once, as it comes into view.
-  if (!reduceMotion && 'IntersectionObserver' in window) {
-    const order = new Map();
-    live.forEach((el) => {
-      const section = el.closest('section') ?? document.body;
-      const i = order.get(section) ?? 0;
-      el.style.setProperty('--s', i % 8);
-      order.set(section, i + 1);
+    document.querySelectorAll('[data-introspect]').forEach((el) => {
+      if (!templateFor(el.dataset.introspect)) {
+        degrade(el);
+        return;
+      }
+      live.push(el);
     });
 
-    const scan = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-lit');
-          scan.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.6 }
-    );
-    live.forEach((el) => scan.observe(el));
-  }
+    // Arrival scan: a resting colour is easy to miss, a one-shot flash is not.
+    // Triggers light up in sequence within their own section, once, as it comes into view.
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      const order = new Map();
+      live.forEach((el) => {
+        const section = el.closest('section') ?? document.body;
+        const i = order.get(section) ?? 0;
+        el.style.setProperty('--s', i % 8);
+        order.set(section, i + 1);
+      });
+
+      const scan = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-lit');
+            scan.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.6 }
+      );
+      live.forEach((el) => scan.observe(el));
+    }
+  });
 
   // Delegated: a locale switch replaces the markup around inline triggers, dropping any per-element listener
   document.addEventListener('click', (e) => {
@@ -272,14 +275,11 @@ if (canUseCursor) {
     { passive: true }
   );
 
-  document.querySelectorAll('a, button').forEach((el) => {
-    el.addEventListener('mouseenter', () => {
-      hovering = true;
-      paint(lastX, lastY);
-    });
-    el.addEventListener('mouseleave', () => {
-      hovering = false;
-      paint(lastX, lastY);
-    });
+  // Delegated, like the introspect triggers: a locale switch re-renders links and buttons
+  document.addEventListener('pointerover', (e) => {
+    const over = Boolean(e.target.closest('a, button'));
+    if (over === hovering) return;
+    hovering = over;
+    paint(lastX, lastY);
   });
 }

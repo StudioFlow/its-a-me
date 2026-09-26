@@ -19,8 +19,8 @@ Use `data-i18n-html` wherever the copy embeds `<strong>`, `<br>` or inline `<but
 
 ## Acceptance
 
-- [ ] No English copy remains in these sections in `fr-FR`, except the exclusions listed in the spec.
-- [ ] Inline entity buttons still open their dialogs in both locales.
-- [ ] French typography rules from the spec are applied.
-- [ ] No layout breaks from the longer French copy (headings, cards, timeline) at 360px, 768px and 1440px.
+- [x] No English copy remains in these sections in `fr-FR`, except the exclusions listed in the spec.
+- [x] Inline entity buttons still open their dialogs in both locales.
+- [x] French typography rules from the spec are applied.
+- [x] No layout breaks from the longer French copy (headings, cards, timeline) at 360px, 768px and 1440px.
 - [ ] Florian has reviewed the French copy.

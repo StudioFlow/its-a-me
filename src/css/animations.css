@@ -90,7 +90,7 @@ main {
 }
 
 /* A fr-FR visitor sees nothing until the French is in place, then the page fades in */
-.i18n-pending :is(.nav, main) {
+.i18n-pending :is(.nav, main, .footer) {
   opacity: 0;
 }
 
@@ -100,7 +100,7 @@ main {
 }
 
 /* Only what gets rewritten fades: the toggle stays put so its brackets can be followed */
-.i18n-swapping :is(main, .nav__links > a:not(.nav__icon)) {
+.i18n-swapping :is(main, .footer, .nav__links > a:not(.nav__icon)) {
   opacity: 0;
   transition-duration: var(--dur-micro);
   transition-timing-function: var(--ease-in-out);

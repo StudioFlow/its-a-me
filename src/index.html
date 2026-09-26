@@ -133,21 +133,21 @@
   <section class="about" id="about">
     <div class="container about__grid">
       <div class="about__label reveal">
-        <p class="overline">Who I Am</p>
+        <p class="overline" data-i18n="about.label">Who I Am</p>
       </div>
       <div class="about__body">
-        <h2 class="h2 reveal">Identity is the front door.<br>I make sure it holds.</h2>
-        <p class="body-lg reveal" style="--d:1">
+        <h2 class="h2 reveal" data-i18n-html="about.title">Identity is the front door.<br>I make sure it holds.</h2>
+        <p class="body-lg reveal" style="--d:1" data-i18n-html="about.lede">
           Today, I'm IAM Architect &amp; Backend/Security Tech Lead at <button type="button" class="entity" data-introspect="lectra">Lectra SA</button>. I built the IDM/IDP platform
           at the core of Lectra Cloud from the ground up, and I keep evolving it: over
           <strong>100 highly available microservices</strong> serving the entire R&amp;D organization.
         </p>
-        <p class="body-lg reveal" style="--d:2">
+        <p class="body-lg reveal" style="--d:2" data-i18n="about.referent">
           Beyond the architecture itself, I act as a technical referent for identity and access management.
           I guide R&amp;D teams through the OAuth2 and OIDC flows they rely on every day, and translate IAM
           stakes into value that non-technical stakeholders can act on.
         </p>
-        <p class="body-lg reveal" style="--d:3">
+        <p class="body-lg reveal" style="--d:3" data-i18n="about.transmission">
           I see that transmission role as just as critical as the technical design work itself.
         </p>
       </div>
@@ -157,65 +157,65 @@
   <!-- ============ FOCUS (bento) ============ -->
   <section class="section-full" id="focus">
     <div class="container">
-      <p class="overline reveal">What Drives Me</p>
-      <h2 class="h2 reveal" style="--d:1">Eight things I care about, in no particular order</h2>
+      <p class="overline reveal" data-i18n="focus.overline">What Drives Me</p>
+      <h2 class="h2 reveal" style="--d:1" data-i18n="focus.title">Eight things I care about, in no particular order</h2>
     </div>
     <div class="bento container">
       <article class="bento__card reveal">
         <span class="bento__num mono">01</span>
-        <h3>Architecture &amp; Resilience</h3>
-        <p>Designing IAM architectures with security and zero-downtime as hard constraints, not aspirations.</p>
+        <h3 data-i18n="focus.cards.01.title">Architecture &amp; Resilience</h3>
+        <p data-i18n="focus.cards.01.body">Designing IAM architectures with security and zero-downtime as hard constraints, not aspirations.</p>
         <button type="button" class="card-trigger" data-introspect="focus-01"
-                aria-label="Focus 01, Architecture & Resilience, details"></button>
+                aria-label="Focus 01, Architecture & Resilience, details" data-i18n-attr="aria-label:focus.cards.01.label"></button>
       </article>
       <article class="bento__card reveal" style="--d:1">
         <span class="bento__num mono">02</span>
-        <h3>Production Operations</h3>
-        <p>Running IAM platforms in production: incident management, operational continuity, hardening.</p>
+        <h3 data-i18n="focus.cards.02.title">Production Operations</h3>
+        <p data-i18n="focus.cards.02.body">Running IAM platforms in production: incident management, operational continuity, hardening.</p>
         <button type="button" class="card-trigger" data-introspect="focus-02"
-                aria-label="Focus 02, Production Operations, details"></button>
+                aria-label="Focus 02, Production Operations, details" data-i18n-attr="aria-label:focus.cards.02.label"></button>
       </article>
       <article class="bento__card reveal" style="--d:2">
         <span class="bento__num mono">03</span>
-        <h3>OAuth2 &amp; Beyond</h3>
-        <p>Securing flows on OAuth2, with fluency across OIDC, SSO, MFA, federation, delegation, token exchange.</p>
+        <h3 data-i18n="focus.cards.03.title">OAuth2 &amp; Beyond</h3>
+        <p data-i18n="focus.cards.03.body">Securing flows on OAuth2, with fluency across OIDC, SSO, MFA, federation, delegation, token exchange.</p>
         <button type="button" class="card-trigger" data-introspect="focus-03"
-                aria-label="Focus 03, OAuth2 & Beyond, details"></button>
+                aria-label="Focus 03, OAuth2 & Beyond, details" data-i18n-attr="aria-label:focus.cards.03.label"></button>
       </article>
       <article class="bento__card reveal" style="--d:3">
         <span class="bento__num mono">04</span>
-        <h3>API Design</h3>
-        <p>Production-ready APIs and GraphQL federation, built to hold up under load and over time.</p>
+        <h3 data-i18n="focus.cards.04.title">API Design</h3>
+        <p data-i18n="focus.cards.04.body">Production-ready APIs and GraphQL federation, built to hold up under load and over time.</p>
         <button type="button" class="card-trigger" data-introspect="focus-04"
-                aria-label="Focus 04, API Design, details"></button>
+                aria-label="Focus 04, API Design, details" data-i18n-attr="aria-label:focus.cards.04.label"></button>
       </article>
       <article class="bento__card reveal" style="--d:4">
         <span class="bento__num mono">05</span>
-        <h3>AI-Augmented Engineering</h3>
-        <p>Exploring how AI reshapes business value and everyday engineering practice.</p>
+        <h3 data-i18n="focus.cards.05.title">AI-Augmented Engineering</h3>
+        <p data-i18n="focus.cards.05.body">Exploring how AI reshapes business value and everyday engineering practice.</p>
         <button type="button" class="card-trigger" data-introspect="focus-05"
-                aria-label="Focus 05, AI-Augmented Engineering, details"></button>
+                aria-label="Focus 05, AI-Augmented Engineering, details" data-i18n-attr="aria-label:focus.cards.05.label"></button>
       </article>
       <article class="bento__card reveal" style="--d:5">
         <span class="bento__num mono">06</span>
-        <h3>Fast Feedback Loops</h3>
-        <p>Trunk-based development, CI/CD pipeline design, DORA-guided delivery.</p>
+        <h3 data-i18n="focus.cards.06.title">Fast Feedback Loops</h3>
+        <p data-i18n="focus.cards.06.body">Trunk-based development, CI/CD pipeline design, DORA-guided delivery.</p>
         <button type="button" class="card-trigger" data-introspect="focus-06"
-                aria-label="Focus 06, Fast Feedback Loops, details"></button>
+                aria-label="Focus 06, Fast Feedback Loops, details" data-i18n-attr="aria-label:focus.cards.06.label"></button>
       </article>
       <article class="bento__card reveal" style="--d:6">
         <span class="bento__num mono">07</span>
-        <h3>Developer Experience</h3>
-        <p>Monorepo, DDD, semantic-release, Renovate, feature flipping, observability.</p>
+        <h3 data-i18n="focus.cards.07.title">Developer Experience</h3>
+        <p data-i18n="focus.cards.07.body">Monorepo, DDD, semantic-release, Renovate, feature flipping, observability.</p>
         <button type="button" class="card-trigger" data-introspect="focus-07"
-                aria-label="Focus 07, Developer Experience, details"></button>
+                aria-label="Focus 07, Developer Experience, details" data-i18n-attr="aria-label:focus.cards.07.label"></button>
       </article>
       <article class="bento__card reveal" style="--d:7">
         <span class="bento__num mono">08</span>
-        <h3>DevOps as Culture</h3>
-        <p>Keeping DevOps a genuine culture of collaboration, not a label on a job title.</p>
+        <h3 data-i18n="focus.cards.08.title">DevOps as Culture</h3>
+        <p data-i18n="focus.cards.08.body">Keeping DevOps a genuine culture of collaboration, not a label on a job title.</p>
         <button type="button" class="card-trigger" data-introspect="focus-08"
-                aria-label="Focus 08, DevOps as Culture, details"></button>
+                aria-label="Focus 08, DevOps as Culture, details" data-i18n-attr="aria-label:focus.cards.08.label"></button>
       </article>
     </div>
   </section>
@@ -223,9 +223,9 @@
   <!-- ============ AI PRACTICE ============ -->
   <section class="ai-practice">
     <div class="container ai-practice__inner">
-      <p class="overline reveal">AI In Daily Practice</p>
-      <p class="ai-practice__statement reveal" style="--d:1">The game has fundamentally changed.</p>
-      <p class="body-lg ai-practice__body reveal" style="--d:2">
+      <p class="overline reveal" data-i18n="aiPractice.overline">AI In Daily Practice</p>
+      <p class="ai-practice__statement reveal" style="--d:1" data-i18n="aiPractice.statement">The game has fundamentally changed.</p>
+      <p class="body-lg ai-practice__body reveal" style="--d:2" data-i18n="aiPractice.body">
         I use AI across every stage of the workflow: architecture, specs, API design, coding, testing,
         refactoring, documentation, debugging, code review. Learning to collaborate effectively with these
         tools is, today, as structurally important as mastering CI/CD was ten years ago.
@@ -236,7 +236,7 @@
   <!-- ============ STACK (marquee) ============ -->
   <section class="stack" id="stack">
     <div class="container">
-      <p class="overline reveal">Favorite Stacks</p>
+      <p class="overline reveal" data-i18n="stack.overline">Favorite Stacks</p>
     </div>
     <div class="marquee" data-marquee>
       <div class="marquee__track">
@@ -300,37 +300,37 @@
         <button type="button" class="tag mono entity" data-introspect="claude" tabindex="-1">Claude</button>
       </div>
     </div>
-    <p class="container stack__note reveal">No stack loyalty. Pragmatism over dogma, and the right tool for the right job.</p>
+    <p class="container stack__note reveal" data-i18n="stack.note">No stack loyalty. Pragmatism over dogma, and the right tool for the right job.</p>
   </section>
 
   <!-- ============ EXPERIENCE (timeline) ============ -->
   <section class="experience section-full" id="experience">
     <div class="container">
-      <p class="overline reveal">Where I've Been</p>
-      <h2 class="h2 reveal" style="--d:1">Eighteen years, five chapters.</h2>
+      <p class="overline reveal" data-i18n="experience.overline">Where I've Been</p>
+      <h2 class="h2 reveal" style="--d:1" data-i18n="experience.title">Eighteen years, five chapters.</h2>
     </div>
     <div class="container timeline">
 
       <article class="xp xp--current reveal">
         <div class="xp__period">
-          <span class="xp__years mono">2016 → Now</span>
-          <span class="xp__duration">9 yrs 11 mos</span>
+          <span class="xp__years mono" data-i18n="experience.jobs.lectraCloud.period">2016 → Now</span>
+          <span class="xp__duration" data-i18n="experience.jobs.lectraCloud.duration">9 yrs 11 mos</span>
         </div>
         <div class="xp__body">
           <div class="xp__head">
-            <h3 class="xp__role">Senior Cloud Engineer, Tech Lead IAM &amp; Cloud CyberSecurity</h3>
+            <h3 class="xp__role" data-i18n="experience.jobs.lectraCloud.role">Senior Cloud Engineer, Tech Lead IAM &amp; Cloud CyberSecurity</h3>
             <p class="xp__company"><button type="button" class="entity" data-introspect="lectra">Lectra</button> <span class="xp__place">Cestas, France</span></p>
           </div>
-          <p class="xp__summary">
+          <p class="xp__summary" data-i18n="experience.jobs.lectraCloud.summary">
             Tech Lead Backend IAM &amp; CyberSecurity within Lectra Cloud R&amp;D. I design and continuously
             evolve, from the ground up, the IDM/IDP platform securing 100+ highly available microservices,
             and I support the entire R&amp;D community on OAuth2/OIDC.
           </p>
           <ul class="xp__points">
-            <li>IAM architecture design for the authentication &amp; authorization platform</li>
-            <li>AI agent &amp; MCP server authentication via Token Exchange (RFC 8693 / OBO)</li>
-            <li>Cloud back-offices for account &amp; RBAC access management</li>
-            <li>Cross-team R&amp;D support: OAuth2 upskilling, architecture reviews</li>
+            <li data-i18n="experience.jobs.lectraCloud.points.0">IAM architecture design for the authentication &amp; authorization platform</li>
+            <li data-i18n="experience.jobs.lectraCloud.points.1">AI agent &amp; MCP server authentication via Token Exchange (RFC 8693 / OBO)</li>
+            <li data-i18n="experience.jobs.lectraCloud.points.2">Cloud back-offices for account &amp; RBAC access management</li>
+            <li data-i18n="experience.jobs.lectraCloud.points.3">Cross-team R&amp;D support: OAuth2 upskilling, architecture reviews</li>
           </ul>
           <ul class="xp__tags">
             <li class="mono">Node.js</li>
@@ -348,21 +348,21 @@
       <article class="xp reveal">
         <div class="xp__period">
           <span class="xp__years mono">2015 → 2016</span>
-          <span class="xp__duration">1 yr 5 mos</span>
+          <span class="xp__duration" data-i18n="experience.jobs.orange.duration">1 yr 5 mos</span>
         </div>
         <div class="xp__body">
           <div class="xp__head">
-            <h3 class="xp__role">Software Quality Architect</h3>
+            <h3 class="xp__role" data-i18n="experience.jobs.orange.role">Software Quality Architect</h3>
             <p class="xp__company"><button type="button" class="entity" data-introspect="orange">Orange</button> <span class="xp__place">Pessac, France · via <button type="button" class="entity" data-introspect="neo-soft">Néo-Soft</button></span></p>
           </div>
-          <p class="xp__summary">
+          <p class="xp__summary" data-i18n="experience.jobs.orange.summary">
             Cross-functional technical referent within the Software Quality methods &amp; tools unit,
             spreading DevOps practices and building internal tooling.
           </p>
           <ul class="xp__points">
-            <li>Active in Orange Software Quality working groups: CI/CD, SonarQube</li>
-            <li>Guided project teams on automation solutions; reliability &amp; robustness audits</li>
-            <li>Built a "Forges as a Service" admin web portal (Jenkins + SonarQube)</li>
+            <li data-i18n="experience.jobs.orange.points.0">Active in Orange Software Quality working groups: CI/CD, SonarQube</li>
+            <li data-i18n="experience.jobs.orange.points.1">Guided project teams on automation solutions; reliability &amp; robustness audits</li>
+            <li data-i18n="experience.jobs.orange.points.2">Built a "Forges as a Service" admin web portal (Jenkins + SonarQube)</li>
           </ul>
           <ul class="xp__tags">
             <li class="mono">Java 8</li>
@@ -379,21 +379,21 @@
       <article class="xp reveal">
         <div class="xp__period">
           <span class="xp__years mono">2013 → 2015</span>
-          <span class="xp__duration">2 yrs 1 mo</span>
+          <span class="xp__duration" data-i18n="experience.jobs.lectraPlm.duration">2 yrs 1 mo</span>
         </div>
         <div class="xp__body">
           <div class="xp__head">
-            <h3 class="xp__role">Software Engineer, J2EE Maintenance &amp; Performance</h3>
+            <h3 class="xp__role" data-i18n="experience.jobs.lectraPlm.role">Software Engineer, J2EE Maintenance &amp; Performance</h3>
             <p class="xp__company"><button type="button" class="entity" data-introspect="lectra">Lectra</button> <span class="xp__place">Cestas, France · via <button type="button" class="entity" data-introspect="neo-soft">Néo-Soft</button></span></p>
           </div>
-          <p class="xp__summary">
+          <p class="xp__summary" data-i18n="experience.jobs.lectraPlm.summary">
             Performance R&amp;D on the FIP integration platform at the core of the Lectra PLM,
             a high-load n-tier architecture.
           </p>
           <ul class="xp__points">
-            <li>Analyzed &amp; optimized execution time of strategic FIP services</li>
-            <li>Scalability studies: user-load objectives, application profiling</li>
-            <li>Identified CPU / memory / I/O bottlenecks and shipped the fixes</li>
+            <li data-i18n="experience.jobs.lectraPlm.points.0">Analyzed &amp; optimized execution time of strategic FIP services</li>
+            <li data-i18n="experience.jobs.lectraPlm.points.1">Scalability studies: user-load objectives, application profiling</li>
+            <li data-i18n="experience.jobs.lectraPlm.points.2">Identified CPU / memory / I/O bottlenecks and shipped the fixes</li>
           </ul>
           <ul class="xp__tags">
             <li class="mono">Java</li>
@@ -410,21 +410,21 @@
       <article class="xp reveal">
         <div class="xp__period">
           <span class="xp__years mono">2011 → 2013</span>
-          <span class="xp__duration">2 yrs 1 mo</span>
+          <span class="xp__duration" data-i18n="experience.jobs.banquePostale.duration">2 yrs 1 mo</span>
         </div>
         <div class="xp__body">
           <div class="xp__head">
-            <h3 class="xp__role">Software Engineer, J2EE Designer</h3>
+            <h3 class="xp__role" data-i18n="experience.jobs.banquePostale.role">Software Engineer, J2EE Designer</h3>
             <p class="xp__company"><button type="button" class="entity" data-introspect="banque-postale">La Banque Postale</button> <span class="xp__place">Gradignan, France · via <button type="button" class="entity" data-introspect="geos-informatique">Geos-Informatique</button></span></p>
           </div>
-          <p class="xp__summary">
+          <p class="xp__summary" data-i18n="experience.jobs.banquePostale.summary">
             Experienced designer/developer, quickly extended to technical leadership and application
             piloting within the shared development center (CDM EPA).
           </p>
           <ul class="xp__points">
-            <li>Application piloting between business (MOA) and ATOS delivery</li>
-            <li>Technical mentoring; requirements, feasibility, estimation, documentation</li>
-            <li>Technical migrations: JDK, DISFE framework, WAS 6.1 → 7</li>
+            <li data-i18n="experience.jobs.banquePostale.points.0">Application piloting between business (MOA) and ATOS delivery</li>
+            <li data-i18n="experience.jobs.banquePostale.points.1">Technical mentoring; requirements, feasibility, estimation, documentation</li>
+            <li data-i18n="experience.jobs.banquePostale.points.2">Technical migrations: JDK, DISFE framework, WAS 6.1 → 7</li>
           </ul>
           <ul class="xp__tags">
             <li class="mono">Java</li>
@@ -441,21 +441,21 @@
       <article class="xp reveal">
         <div class="xp__period">
           <span class="xp__years mono">2008 → 2011</span>
-          <span class="xp__duration">3 yrs 1 mo</span>
+          <span class="xp__duration" data-i18n="experience.jobs.creditAgricole.duration">3 yrs 1 mo</span>
         </div>
         <div class="xp__body">
           <div class="xp__head">
-            <h3 class="xp__role">Software Engineer, J2EE Designer</h3>
+            <h3 class="xp__role" data-i18n="experience.jobs.creditAgricole.role">Software Engineer, J2EE Designer</h3>
             <p class="xp__company"><button type="button" class="entity" data-introspect="credit-agricole">Crédit Agricole Aquitaine</button> <span class="xp__place">Gradignan, France · via <button type="button" class="entity" data-introspect="ausy">Ausy</button> / AtlantiCA</span></p>
           </div>
-          <p class="xp__summary">
+          <p class="xp__summary" data-i18n="experience.jobs.creditAgricole.summary">
             Fast progression from junior developer to technical referent to project lead within a
             ten-person team, on the BAM online banking portal.
           </p>
           <ul class="xp__points">
-            <li>Evolutions &amp; maintenance of the BAM customer banking portal</li>
-            <li>New account overview, portal redesign, screen security &amp; certification</li>
-            <li>RIB → SEPA migration; technical mentoring &amp; agile project piloting</li>
+            <li data-i18n="experience.jobs.creditAgricole.points.0">Evolutions &amp; maintenance of the BAM customer banking portal</li>
+            <li data-i18n="experience.jobs.creditAgricole.points.1">New account overview, portal redesign, screen security &amp; certification</li>
+            <li data-i18n="experience.jobs.creditAgricole.points.2">RIB → SEPA migration; technical mentoring &amp; agile project piloting</li>
           </ul>
           <ul class="xp__tags">
             <li class="mono">Java</li>
@@ -474,27 +474,27 @@
   <!-- ============ EDUCATION & CERTIFICATIONS ============ -->
   <section class="credentials" id="education">
     <div class="container">
-      <p class="overline reveal">Papers &amp; Proof</p>
-      <h2 class="h2 reveal" style="--d:1">Education &amp; certifications.</h2>
+      <p class="overline reveal" data-i18n="education.overline">Papers &amp; Proof</p>
+      <h2 class="h2 reveal" style="--d:1" data-i18n="education.title">Education &amp; certifications.</h2>
     </div>
     <div class="container credentials__grid">
 
       <div class="credentials__col reveal">
-        <p class="credentials__col-title mono">/ Education</p>
+        <p class="credentials__col-title mono" data-i18n="education.column">/ Education</p>
         <ul class="credentials__list">
           <li class="cred">
             <span class="cred__meta mono">2005 → 2007</span>
             <div class="cred__body">
-              <h3 class="cred__title">Master's in Computer Science</h3>
-              <p class="cred__sub">Specialization in Bio-Informatics</p>
+              <h3 class="cred__title" data-i18n="education.master.title">Master's in Computer Science</h3>
+              <p class="cred__sub" data-i18n="education.master.sub">Specialization in Bio-Informatics</p>
               <p class="cred__org"><button type="button" class="entity" data-introspect="bordeaux-2">Université Victor Segalen Bordeaux 2</button></p>
             </div>
           </li>
           <li class="cred">
             <span class="cred__meta mono">2002 → 2005</span>
             <div class="cred__body">
-              <h3 class="cred__title">Bachelor's in Cell Biology &amp; Physiology</h3>
-              <p class="cred__sub">Biologie Cellulaire et Physiologie</p>
+              <h3 class="cred__title" data-i18n="education.bachelor.title">Bachelor's in Cell Biology &amp; Physiology</h3>
+              <p class="cred__sub" data-i18n="education.bachelor.sub">Biologie Cellulaire et Physiologie</p>
               <p class="cred__org"><button type="button" class="entity" data-introspect="bordeaux-2">Université Victor Segalen Bordeaux 2</button></p>
             </div>
           </li>
@@ -556,9 +556,9 @@
         </svg>
       </div>
       <div class="side-project__body">
-        <p class="overline reveal">On The Side</p>
+        <p class="overline reveal" data-i18n="sideProject.overline">On The Side</p>
         <h2 class="h2 reveal" style="--d:1">Fada-Domotics</h2>
-        <p class="body-lg reveal" style="--d:2">
+        <p class="body-lg reveal" style="--d:2" data-i18n="sideProject.body">
           A full home-automation system, and a monorepo playground where I use AI to move faster across
           stacks I don't touch at work.
         </p>
@@ -569,10 +569,10 @@
   <!-- ============ CONTACT ============ -->
   <section class="contact" id="contact">
     <div class="container contact__inner">
-      <p class="overline reveal">Get In Touch</p>
-      <h2 class="contact__title reveal" style="--d:1">Let's talk Json-Web-Tokens,<br>DevOps or DevEx.</h2>
+      <p class="overline reveal" data-i18n="contact.overline">Get In Touch</p>
+      <h2 class="contact__title reveal" style="--d:1" data-i18n-html="contact.title">Let's talk Json-Web-Tokens,<br>DevOps or DevEx.</h2>
       <a class="contact__email mono reveal" style="--d:2" href="mailto:floryan.daniels@gmail.com">floryan.daniels@gmail.com</a>
-      <p class="contact__meta reveal" style="--d:3">
+      <p class="contact__meta reveal" style="--d:3" data-i18n-html="contact.meta">
         Bordeaux, Nouvelle-Aquitaine, France. Remote / hybrid friendly.<br>
         English works, though French is my strongest language.
       </p>
@@ -584,7 +584,7 @@
 <footer class="footer">
   <div class="container footer__inner">
     <span>© <span data-year></span> Florian Daniels</span>
-    <a href="#top" class="link-underline">Back to top ↑</a>
+    <a href="#top" class="link-underline" data-i18n="footer.backToTop">Back to top ↑</a>
   </div>
 </footer>
 
@@ -594,7 +594,7 @@
     <div class="introspect__head mono">
       <span class="introspect__status">200 OK</span>
       <span class="introspect__route" data-introspect-route></span>
-      <button type="button" class="introspect__close" data-introspect-close aria-label="Close details">esc</button>
+      <button type="button" class="introspect__close" data-introspect-close aria-label="Close details" data-i18n-attr="aria-label:dialog.close">esc</button>
     </div>
     <span class="introspect__beam" aria-hidden="true"></span>
     <div class="introspect__body" data-introspect-body></div>

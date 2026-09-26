@@ -55,6 +55,11 @@ p {
   text-wrap: pretty;
 }
 
+/* Keeps punctuation glued to an inline entity button, which is otherwise a line-break opportunity */
+.nowrap {
+  white-space: nowrap;
+}
+
 .mono {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;

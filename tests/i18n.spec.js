@@ -1,3 +1,5 @@
+const fs = require('node:fs');
+const path = require('node:path');
 const { test, expect } = require('@playwright/test');
 
 const EN = {
@@ -89,7 +91,9 @@ const localizedMarkup = (page) =>
   page.evaluate(() => {
     const selector = '[data-i18n], [data-i18n-html], [data-i18n-attr]';
     const scopes = [document, ...Array.from(document.querySelectorAll('template'), (t) => t.content)];
-    return scopes.flatMap((scope) => Array.from(scope.querySelectorAll(selector), (el) => el.outerHTML));
+    // The introspect arrival scan decorates live triggers (--s, is-lit); swapped markup legitimately drops it
+    const content = (el) => el.outerHTML.replace(/ style="--s: \d+;"/g, '').replace(/ is-lit\b/g, '');
+    return scopes.flatMap((scope) => Array.from(scope.querySelectorAll(selector), content));
   });
 
 test.describe('Round trip', () => {
@@ -229,5 +233,63 @@ test.describe('Catalog failure on toggle', () => {
     await expect(subhead(page)).toHaveText(EN.subhead);
     await expect(toggleOption(page, 'en-US')).toHaveAttribute('aria-pressed', 'true');
     expect(await page.evaluate(() => localStorage.getItem('locale'))).toBeNull();
+  });
+});
+
+test('every translation key in the page has a French Translation', async () => {
+  const html = fs.readFileSync(path.join(__dirname, '../src/index.html'), 'utf8');
+  const catalog = JSON.parse(fs.readFileSync(path.join(__dirname, '../src/i18n/fr-FR.json'), 'utf8'));
+
+  const keys = [
+    ...Array.from(html.matchAll(/data-i18n(?:-html)?="([^"]+)"/g), (m) => m[1]),
+    ...Array.from(html.matchAll(/data-i18n-attr="([^"]+)"/g), (m) => m[1])
+      .flatMap((spec) => spec.split(';').map((pair) => pair.split(':')[1].trim())),
+  ];
+  const missing = keys.filter((key) => typeof key.split('.').reduce((node, part) => node?.[part], catalog) !== 'string');
+
+  // Guards the scrape itself: a broken regex would find no keys and pass vacuously
+  expect(keys.length).toBeGreaterThan(80);
+  expect(missing).toEqual([]);
+});
+
+test.describe('Translated sections for a French-speaking visitor', () => {
+  test.use({ locale: 'fr-FR' });
+
+  test('read in French, and inline entities still open their dialog', async ({ page }) => {
+    await page.goto('./');
+    await expect(page.locator('#experience .h2')).toHaveText('Dix-huit ans, cinq chapitres.');
+    await expect(page.locator('.footer .link-underline')).toHaveText('Retour en haut ↑');
+    await expect(page.locator('[data-introspect-close]')).toHaveAttribute('aria-label', 'Fermer les détails');
+
+    await page.locator('.about [data-introspect="lectra"]').click();
+    await expect(page.locator('[data-introspect-dialog]')).toHaveAttribute('open', '');
+  });
+});
+
+test.describe('Custom cursor after a switch', () => {
+  test.use({ locale: 'en-US' });
+
+  test('still grows over an inline entity that was re-rendered', async ({ page }) => {
+    await page.goto('./');
+    test.skip(!(await page.evaluate(() => matchMedia('(pointer: fine)').matches)), 'needs a fine pointer');
+
+    await toggleOption(page, 'fr-FR').click();
+    await expect(subhead(page)).toHaveText(FR.subhead);
+
+    await page.locator('.about [data-introspect="lectra"]').hover();
+    await expect(page.locator('.cursor-dot')).toHaveAttribute('style', /scale\(2\.5\)/);
+  });
+});
+
+test.describe('Arrival scan for a French-speaking visitor', () => {
+  test.use({ locale: 'fr-FR' });
+
+  test('lights up inline entities rendered by the Translation', async ({ page }) => {
+    await page.goto('./');
+    await expect(subhead(page)).toHaveClass(/is-visible/);
+
+    const lectra = page.locator('.about [data-introspect="lectra"]');
+    await lectra.scrollIntoViewIfNeeded();
+    await expect(lectra).toHaveClass(/\bis-lit\b/);
   });
 });

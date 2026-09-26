@@ -10,7 +10,7 @@ The profile is readable in `en-US` (default) and `fr-FR`. The locale is picked a
 ## Model
 
 - `src/index.html` stays authored in `en-US` and is the only source of English text. No `en-US.json`.
-- `src/i18n/fr-FR.json` holds the French Translations, nested by namespace mirroring page sections: `head`, `nav`, `hero`, `stats`, `about`, `focus`, `aiPractice`, `stack`, `experience`, `education`, `contact`, `footer`, `dialog`, and `entity.<id>.*` for each `<template data-entity>`.
+- `src/i18n/fr-FR.json` holds the French Translations, nested by namespace mirroring page sections: `head`, `nav`, `hero`, `stats`, `about`, `focus`, `aiPractice`, `stack`, `experience`, `education`, `sideProject`, `contact`, `footer`, `dialog`, and `entity.<id>.*` for each `<template data-entity>`.
 - Switching back to `en-US` restores a snapshot of the original DOM (text, HTML, attributes, template contents) taken at boot.
 
 ## Locale resolution (first match wins)
@@ -41,8 +41,8 @@ The profile is readable in `en-US` (default) and `fr-FR`. The locale is picked a
 
 ## Motion
 
-- Locale switch: `<main>` and the header's text links fade to 0 over 150ms, content is swapped, then they fade back to 1 over 250ms. The toggle itself does not fade, so its bracket slide stays visible. A catalog that does not answer within ~1.5s aborts the switch back to the current locale. Only `opacity` is animated. Already-played reveals do not replay.
-- First load in `fr-FR`: `i18n-pending` holds the header and `<main>` at `opacity: 0`, the French is applied, then they fade in over 250ms and the hero entrance starts with the fade. The toggle already shows `[FR]` when it appears. A ~1.5s safety timeout reveals the English page if the catalog fails to load.
+- Locale switch: `<main>`, the footer and the header's text links fade to 0 over 150ms, content is swapped, then they fade back to 1 over 250ms. The toggle itself does not fade, so its bracket slide stays visible. A catalog that does not answer within ~1.5s aborts the switch back to the current locale. Only `opacity` is animated. Already-played reveals do not replay.
+- First load in `fr-FR`: `i18n-pending` holds the header, `<main>` and the footer at `opacity: 0`, the French is applied, then they fade in over 250ms and the hero entrance starts with the fade. The toggle already shows `[FR]` when it appears. A ~1.5s safety timeout reveals the English page if the catalog fails to load.
 - `en-US` visitors: unchanged from today.
 - `prefers-reduced-motion`: instant swap, no fades.
 

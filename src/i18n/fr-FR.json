@@ -1,7 +1,7 @@
 {
   "head": {
     "title": "Florian Daniels · Architecte IAM & Tech Lead Sécurité",
-    "description": "Florian Daniels, architecte IAM et tech lead backend/sécurité. Plus de 18 ans à concevoir des systèmes d’identité, des plateformes OAuth2/OIDC et des architectures sans interruption de service. Basé à Bordeaux."
+    "description": "Florian Daniels, architecte IAM et tech lead backend/sécurité. Plus de 18 ans à concevoir des systèmes d’identité, des plateformes OAuth2/OIDC et des architectures sans interruption de service. Basé à Bordeaux."
   },
   "nav": {
     "about": "À propos",
@@ -27,5 +27,153 @@
     "microservices": "Microservices en production",
     "iamSince": "Systèmes IAM depuis",
     "codeSince": "Développeur depuis"
+  },
+  "about": {
+    "label": "Qui je suis",
+    "title": "L’identité, c’est la porte d’entrée.<br>Je veille à ce qu’elle tienne.",
+    "lede": "Aujourd’hui, je suis architecte IAM et Tech Lead backend/sécurité chez <span class=\"nowrap\"><button type=\"button\" class=\"entity\" data-introspect=\"lectra\">Lectra SA</button>.</span> J’ai construit de zéro la plateforme IDM/IDP au cœur de Lectra Cloud, et je continue de la faire évoluer : plus de <strong>100 microservices hautement disponibles</strong> au service de toute l’organisation R&D.",
+    "referent": "Au-delà de l’architecture, je suis référent technique en gestion des identités et des accès. J’accompagne les équipes R&D sur les flux OAuth2 et OIDC qu’elles utilisent au quotidien, et je traduis les enjeux IAM en valeur concrète pour les interlocuteurs non techniques.",
+    "transmission": "Ce rôle de transmission compte pour moi autant que la conception technique elle-même."
+  },
+  "focus": {
+    "overline": "Ce qui me fait avancer",
+    "title": "Huit sujets qui me tiennent à cœur, sans ordre particulier",
+    "cards": {
+      "01": {
+        "title": "Architecture & résilience",
+        "body": "Concevoir des architectures IAM où la sécurité et le zéro interruption sont des contraintes fermes, pas des aspirations.",
+        "label": "Axe 01, Architecture & résilience, détails"
+      },
+      "02": {
+        "title": "Exploitation en production",
+        "body": "Faire tourner des plateformes IAM en production : gestion d’incidents, continuité opérationnelle, durcissement.",
+        "label": "Axe 02, Exploitation en production, détails"
+      },
+      "03": {
+        "title": "OAuth2 et au-delà",
+        "body": "Sécuriser les flux avec OAuth2, en maîtrisant OIDC, SSO, MFA, fédération, délégation et token exchange.",
+        "label": "Axe 03, OAuth2 et au-delà, détails"
+      },
+      "04": {
+        "title": "Conception d’API",
+        "body": "Des API prêtes pour la production et une fédération GraphQL, conçues pour tenir la charge et durer.",
+        "label": "Axe 04, Conception d’API, détails"
+      },
+      "05": {
+        "title": "Ingénierie augmentée par l’IA",
+        "body": "Explorer comment l’IA transforme la valeur métier et la pratique quotidienne de l’ingénierie.",
+        "label": "Axe 05, Ingénierie augmentée par l’IA, détails"
+      },
+      "06": {
+        "title": "Boucles de feedback courtes",
+        "body": "Trunk-based development, conception de pipelines CI/CD, livraison guidée par DORA.",
+        "label": "Axe 06, Boucles de feedback courtes, détails"
+      },
+      "07": {
+        "title": "Expérience développeur",
+        "body": "Monorepo, DDD, semantic-release, Renovate, feature flipping, observabilité.",
+        "label": "Axe 07, Expérience développeur, détails"
+      },
+      "08": {
+        "title": "Le DevOps comme culture",
+        "body": "Faire du DevOps une vraie culture de collaboration, pas une étiquette sur un intitulé de poste.",
+        "label": "Axe 08, Le DevOps comme culture, détails"
+      }
+    }
+  },
+  "aiPractice": {
+    "overline": "L’IA au quotidien",
+    "statement": "Les règles du jeu ont profondément changé.",
+    "body": "J’utilise l’IA à chaque étape du travail : architecture, specs, conception d’API, code, tests, refactoring, documentation, débogage, revue de code. Apprendre à collaborer efficacement avec ces outils est aujourd’hui aussi structurant que l’était la maîtrise de la CI/CD il y a dix ans."
+  },
+  "stack": {
+    "overline": "Stacks favorites",
+    "note": "Aucune fidélité à une stack. Le pragmatisme plutôt que le dogme, et le bon outil pour le bon besoin."
+  },
+  "experience": {
+    "overline": "Mon parcours",
+    "title": "Dix-huit ans, cinq chapitres.",
+    "jobs": {
+      "lectraCloud": {
+        "period": "2016 → Aujourd’hui",
+        "duration": "9 ans 11 mois",
+        "role": "Ingénieur cloud senior, Tech Lead IAM & cybersécurité cloud",
+        "summary": "Tech Lead Backend IAM & cybersécurité au sein de la R&D Lectra Cloud. Je conçois de zéro et fais évoluer en continu la plateforme IDM/IDP qui sécurise plus de 100 microservices hautement disponibles, et j’accompagne toute la communauté R&D sur OAuth2/OIDC.",
+        "points": [
+          "Conception de l’architecture IAM de la plateforme d’authentification et d’autorisation",
+          "Authentification des agents IA et des serveurs MCP via Token Exchange (RFC 8693 / OBO)",
+          "Back-offices cloud de gestion des comptes et des accès RBAC",
+          "Accompagnement transverse de la R&D : montée en compétence OAuth2, revues d’architecture"
+        ]
+      },
+      "orange": {
+        "duration": "1 an 5 mois",
+        "role": "Architecte qualité logicielle",
+        "summary": "Référent technique transverse au sein de l’unité méthodes & outils Qualité logicielle, pour diffuser les pratiques DevOps et construire l’outillage interne.",
+        "points": [
+          "Participation active aux groupes de travail Qualité logicielle d’Orange : CI/CD, SonarQube",
+          "Accompagnement des équipes projet sur l’automatisation ; audits de fiabilité et de robustesse",
+          "Création d’un portail web d’administration « Forges as a Service » (Jenkins + SonarQube)"
+        ]
+      },
+      "lectraPlm": {
+        "duration": "2 ans 1 mois",
+        "role": "Ingénieur logiciel, maintenance & performance J2EE",
+        "summary": "R&D performance sur la plateforme d’intégration FIP au cœur du PLM Lectra, une architecture n-tiers à forte charge.",
+        "points": [
+          "Analyse et optimisation du temps d’exécution des services FIP stratégiques",
+          "Études de scalabilité : objectifs de charge utilisateurs, profilage applicatif",
+          "Identification des goulets d’étranglement CPU / mémoire / I/O et livraison des correctifs"
+        ]
+      },
+      "banquePostale": {
+        "duration": "2 ans 1 mois",
+        "role": "Ingénieur logiciel, concepteur J2EE",
+        "summary": "Concepteur/développeur confirmé, dont le rôle s’est rapidement étendu au leadership technique et au pilotage applicatif au sein du centre de développement mutualisé (CDM EPA).",
+        "points": [
+          "Pilotage applicatif entre le métier (MOA) et la réalisation ATOS",
+          "Mentorat technique ; exigences, faisabilité, chiffrage, documentation",
+          "Migrations techniques : JDK, framework DISFE, WAS 6.1 → 7"
+        ]
+      },
+      "creditAgricole": {
+        "duration": "3 ans 1 mois",
+        "role": "Ingénieur logiciel, concepteur J2EE",
+        "summary": "Progression rapide de développeur junior à référent technique puis chef de projet, au sein d’une équipe de dix personnes, sur le portail bancaire en ligne BAM.",
+        "points": [
+          "Évolutions et maintenance du portail bancaire client BAM",
+          "Nouvelle synthèse des comptes, refonte du portail, sécurité et certification des écrans",
+          "Migration RIB → SEPA ; mentorat technique et pilotage de projet agile"
+        ]
+      }
+    }
+  },
+  "education": {
+    "overline": "Diplômes & preuves",
+    "title": "Formation & certifications.",
+    "column": "/ Formation",
+    "master": {
+      "title": "Master en informatique",
+      "sub": "Spécialisation en bio-informatique"
+    },
+    "bachelor": {
+      "title": "Licence de biologie cellulaire et physiologie",
+      "sub": "Université de Bordeaux, mention BCP"
+    }
+  },
+  "sideProject": {
+    "overline": "En parallèle",
+    "body": "Un système domotique complet, et un monorepo terrain de jeu où j’utilise l’IA pour aller plus vite sur des stacks que je ne touche pas au travail."
+  },
+  "contact": {
+    "overline": "Me contacter",
+    "title": "Parlons Json-Web-Tokens,<br>DevOps ou DevEx.",
+    "meta": "Bordeaux, Nouvelle-Aquitaine, France. Télétravail / hybride bienvenus.<br>Je travaille aussi en anglais, même si le français reste ma langue la plus solide."
+  },
+  "footer": {
+    "backToTop": "Retour en haut ↑"
+  },
+  "dialog": {
+    "close": "Fermer les détails"
   }
 }
