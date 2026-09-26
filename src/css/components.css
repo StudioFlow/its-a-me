@@ -68,6 +68,13 @@
   color: var(--accent);
 }
 
+/* The nav has no room left for a sixth link below this width */
+@media (max-width: 960px) {
+  .nav__links .nav__link--wide {
+    display: none;
+  }
+}
+
 @media (max-width: 640px) {
   .nav__links {
     gap: var(--space-md);
@@ -607,6 +614,282 @@
   .stats {
     grid-template-columns: repeat(2, 1fr);
     margin-top: var(--space-lg);
+  }
+}
+
+/* ============ IDENTITY PRIMER ============ */
+.primer {
+  position: relative;
+  padding-block: var(--space-3xl) var(--space-2xl);
+  background: var(--bg-inset);
+  border-top: 1px solid var(--border);
+  isolation: isolate;
+}
+
+.primer__grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: linear-gradient(180deg, black, transparent 45%);
+  mask-image: linear-gradient(180deg, black, transparent 45%);
+  opacity: 0.4;
+}
+
+.primer__statement {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
+  margin-top: var(--space-md);
+  max-width: 52ch;
+}
+
+.primer__statement strong {
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.primer__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  grid-template-areas: "chapters decoder";
+  gap: var(--space-2xl);
+  align-items: start;
+  margin-top: var(--space-2xl);
+}
+
+.primer__chapters {
+  grid-area: chapters;
+  display: grid;
+  gap: var(--space-3xl);
+}
+
+.primer__kicker {
+  font-size: var(--text-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.primer__heading {
+  font-size: var(--text-h2);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-md);
+  max-width: 22ch;
+}
+
+.primer__sublabel {
+  margin-top: var(--space-xl);
+}
+
+.primer__rows {
+  margin-top: var(--space-md);
+  border-top: 1px solid var(--border);
+}
+
+.primer__rows > div {
+  display: grid;
+  grid-template-columns: 12ch 1fr;
+  gap: var(--space-md);
+  padding-block: var(--space-sm);
+  border-bottom: 1px solid var(--border);
+}
+
+.primer__rows--grants > div {
+  grid-template-columns: 15rem 1fr;
+}
+
+.primer__rows dt {
+  font-size: var(--text-label);
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  padding-top: 0.2em;
+}
+
+.primer__rows:not(.primer__rows--grants) dt {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.primer__rows dd {
+  color: var(--text-secondary);
+}
+
+.primer__bridge {
+  display: inline-block;
+  margin-top: var(--space-3xl);
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  color: var(--text-secondary);
+  transition: color var(--dur-sm) ease;
+}
+
+.primer__bridge:hover {
+  color: var(--accent);
+}
+
+/* ---- Decoder: the hero credential, read segment by segment ---- */
+.primer__decoder {
+  grid-area: decoder;
+  position: sticky;
+  top: 120px;
+  padding: var(--space-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  font-size: var(--text-overline);
+}
+
+.primer__jwt {
+  word-break: break-all;
+  line-height: 1.5;
+  color: var(--text-disabled);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px dashed var(--border-strong);
+}
+
+.primer__seg {
+  transition: color var(--dur-md) ease;
+}
+
+.primer__seg--payload {
+  color: var(--accent);
+}
+
+.primer__seg--sig {
+  color: var(--accent-2);
+}
+
+.primer__claims {
+  display: grid;
+  gap: 4px;
+  padding-block: var(--space-sm);
+  color: var(--text-secondary);
+  white-space: pre;
+}
+
+.primer__claim {
+  padding-left: 2ch;
+  transition: opacity var(--dur-md) var(--ease-out), transform var(--dur-md) var(--ease-out), color var(--dur-md) ease;
+  transition-delay: calc(var(--i, 0) * 60ms);
+}
+
+.primer__claim b {
+  font-weight: 400;
+  color: var(--text-tertiary);
+}
+
+.primer__brace {
+  color: var(--text-tertiary);
+}
+
+.primer__status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-sm);
+  border-top: 1px dashed var(--border-strong);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.primer__verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  transform-origin: left center;
+  transition: opacity var(--dur-md) ease, transform var(--dur-md) var(--ease-spring);
+}
+
+/* Progressive decoding only once main.js drives it; without JS the token reads fully decoded */
+.primer.is-live .primer__seg {
+  color: var(--text-disabled);
+}
+
+.primer.is-live .primer__seg.is-current--payload {
+  color: var(--accent);
+}
+
+.primer.is-live .primer__seg.is-current--sig {
+  color: var(--accent-2);
+}
+
+.primer.is-live .primer__claim {
+  opacity: 0.15;
+  transform: translateX(-6px);
+}
+
+.primer.is-live .primer__claim.is-decoded {
+  opacity: 1;
+  transform: none;
+}
+
+.primer.is-live .primer__claim.is-current {
+  color: var(--accent-strong);
+}
+
+.primer.is-live .primer__verified {
+  opacity: 0;
+  transform: scale(0.85);
+}
+
+.primer.is-live .primer__verified.is-decoded {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .primer__layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "decoder" "chapters";
+    gap: var(--space-xl);
+  }
+
+  /* A compact strip that stays in view: the chapters carry the content, the strip only shows which part is being read */
+  .primer__decoder {
+    top: var(--space-xs);
+    z-index: 1;
+    padding: var(--space-xs) var(--space-sm);
+    background: oklch(0.19 0.016 250 / 0.85);
+    backdrop-filter: blur(10px);
+  }
+
+  .primer__jwt {
+    display: flex;
+    white-space: nowrap;
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .primer__seg {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .primer__seg--header {
+    flex-grow: 0.6;
+  }
+
+  .primer__claims,
+  .primer__status {
+    display: none;
+  }
+
+  .primer__rows > div,
+  .primer__rows--grants > div {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xs);
   }
 }
 

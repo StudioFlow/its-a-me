@@ -28,6 +28,7 @@
     StudioFlow
   </a>
   <nav class="nav__links">
+    <a class="nav__link--wide" href="#identity" data-i18n="nav.identity">Identity</a>
     <a href="#about" data-i18n="nav.about">About</a>
     <a href="#focus" data-i18n="nav.focus">Focus</a>
     <a href="#experience" data-i18n="nav.experience">Experience</a>
@@ -126,6 +127,115 @@
     <div class="metric-card reveal" style="--d:3">
       <span class="metric-card__number"><span class="metric-card__value mono">2008</span></span>
       <span class="metric-card__label" data-i18n="stats.codeSince">Writing code since</span>
+    </div>
+  </section>
+
+  <!-- ============ IDENTITY PRIMER (the hero credential, decoded) ============ -->
+  <section class="primer" id="identity" data-primer>
+    <div class="primer__grid-bg" aria-hidden="true"></div>
+    <div class="container">
+      <p class="overline reveal" data-i18n="identity.overline">00 — Primer</p>
+      <h2 class="h2 reveal" style="--d:1" data-i18n="identity.title">What is a digital identity?</h2>
+      <p class="primer__statement reveal" style="--d:2" data-i18n-html="identity.statement">
+        <strong>Online, you are never who you are. You are what a system is willing to believe about you.</strong>
+        That belief is built from fragments: an account here, a sign-in there, a badge issued by your employer,
+        a token handed from one service to the next. A digital identity is the thread that ties those fragments
+        together, and the rules that decide who may vouch for it, who may rely on it, and for how long.
+      </p>
+    </div>
+
+    <div class="container primer__layout">
+      <div class="primer__decoder" aria-hidden="true">
+        <p class="primer__jwt mono"><span class="primer__seg primer__seg--header">eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9</span><span class="primer__dot">.</span><span class="primer__seg primer__seg--payload" data-seg="1 3">eyJzdWIiOiJmbG9yaWFuLmRhbmllbHMiLCJuYW1lIjoiRmxvcmlhbiBEYW5pZWxzIiwicm9sZXMiOlsiaWFtX2FyY2hpdGVjdCJdLCJpc3MiOiJib3JkZWF1eC5mciIsImF1ZCI6InlvdXJfdGVhbSIsInNjb3BlIjoiY3Y6cmVhZCBjb250YWN0OndyaXRlIiwiZXhwIjoxNzkwMDAwMDAwfQ</span><span class="primer__dot">.</span><span class="primer__seg primer__seg--sig" data-seg="2">ZCmhNwY_nYsb5O81SX8W9jBGFg3P-TR_PbpWLotnBvxPl7Lv0pQHdHpKzLjH7n6S</span></p>
+        <div class="primer__claims mono">
+          <span class="primer__brace">{</span>
+          <span class="primer__claim" data-claim="1"><b>"sub"</b>: "florian.daniels",</span>
+          <span class="primer__claim" data-claim="1"><b>"name"</b>: "Florian Daniels",</span>
+          <span class="primer__claim" data-claim="1"><b>"roles"</b>: ["iam_architect"],</span>
+          <span class="primer__claim" data-claim="2"><b>"iss"</b>: "bordeaux.fr",</span>
+          <span class="primer__claim" data-claim="3"><b>"aud"</b>: "your_team",</span>
+          <span class="primer__claim" data-claim="3"><b>"scope"</b>: "cv:read contact:write",</span>
+          <span class="primer__claim" data-claim="3"><b>"exp"</b>: 1790000000</span>
+          <span class="primer__brace">}</span>
+        </div>
+        <p class="primer__status mono">
+          <span class="primer__verified"><span class="credential__dot"></span>Signature verified</span>
+          <span class="credential__alg">alg RS256</span>
+        </p>
+      </div>
+
+      <div class="primer__chapters">
+        <article class="primer__chapter" data-step="1">
+          <p class="primer__kicker mono reveal" data-i18n="identity.identity.kicker">01 · Identity</p>
+          <h3 class="primer__heading reveal" style="--d:1" data-i18n="identity.identity.title">A subject, some claims, a proof.</h3>
+          <p class="body-lg reveal" style="--d:2" data-i18n="identity.identity.body">
+            A digital identity isn't a person, it's a representation: a stable identifier, attributes attached
+            to it (name, email, role, organization), and credentials that bind you to that record: a password,
+            a passkey, a second factor. Each application only ever sees a projection of it, and one person holds
+            many: employee, customer, administrator.
+          </p>
+        </article>
+
+        <article class="primer__chapter" data-step="2">
+          <p class="primer__kicker mono reveal" data-i18n="identity.stakes.kicker">02 · Stakes</p>
+          <h3 class="primer__heading reveal" style="--d:1" data-i18n="identity.stakes.title">Whoever controls identity controls everything behind it.</h3>
+          <dl class="primer__rows">
+            <div class="reveal" style="--d:2">
+              <dt class="mono" data-i18n="identity.stakes.security.label">Security</dt>
+              <dd data-i18n="identity.stakes.security.body">Identity is the primary attack surface. Phishing, credential stuffing and session hijacking go for the front door, not the walls.</dd>
+            </div>
+            <div class="reveal" style="--d:3">
+              <dt class="mono" data-i18n="identity.stakes.privacy.label">Privacy</dt>
+              <dd data-i18n="identity.stakes.privacy.body">Share only what's needed: minimal claims, explicit consent, GDPR by design.</dd>
+            </div>
+            <div class="reveal" style="--d:4">
+              <dt class="mono" data-i18n="identity.stakes.continuity.label">Continuity</dt>
+              <dd data-i18n="identity.stakes.continuity.body">When the identity provider is down, everything is down.</dd>
+            </div>
+            <div class="reveal" style="--d:5">
+              <dt class="mono" data-i18n="identity.stakes.experience.label">Experience</dt>
+              <dd data-i18n="identity.stakes.experience.body">One account, one sign-in, everywhere, without trading away security.</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="primer__chapter" data-step="3">
+          <p class="primer__kicker mono reveal" data-i18n="identity.oauth.kicker">03 · OAuth2</p>
+          <h3 class="primer__heading reveal" style="--d:1" data-i18n="identity.oauth.title">Delegate access. Never hand over the keys.</h3>
+          <p class="body-lg reveal" style="--d:2" data-i18n="identity.oauth.body">
+            OAuth2 answers one precise question: how can an application act on your behalf without ever knowing
+            your password? Instead of a secret, the authorization server issues a token that is scoped, short-lived
+            and bound to an audience. OAuth2 authorizes; OpenID Connect adds the layer that authenticates.
+          </p>
+          <p class="primer__sublabel overline reveal" style="--d:3" data-i18n="identity.oauth.inPractice">In the platforms I build</p>
+          <dl class="primer__rows primer__rows--grants">
+            <div class="reveal" style="--d:3">
+              <dt class="mono">Authorization Code + PKCE</dt>
+              <dd data-i18n="identity.oauth.grants.pkce">Users signing in to web and mobile apps</dd>
+            </div>
+            <div class="reveal" style="--d:4">
+              <dt class="mono">Client Credentials</dt>
+              <dd data-i18n="identity.oauth.grants.clientCredentials">Service-to-service calls across 100+ microservices</dd>
+            </div>
+            <div class="reveal" style="--d:5">
+              <dt class="mono">Device Flow</dt>
+              <dd data-i18n="identity.oauth.grants.device">Connected devices without a keyboard</dd>
+            </div>
+            <div class="reveal" style="--d:6">
+              <dt class="mono">Token Exchange</dt>
+              <dd data-i18n="identity.oauth.grants.tokenExchange">Propagating identity between services without widening privileges</dd>
+            </div>
+            <div class="reveal" style="--d:7">
+              <dt class="mono">RBAC / TBAC</dt>
+              <dd data-i18n="identity.oauth.grants.rbac">Authorization stays in the business domain, not in the vendor</dd>
+            </div>
+          </dl>
+        </article>
+      </div>
+    </div>
+
+    <div class="container">
+      <a class="primer__bridge reveal" href="#about" data-i18n-html="identity.bridge">That front door is what I design.<span aria-hidden="true"> ↓</span></a>
     </div>
   </section>
 

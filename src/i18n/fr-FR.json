@@ -4,6 +4,7 @@
     "description": "Florian Daniels, architecte IAM et tech lead backend/sécurité. Plus de 18 ans à concevoir des systèmes d’identité, des plateformes OAuth2/OIDC et des architectures sans interruption de service. Basé à Bordeaux."
   },
   "nav": {
+    "identity": "Identité",
     "about": "À propos",
     "focus": "Expertise",
     "experience": "Expérience",
@@ -27,6 +28,50 @@
     "microservices": "Microservices en production",
     "iamSince": "Systèmes IAM depuis",
     "codeSince": "Développeur depuis"
+  },
+  "identity": {
+    "overline": "00 — Préambule",
+    "title": "Qu’est-ce qu’une identité numérique ?",
+    "statement": "<strong>En ligne, vous n’êtes jamais qui vous êtes. Vous êtes ce qu’un système accepte de croire à votre sujet.</strong> Cette croyance se construit par fragments : un compte ici, une connexion là, un badge délivré par votre employeur, un jeton transmis d’un service à l’autre. Une identité numérique, c’est le fil qui relie ces fragments, et les règles qui décident qui peut s’en porter garant, qui peut s’y fier, et pour combien de temps.",
+    "identity": {
+      "kicker": "01 · Identité",
+      "title": "Un sujet, des attributs, une preuve.",
+      "body": "Une identité numérique n’est pas une personne, c’est une représentation : un identifiant stable, des attributs qui s’y rattachent (nom, email, rôle, organisation) et des preuves qui vous lient à cet enregistrement : un mot de passe, une passkey, un second facteur. Chaque application n’en voit qu’une projection, et une même personne en porte plusieurs : salarié, client, administrateur."
+    },
+    "stakes": {
+      "kicker": "02 · Enjeux",
+      "title": "Qui contrôle l’identité contrôle tout ce qu’elle protège.",
+      "security": {
+        "label": "Sécurité",
+        "body": "L’identité est la première surface d’attaque. Phishing, credential stuffing et vol de session visent la porte d’entrée, pas les murs."
+      },
+      "privacy": {
+        "label": "Vie privée",
+        "body": "Ne partager que le nécessaire : claims minimaux, consentement explicite, RGPD by design."
+      },
+      "continuity": {
+        "label": "Continuité",
+        "body": "Quand le fournisseur d’identité tombe, tout tombe."
+      },
+      "experience": {
+        "label": "Expérience",
+        "body": "Un compte, une connexion, partout, sans sacrifier la sécurité."
+      }
+    },
+    "oauth": {
+      "kicker": "03 · OAuth2",
+      "title": "Déléguer l’accès. Ne jamais confier les clés.",
+      "body": "OAuth2 répond à une question précise : comment une application peut-elle agir en votre nom sans jamais connaître votre mot de passe ? Au lieu d’un secret, le serveur d’autorisation délivre un jeton limité en portée, en durée et en audience. OAuth2 autorise ; OpenID Connect ajoute la couche qui authentifie.",
+      "inPractice": "Dans les plateformes que je construis",
+      "grants": {
+        "pkce": "Connexion des utilisateurs aux applications web et mobiles",
+        "clientCredentials": "Appels de service à service sur plus de 100 microservices",
+        "device": "Objets connectés sans clavier",
+        "tokenExchange": "Propager l’identité entre services sans élargir les privilèges",
+        "rbac": "L’autorisation reste dans le domaine métier, pas chez l’éditeur"
+      }
+    },
+    "bridge": "Cette porte d’entrée, c’est ce que je conçois.<span aria-hidden=\"true\"> ↓</span>"
   },
   "about": {
     "label": "Qui je suis",

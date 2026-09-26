@@ -50,6 +50,47 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
   revealTargets.forEach((el) => observer.observe(el.closest('.line-mask') ?? el));
 }
 
+// ---- Identity primer: decode the token as each chapter reaches the middle of the viewport ----
+const primer = document.querySelector('[data-primer]');
+
+if (primer && !reduceMotion && 'IntersectionObserver' in window) {
+  const segments = primer.querySelectorAll('[data-seg]');
+  const claims = primer.querySelectorAll('[data-claim]');
+  const verified = primer.querySelector('.primer__verified');
+
+  claims.forEach((claim) => {
+    const siblings = primer.querySelectorAll(`[data-claim="${claim.dataset.claim}"]`);
+    claim.style.setProperty('--i', Array.prototype.indexOf.call(siblings, claim));
+  });
+
+  const decode = (step) => {
+    segments.forEach((seg) => {
+      const current = seg.dataset.seg.split(' ').includes(String(step));
+      seg.classList.toggle('is-current--payload', current && seg.matches('.primer__seg--payload'));
+      seg.classList.toggle('is-current--sig', current && seg.matches('.primer__seg--sig'));
+    });
+    claims.forEach((claim) => {
+      const n = Number(claim.dataset.claim);
+      claim.classList.toggle('is-decoded', n <= step);
+      claim.classList.toggle('is-current', n === step);
+    });
+    verified.classList.toggle('is-decoded', step >= 2);
+  };
+
+  const chapterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) decode(Number(entry.target.dataset.step));
+      });
+    },
+    { rootMargin: '-45% 0px -45% 0px' }
+  );
+
+  decode(0);
+  primer.classList.add('is-live');
+  primer.querySelectorAll('.primer__chapter').forEach((chapter) => chapterObserver.observe(chapter));
+}
+
 // ---- Nav hide on scroll down, show on scroll up ----
 const nav = document.querySelector('[data-nav]');
 const progressBar = document.querySelector('.progress-bar');
