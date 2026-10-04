@@ -17,7 +17,6 @@
     "overline": "Tech Lead IAM · Sécurité Cloud · Backend",
     "subhead": "Je conçois, développe et maintiens des plateformes d’identité.",
     "years": "<span class=\"mono\">18+</span> ans d’ingénierie",
-    "remote": "Ouvert au télétravail / hybride",
     "cta": "Me contacter",
     "seeWork": "Voir le parcours<span aria-hidden=\"true\"> ↓</span>",
     "portraitAlt": "Portrait de Florian Daniels"
@@ -32,7 +31,7 @@
   "identity": {
     "overline": "Aparté — Préambule",
     "title": "Qu’est-ce qu’une identité numérique ?",
-    "statement": "<strong>En ligne, vous n’êtes jamais qui vous êtes. Vous êtes ce qu’un système accepte de croire à votre sujet.</strong> Cette croyance se construit par fragments : un compte ici, une connexion là, un badge délivré par votre employeur, un jeton transmis d’un service à l’autre. Une identité numérique, c’est le fil qui relie ces fragments, et les règles qui décident qui peut s’en porter garant, qui peut s’y fier, et pour combien de temps.",
+    "statement": "<strong>En ligne, vous n’êtes jamais qui vous êtes. Vous êtes ce qu’un système accepte de croire à votre sujet.</strong> Cette confiance se construit par fragments : un compte ici, une connexion là, un badge délivré par votre employeur, un jeton transmis d’un service à l’autre. Une identité numérique, c’est le fil qui relie ces fragments, et les règles qui décident qui peut s’en porter garant, qui peut s’y fier, et pour combien de temps.",
     "identity": {
       "kicker": "01 · Identité",
       "title": "Un sujet, des attributs, une preuve.",
@@ -127,9 +126,24 @@
     }
   },
   "aiPractice": {
-    "overline": "L’IA au quotidien",
-    "statement": "L’IA fait désormais partie de chaque étape de mon travail.",
-    "body": "J’utilise l’IA à chaque étape du travail : architecture, specs, conception d’API, code, tests, refactoring, documentation, débogage, revue de code. Apprendre à collaborer efficacement avec ces outils est aujourd’hui aussi structurant que l’était la maîtrise de la CI/CD il y a dix ans."
+    "overline": "L’IA à l’échelle",
+    "statement": "L’IA rend chaque développeur plus rapide. Mon rôle : qu’ils accélèrent tous dans la même direction.",
+    "body": "L’IA démultiplie la vélocité des équipes. Sans vision d’architecture unifiée et robuste, elle démultiplie aussi la divergence : patterns contradictoires, sécurité réinventée équipe par équipe, dette qui se compose. Le support et l’accompagnement des développeurs deviennent le goulot d’étranglement, et ils ne passent plus à l’échelle par l’humain seul. La réponse est le self-service : skills, serveurs MCP et golden paths outillés qui encodent l’expertise, pour que chaque développeur, et chaque agent, applique les bons standards sans attendre un expert.",
+    "pillars": {
+      "vision": {
+        "title": "Vision",
+        "body": "Une architecture de référence, explicite et opposable."
+      },
+      "selfService": {
+        "title": "Self-service",
+        "body": "L’expert sort du chemin critique."
+      },
+      "skills": {
+        "title": "Skills & MCP",
+        "body": "L’expertise encodée, consommable par les humains comme par les agents."
+      }
+    },
+    "coda": "Et chacun de ces agents a besoin d’une identité..."
   },
   "stack": {
     "overline": "Stacks favorites",
@@ -205,10 +219,6 @@
       "title": "Licence de biologie cellulaire et physiologie",
       "sub": "Université de Bordeaux, mention BCP"
     }
-  },
-  "sideProject": {
-    "overline": "En parallèle",
-    "body": "Un système domotique complet, et un monorepo terrain de jeu où j’utilise l’IA pour aller plus vite sur des stacks que je ne touche pas au travail."
   },
   "contact": {
     "overline": "Me contacter",
