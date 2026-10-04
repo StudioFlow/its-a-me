@@ -208,9 +208,9 @@
     }
   },
   "education": {
-    "overline": "Diplômes & preuves",
-    "title": "Formation & certifications.",
-    "column": "/ Formation",
+    "overline": "Formation",
+    "title": "Diplômes & Certifications.",
+    "column": "/ Diplômes",
     "master": {
       "title": "Master en informatique",
       "sub": "Spécialisation en bio-informatique"
