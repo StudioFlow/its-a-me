@@ -50,7 +50,7 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
   revealTargets.forEach((el) => observer.observe(el.closest('.line-mask') ?? el));
 }
 
-// ---- Identity primer: decode the token as each chapter reaches the middle of the viewport ----
+// ---- Identity primer: decode the token as the intro, then each chapter, reaches the middle of the viewport ----
 const primer = document.querySelector('[data-primer]');
 
 if (primer && !reduceMotion && 'IntersectionObserver' in window) {
@@ -66,6 +66,7 @@ if (primer && !reduceMotion && 'IntersectionObserver' in window) {
   const decode = (step) => {
     segments.forEach((seg) => {
       const current = seg.dataset.seg.split(' ').includes(String(step));
+      seg.classList.toggle('is-current--header', current && seg.matches('.primer__seg--header'));
       seg.classList.toggle('is-current--payload', current && seg.matches('.primer__seg--payload'));
       seg.classList.toggle('is-current--sig', current && seg.matches('.primer__seg--sig'));
     });
@@ -88,7 +89,7 @@ if (primer && !reduceMotion && 'IntersectionObserver' in window) {
 
   decode(0);
   primer.classList.add('is-live');
-  primer.querySelectorAll('.primer__chapter').forEach((chapter) => chapterObserver.observe(chapter));
+  primer.querySelectorAll('[data-step]').forEach((step) => chapterObserver.observe(step));
 }
 
 // ---- Nav hide on scroll down, show on scroll up ----

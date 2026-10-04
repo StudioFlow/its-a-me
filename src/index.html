@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="head.title">Florian Daniels · IAM Architect &amp; Security Tech Lead</title>
-<meta name="description" data-i18n-attr="content:head.description" content="Florian Daniels, IAM Architect &amp; Backend/Security Tech Lead. 18+ years designing identity systems, OAuth2/OIDC platforms, and zero-downtime architecture. Based in Bordeaux, France.">
+<title data-i18n="head.title">Florian Daniels · Tech Lead IAM &amp; Cloud Security</title>
+<meta name="description" data-i18n-attr="content:head.description" content="Florian Daniels, Tech Lead IAM &amp; Cloud Security. 18+ years designing identity systems, OAuth2/OIDC platforms, and zero-downtime architecture. Based in Bordeaux, France.">
 
 <script src="js/locale-boot.js"></script>
 
@@ -28,8 +28,8 @@
     StudioFlow
   </a>
   <nav class="nav__links">
-    <a class="nav__link--wide" href="#identity" data-i18n="nav.identity">Identity</a>
     <a href="#about" data-i18n="nav.about">About</a>
+    <a class="nav__link--wide" href="#identity" data-i18n="nav.identity">Identity</a>
     <a href="#focus" data-i18n="nav.focus">Focus</a>
     <a href="#experience" data-i18n="nav.experience">Experience</a>
     <a href="#education" data-i18n="nav.education">Education</a>
@@ -56,12 +56,12 @@
     <div class="hero__scanline" aria-hidden="true"></div>
     <div class="container hero__content">
       <div class="hero__text">
-        <p class="overline reveal" data-i18n="hero.overline">IAM Architect · OAuth2 Specialist · Backend Tech Lead</p>
+        <p class="overline reveal" data-i18n="hero.overline">Tech Lead IAM · Cloud Security · Backend</p>
         <h1 class="hero__title">
           <span class="line-mask"><span class="line-inner reveal-line" style="--d:0">FLOR<span class="glyph-id">I<span class="glyph-id__alt" aria-hidden="true">Y</span></span>AN</span></span>
           <span class="line-mask"><span class="line-inner reveal-line" style="--d:1">DANIELS</span></span>
         </h1>
-        <p class="hero__subhead reveal" style="--d:2" data-i18n="hero.subhead">I design and implement identity systems that don't go down.</p>
+        <p class="hero__subhead reveal" style="--d:2" data-i18n="hero.subhead">I design, build and run identity platforms.</p>
         <ul class="hero__meta reveal" style="--d:3">
           <li data-i18n-html="hero.years"><span class="mono">18+</span> yrs engineering</li>
           <li aria-hidden="true">·</li>
@@ -94,12 +94,12 @@
         </div>
         <dl class="credential__data mono">
           <div><dt>sub</dt><dd>florian.daniels</dd></div>
-          <div><dt>role</dt><dd>cloud_engineer</dd></div>
+          <div><dt>role</dt><dd>iam_tech_lead</dd></div>
           <div><dt>aud</dt><dd>your_team</dd></div>
           <div><dt>iss</dt><dd>bordeaux.fr</dd></div>
         </dl>
         <figcaption class="credential__status mono">
-          <span class="credential__verified"><span class="credential__dot" aria-hidden="true"></span>Verified</span>
+          <span class="credential__verified"><span class="credential__dot" aria-hidden="true"></span>Self-signed</span>
           <span class="credential__alg">alg RS256</span>
         </figcaption>
       </figure>
@@ -130,28 +130,54 @@
     </div>
   </section>
 
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="container about__grid">
+      <div class="about__label reveal">
+        <p class="overline" data-i18n="about.label">Who I Am</p>
+      </div>
+      <div class="about__body">
+        <h2 class="h2 reveal" data-i18n-html="about.title">I build the front door.<br>Then I help everyone use it.</h2>
+        <p class="body-lg reveal" style="--d:1" data-i18n-html="about.lede">
+          Today, I'm Tech Lead IAM &amp; Cloud Security at <button type="button" class="entity" data-introspect="lectra">Lectra SA</button>. With my team, we designed
+          the IDM/IDP platform at the core of Lectra Cloud and we run and evolve it. It secures
+          <strong>100+ highly available microservices</strong> across R&amp;D.
+        </p>
+        <p class="body-lg reveal" style="--d:2" data-i18n="about.referent">
+          Beyond the architecture itself, I act as a technical referent for identity and access management.
+          I guide customers and R&amp;D teams through the OAuth2 and OIDC flows they rely on every day, and translate IAM
+          stakes into value that non-technical stakeholders can act on.
+        </p>
+        <p class="body-lg reveal" style="--d:3" data-i18n="about.transmission">
+          Teaching the mental model before the flows (audience, delegation) helps teams understand
+          what they're doing and make the right design choices.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ IDENTITY PRIMER (the hero credential, decoded) ============ -->
   <section class="primer" id="identity" data-primer>
     <div class="primer__grid-bg" aria-hidden="true"></div>
-    <div class="container">
-      <p class="overline reveal" data-i18n="identity.overline">00 — Primer</p>
-      <h2 class="h2 reveal" style="--d:1" data-i18n="identity.title">What is a digital identity?</h2>
-      <p class="primer__statement reveal" style="--d:2" data-i18n-html="identity.statement">
-        <strong>Online, you are never who you are. You are what a system is willing to believe about you.</strong>
-        That belief is built from fragments: an account here, a sign-in there, a badge issued by your employer,
-        a token handed from one service to the next. A digital identity is the thread that ties those fragments
-        together, and the rules that decide who may vouch for it, who may rely on it, and for how long.
-      </p>
-    </div>
-
     <div class="container primer__layout">
+      <div class="primer__intro" data-step="0">
+        <p class="overline reveal" data-i18n="identity.overline">Side note — Primer</p>
+        <h2 class="h2 reveal" style="--d:1" data-i18n="identity.title">What is a digital identity?</h2>
+        <p class="primer__statement reveal" style="--d:2" data-i18n-html="identity.statement">
+          <strong>Online, you are never who you are. You are what a system is willing to believe about you.</strong>
+          That belief is built from fragments: an account here, a sign-in there, a badge issued by your employer,
+          a token handed from one service to the next. A digital identity is the thread that ties those fragments
+          together, and the rules that decide who may vouch for it, who may rely on it, and for how long.
+        </p>
+      </div>
+
       <div class="primer__decoder" aria-hidden="true">
-        <p class="primer__jwt mono"><span class="primer__seg primer__seg--header">eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9</span><span class="primer__dot">.</span><span class="primer__seg primer__seg--payload" data-seg="1 3">eyJzdWIiOiJmbG9yaWFuLmRhbmllbHMiLCJuYW1lIjoiRmxvcmlhbiBEYW5pZWxzIiwicm9sZXMiOlsiaWFtX2FyY2hpdGVjdCJdLCJpc3MiOiJib3JkZWF1eC5mciIsImF1ZCI6InlvdXJfdGVhbSIsInNjb3BlIjoiY3Y6cmVhZCBjb250YWN0OndyaXRlIiwiZXhwIjoxNzkwMDAwMDAwfQ</span><span class="primer__dot">.</span><span class="primer__seg primer__seg--sig" data-seg="2">ZCmhNwY_nYsb5O81SX8W9jBGFg3P-TR_PbpWLotnBvxPl7Lv0pQHdHpKzLjH7n6S</span></p>
+        <p class="primer__jwt mono"><span class="primer__seg primer__seg--header" data-seg="0">eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9</span><span class="primer__dot">.</span><span class="primer__seg primer__seg--payload" data-seg="1 3">eyJzdWIiOiJmbG9yaWFuLmRhbmllbHMiLCJuYW1lIjoiRmxvcmlhbiBEYW5pZWxzIiwicm9sZXMiOlsiaWFtX3RlY2hfbGVhZCJdLCJpc3MiOiJib3JkZWF1eC5mciIsImF1ZCI6InlvdXJfdGVhbSIsInNjb3BlIjoiY3Y6cmVhZCBjb250YWN0OndyaXRlIiwiZXhwIjoxNzkwMDAwMDAwfQ</span><span class="primer__dot">.</span><span class="primer__seg primer__seg--sig" data-seg="2">ZCmhNwY_nYsb5O81SX8W9jBGFg3P-TR_PbpWLotnBvxPl7Lv0pQHdHpKzLjH7n6S</span></p>
         <div class="primer__claims mono">
           <span class="primer__brace">{</span>
           <span class="primer__claim" data-claim="1"><b>"sub"</b>: "florian.daniels",</span>
           <span class="primer__claim" data-claim="1"><b>"name"</b>: "Florian Daniels",</span>
-          <span class="primer__claim" data-claim="1"><b>"roles"</b>: ["iam_architect"],</span>
+          <span class="primer__claim" data-claim="1"><b>"roles"</b>: ["iam_tech_lead"],</span>
           <span class="primer__claim" data-claim="2"><b>"iss"</b>: "bordeaux.fr",</span>
           <span class="primer__claim" data-claim="3"><b>"aud"</b>: "your_team",</span>
           <span class="primer__claim" data-claim="3"><b>"scope"</b>: "cv:read contact:write",</span>
@@ -159,7 +185,7 @@
           <span class="primer__brace">}</span>
         </div>
         <p class="primer__status mono">
-          <span class="primer__verified"><span class="credential__dot"></span>Signature verified</span>
+          <span class="primer__verified"><span class="credential__dot"></span>Self-signed · verify in person</span>
           <span class="credential__alg">alg RS256</span>
         </p>
       </div>
@@ -178,7 +204,7 @@
 
         <article class="primer__chapter" data-step="2">
           <p class="primer__kicker mono reveal" data-i18n="identity.stakes.kicker">02 · Stakes</p>
-          <h3 class="primer__heading reveal" style="--d:1" data-i18n="identity.stakes.title">Whoever controls identity controls everything behind it.</h3>
+          <h3 class="primer__heading reveal" style="--d:1" data-i18n="identity.stakes.title">When identity breaks, everything behind it breaks too.</h3>
           <dl class="primer__rows">
             <div class="reveal" style="--d:2">
               <dt class="mono" data-i18n="identity.stakes.security.label">Security</dt>
@@ -235,32 +261,7 @@
     </div>
 
     <div class="container">
-      <a class="primer__bridge reveal" href="#about" data-i18n-html="identity.bridge">That front door is what I design.<span aria-hidden="true"> ↓</span></a>
-    </div>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section class="about" id="about">
-    <div class="container about__grid">
-      <div class="about__label reveal">
-        <p class="overline" data-i18n="about.label">Who I Am</p>
-      </div>
-      <div class="about__body">
-        <h2 class="h2 reveal" data-i18n-html="about.title">Identity is the front door.<br>I make sure it holds.</h2>
-        <p class="body-lg reveal" style="--d:1" data-i18n-html="about.lede">
-          Today, I'm IAM Architect &amp; Backend/Security Tech Lead at <button type="button" class="entity" data-introspect="lectra">Lectra SA</button>. I built the IDM/IDP platform
-          at the core of Lectra Cloud from the ground up, and I keep evolving it: over
-          <strong>100 highly available microservices</strong> serving the entire R&amp;D organization.
-        </p>
-        <p class="body-lg reveal" style="--d:2" data-i18n="about.referent">
-          Beyond the architecture itself, I act as a technical referent for identity and access management.
-          I guide R&amp;D teams through the OAuth2 and OIDC flows they rely on every day, and translate IAM
-          stakes into value that non-technical stakeholders can act on.
-        </p>
-        <p class="body-lg reveal" style="--d:3" data-i18n="about.transmission">
-          I see that transmission role as just as critical as the technical design work itself.
-        </p>
-      </div>
+      <a class="primer__bridge reveal" href="#focus" data-i18n-html="identity.bridge">What I focus on.<span aria-hidden="true"> ↓</span></a>
     </div>
   </section>
 
@@ -334,7 +335,7 @@
   <section class="ai-practice">
     <div class="container ai-practice__inner">
       <p class="overline reveal" data-i18n="aiPractice.overline">AI In Daily Practice</p>
-      <p class="ai-practice__statement reveal" style="--d:1" data-i18n="aiPractice.statement">The game has fundamentally changed.</p>
+      <p class="ai-practice__statement reveal" style="--d:1" data-i18n="aiPractice.statement">AI is now part of every step of my work.</p>
       <p class="body-lg ai-practice__body reveal" style="--d:2" data-i18n="aiPractice.body">
         I use AI across every stage of the workflow: architecture, specs, API design, coding, testing,
         refactoring, documentation, debugging, code review. Learning to collaborate effectively with these
@@ -433,8 +434,8 @@
           </div>
           <p class="xp__summary" data-i18n="experience.jobs.lectraCloud.summary">
             Tech Lead Backend IAM &amp; CyberSecurity within Lectra Cloud R&amp;D. I design and continuously
-            evolve, from the ground up, the IDM/IDP platform securing 100+ highly available microservices,
-            and I support the entire R&amp;D community on OAuth2/OIDC.
+            evolve the IDM/IDP platform securing 100+ highly available microservices,
+            and I support R&amp;D teams on OAuth2/OIDC.
           </p>
           <ul class="xp__points">
             <li data-i18n="experience.jobs.lectraCloud.points.0">IAM architecture design for the authentication &amp; authorization platform</li>
@@ -741,13 +742,13 @@
     <p class="introspect__block-title" data-i18n="entity.lectra.block.title">My chapter</p>
     <p data-i18n="entity.lectra.block.body">
       Two stints. First as a J2EE performance engineer on the FIP integration platform behind the PLM
-      (2013 → 2015), then from 2016 as the person who designed and still owns the IDM/IDP platform
-      securing 100+ microservices across Lectra Cloud.
+      (2013 → 2015), then, since 2016, designing and still leading the IDM/IDP platform that
+      secures 100+ microservices across Lectra Cloud.
     </p>
   </div>
   <ul class="introspect__list">
     <li data-i18n="entity.lectra.list.0">Authentication &amp; authorization architecture for the whole cloud platform</li>
-    <li data-i18n="entity.lectra.list.1">OAuth2/OIDC referent for the entire R&amp;D organization</li>
+    <li data-i18n="entity.lectra.list.1">OAuth2/OIDC referent for R&amp;D teams</li>
     <li data-i18n="entity.lectra.list.2">Token Exchange (RFC 8693) to give AI agents and MCP servers a real identity</li>
   </ul>
   <div class="introspect__foot">
@@ -854,7 +855,7 @@
   <div class="introspect__block">
     <p class="introspect__block-title" data-i18n="entity.credit-agricole.block.title">My chapter</p>
     <p data-i18n="entity.credit-agricole.block.body">
-      My first job, and the fastest progression of my career: junior developer → technical referent →
+      My first job: junior developer → technical referent →
       project lead in three years, on BAM, the online banking portal for account overview and everyday
       banking operations.
     </p>
@@ -908,8 +909,7 @@
     <p class="introspect__block-title" data-i18n="entity.geos-informatique.block.title">My chapter</p>
     <p data-i18n="entity.geos-informatique.block.body">
       Two years on a single assignment: designer/developer in La Banque Postale's shared development
-      centre in Gradignan, a role that grew into technical leadership and application piloting well
-      beyond what the mission sheet said.
+      centre in Gradignan, a role that grew into technical leadership and application piloting.
     </p>
   </div>
   <div class="introspect__foot">
@@ -1144,9 +1144,6 @@
     Its typing is structural, so a value fits a shape if it looks right, not if it inherits from the
     right class. That matches how JavaScript objects are actually passed around.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.typescript.block.body">A type system that exists only while you are writing code is the rare kind of safety net nobody pays for later.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.typescriptlang.org" target="_blank" rel="noopener">typescriptlang.org<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.typescript.sig">Microsoft · compiles to JavaScript</span>
@@ -1164,9 +1161,6 @@
     Everything composes through text streams, which is why a pipeline written in 1985 still runs today,
     and why every tool that respects stdin and stdout joins the ecosystem for free.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.shell.block.body">Nothing else glues five unrelated tools together in one line and still works a decade later.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.gnu.org/software/bash/" target="_blank" rel="noopener">gnu.org/software/bash<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">POSIX · bash, zsh</span>
@@ -1184,9 +1178,6 @@
     Its middleware signature became a de facto standard, to the point that other frameworks still
     implement a compatibility layer for it.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.express.block.body">Boring, tiny and everywhere, which is exactly what you want from the layer answering your HTTP requests.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://expressjs.com" target="_blank" rel="noopener">expressjs.com<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">OpenJS Foundation · MIT</span>
@@ -1204,9 +1195,6 @@
     Plugins get an encapsulated scope of their own, so a badly behaved one cannot leak its decorators
     into the rest of the application.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.fastify.block.body">Schema-first routes make validation, documentation and the fast path the same single declaration.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://fastify.dev" target="_blank" rel="noopener">fastify.dev<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">OpenJS Foundation · MIT</span>
@@ -1224,9 +1212,6 @@
     The schema is the contract, and it is introspectable, so documentation, tooling and client code
     generation all fall out of it instead of being maintained separately.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.graphql.block.body">It moves the argument about what an endpoint should return out of meetings and into a type system.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://graphql.org" target="_blank" rel="noopener">graphql.org<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">GraphQL Foundation · spec</span>
@@ -1244,9 +1229,6 @@
     Subscriptions, file uploads, CORS, GraphiQL and the error masking you want in production are all on
     by default, configured rather than assembled.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.graphql-yoga.block.body">Sensible defaults you do not have to wire up, on a runtime-agnostic base you will not have to rewrite.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://the-guild.dev/graphql/yoga-server" target="_blank" rel="noopener">the-guild.dev/graphql/yoga-server<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">The Guild · MIT</span>
@@ -1264,9 +1246,6 @@
     Entities are the mechanism: a type declared with a key in one subgraph can be extended with new
     fields by another, without either team touching the other's code.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.apollo-federation.block.body">One graph for the consumers, separate deployments for the teams behind it.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.apollographql.com/docs/federation" target="_blank" rel="noopener">apollographql.com/docs/federation<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">Apollo GraphQL</span>
@@ -1284,9 +1263,6 @@
     Migrations are generated from that same schema, so the database and the types cannot drift apart
     silently between two deployments.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.prisma.block.body">Autocomplete that knows your actual database columns beats any clever query builder.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.prisma.io" target="_blank" rel="noopener">prisma.io<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.prisma.sig">Prisma · engines in Rust</span>
@@ -1304,9 +1280,6 @@
     Routing lives in the broker topology rather than in application code, so changing who receives what
     becomes a configuration change instead of a deployment.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.rabbitmq.block.body">When a consumer dies mid-message, an unacknowledged message goes back on the queue instead of into the void.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.rabbitmq.com" target="_blank" rel="noopener">rabbitmq.com<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.rabbitmq.sig">Built on Erlang/OTP</span>
@@ -1324,9 +1297,6 @@
     That extension model is why a single Postgres instance can credibly act as a document store, a job
     queue or a vector database before you need to run anything else.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.postgresql.block.body">Three decades of proving that boring, correct and free beats exciting.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.postgresql.org" target="_blank" rel="noopener">postgresql.org<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.postgresql.sig">Open source · since 1996</span>
@@ -1344,9 +1314,6 @@
     Its aggregation pipeline is the real engine: a sequence of stages transforming documents server
     side, where a relational database would reach for joins and subqueries.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.mongodb.block.body">When the data really is irregular, not enforcing a schema stops being a shortcut and becomes the right model.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.mongodb.com" target="_blank" rel="noopener">mongodb.com<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.mongodb.sig">MongoDB Inc. · BSON documents</span>
@@ -1364,9 +1331,6 @@
     The core command loop is single-threaded on purpose, which is precisely why every operation is
     atomic without any locking on the caller's side.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.redis.block.body">Sub-millisecond latency, plus data structures you would otherwise reimplement badly in your own code.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://redis.io" target="_blank" rel="noopener">redis.io<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.redis.sig">In-memory · single-threaded core</span>
@@ -1384,9 +1348,6 @@
     Its extensibility model matters more than the feature list. Actions run custom code inside the login
     pipeline, which is where the requirements no vendor anticipated end up living.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.auth0.block.body">Authentication is a standard, exhausting problem, and buying a correct implementation frees a team for its actual product.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://auth0.com" target="_blank" rel="noopener">auth0.com<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">Okta · OAuth2 / OIDC</span>
@@ -1404,9 +1365,6 @@
     Containers are less a single Linux feature than a combination of several: namespaces for isolation,
     cgroups for limits, union filesystems for images.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.linux.block.body">Almost everything else in this list is built on the assumption that it exists.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.kernel.org" target="_blank" rel="noopener">kernel.org<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.linux.sig">GPLv2 · since 1991</span>
@@ -1424,9 +1382,6 @@
     Images are layered and content-addressed, so a shared base layer is pulled once and a rebuild only
     rewrites the layers whose inputs changed.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.docker.block.body">The same artifact runs on a laptop and in production, which ended an entire category of argument.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.docker.com" target="_blank" rel="noopener">docker.com<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">Go · OCI images</span>
@@ -1444,9 +1399,6 @@
     Nearly everything is an object in one uniform API, and custom resources let you extend that API with
     your own kinds, which is why the ecosystem around it grew the way it did.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.kubernetes.block.body">Declaring a desired state and letting a controller converge is a far better bargain than scripting every transition.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://kubernetes.io" target="_blank" rel="noopener">kubernetes.io<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.kubernetes.sig">CNCF · written in Go</span>
@@ -1464,9 +1416,6 @@
     Its strongest argument is rarely one standout service. It is the continuity with an estate that
     already exists: directory, tenants, licensing, compliance.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.azure.block.body">When the corporate identity provider is already there, everything else starts one integration ahead.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://azure.microsoft.com" target="_blank" rel="noopener">azure.microsoft.com<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">Microsoft · IaaS / PaaS</span>
@@ -1484,9 +1433,6 @@
     Modules are written to be idempotent, so running the same playbook a second time converges on the
     same state instead of duplicating its effects.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.ansible.block.body">Infrastructure described in a file a human can read out loud during an incident.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.ansible.com" target="_blank" rel="noopener">ansible.com<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.ansible.sig">Red Hat · agentless</span>
@@ -1504,9 +1450,6 @@
     Branches are just movable pointers to a commit, which is why creating one is instant and why an
     entire collaboration culture grew around them.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.git.block.body">Cheap branching and a tamper-evident history changed how teams work together more than any process ever did.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://git-scm.com" target="_blank" rel="noopener">git-scm.com<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">Linus Torvalds · GPLv2</span>
@@ -1524,9 +1467,6 @@
     Its node_modules layout is strict: a package can only import what it actually declared, so phantom
     dependencies fail immediately rather than months later on someone else's machine.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.pnpm.block.body">Undeclared dependencies break on your machine first, which is the only place where breaking is useful.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://pnpm.io" target="_blank" rel="noopener">pnpm.io<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.pnpm.sig">MIT · content-addressable store</span>
@@ -1544,9 +1484,6 @@
     A cache hit replays stored output instead of rebuilding, so a task whose inputs have not changed
     costs essentially nothing, locally or in CI.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.turborepo.block.body">Rebuilding only what actually changed removes the main argument people have against monorepos.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://turborepo.com" target="_blank" rel="noopener">turborepo.com<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.turborepo.sig">Vercel · written in Rust</span>
@@ -1564,9 +1501,6 @@
     It speaks the same protocol as the hosted service, so adopting it or moving away from it is a change
     of URL and token, not a change of workflow.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.turborepo-remote-cache.block.body">The build a colleague already ran is the one nobody should have to run again.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://github.com/ducktors/turborepo-remote-cache" target="_blank" rel="noopener">github.com/ducktors/turborepo-remote-cache<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.turborepo-remote-cache.sig">Community · MIT</span>
@@ -1584,9 +1518,6 @@
     Grouping, scheduling and automerge rules are all configuration, so the flow of updates can be tuned
     to whatever a given team is able to absorb.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.renovate.block.body">Twenty small upgrades that each pass CI beat one terrifying upgrade a year later.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.mend.io/renovate/" target="_blank" rel="noopener">mend.io/renovate<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">Mend · open source</span>
@@ -1604,9 +1535,6 @@
     Version policies are declared once and then enforced in CI like any other lint rule, instead of
     being a convention people remember with varying success.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.syncpack.block.body">Two packages depending on two versions of the same library is a bug that only surfaces at the worst moment.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://jamiemason.github.io/syncpack/" target="_blank" rel="noopener">jamiemason.github.io/syncpack<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.syncpack.sig">MIT · monorepo linter</span>
@@ -1624,9 +1552,6 @@
     The pipeline model of SPL, where each command feeds the next, makes an investigation feel closer to
     working in a shell than to writing SQL.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.splunk.block.body">During an incident, being able to ask an unplanned question of six months of logs is worth the ingestion bill.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.splunk.com" target="_blank" rel="noopener">splunk.com<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">Cisco · SPL</span>
@@ -1644,9 +1569,6 @@
     Jira's real substance is the workflow engine and the query language underneath the board.
     Confluence's is not the editor but the fact that a decision stays findable years later.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.atlassian.block.body">A team that writes down why it decided something outperforms one that does not, whatever the tool.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://www.atlassian.com" target="_blank" rel="noopener">atlassian.com<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono">Jira · Confluence</span>
@@ -1664,9 +1586,6 @@
     Its suggestions track how much relevant context is already on screen, so it behaves less like a
     knowledge base and more like a very fast pair of hands.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.copilot.block.body">For boilerplate you were going to type anyway, an inline suggestion at the cursor is the shortest feedback loop there is.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://github.com/features/copilot" target="_blank" rel="noopener">github.com/features/copilot<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.copilot.sig">GitHub · in-editor</span>
@@ -1684,9 +1603,6 @@
     MCP, the Model Context Protocol, standardises how it reaches external tools and data, so an
     integration written once works across every client that speaks it.
   </p>
-  <div class="introspect__block">
-    <p data-i18n="entity.claude.block.body">A model that can read the actual repository, run the actual tests and hold all of it in context stops being autocomplete.</p>
-  </div>
   <div class="introspect__foot">
     <a class="link-underline" href="https://claude.com" target="_blank" rel="noopener">claude.com<span aria-hidden="true"> ↗</span></a>
     <span class="introspect__sig mono" data-i18n="entity.claude.sig">Anthropic · MCP, long context</span>

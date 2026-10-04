@@ -658,10 +658,13 @@
 .primer__layout {
   display: grid;
   grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  grid-template-areas: "chapters decoder";
+  grid-template-areas: "intro decoder" "chapters decoder";
   gap: var(--space-2xl);
   align-items: start;
-  margin-top: var(--space-2xl);
+}
+
+.primer__intro {
+  grid-area: intro;
 }
 
 .primer__chapters {
@@ -815,6 +818,10 @@
   color: var(--text-disabled);
 }
 
+.primer.is-live .primer__seg.is-current--header {
+  color: var(--text-primary);
+}
+
 .primer.is-live .primer__seg.is-current--payload {
   color: var(--accent);
 }
@@ -850,7 +857,7 @@
 @media (max-width: 900px) {
   .primer__layout {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "decoder" "chapters";
+    grid-template-areas: "intro" "decoder" "chapters";
     gap: var(--space-xl);
   }
 

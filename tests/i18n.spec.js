@@ -3,14 +3,14 @@ const path = require('node:path');
 const { test, expect } = require('@playwright/test');
 
 const EN = {
-  title: 'Florian Daniels · IAM Architect & Security Tech Lead',
-  subhead: "I design and implement identity systems that don't go down.",
+  title: 'Florian Daniels · Tech Lead IAM & Cloud Security',
+  subhead: 'I design, build and run identity platforms.',
   about: 'About',
 };
 
 const FR = {
-  title: 'Florian Daniels · Architecte IAM & Tech Lead Sécurité',
-  subhead: 'Je conçois et je construis des systèmes d’identité qui ne tombent pas.',
+  title: 'Florian Daniels · Tech Lead IAM & Sécurité Cloud',
+  subhead: 'Je conçois, développe et maintiens des plateformes d’identité.',
   about: 'À propos',
 };
 
@@ -25,7 +25,7 @@ test.describe('French-speaking browser', () => {
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'fr-FR');
     await expect(page).toHaveTitle(FR.title);
-    await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /architecte IAM/);
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /tech lead IAM/);
     await expect(subhead(page)).toHaveText(FR.subhead);
     await expect(page.locator('.nav__links a[href="#about"]')).toHaveText(FR.about);
     await expect(toggleOption(page, 'fr-FR')).toHaveAttribute('aria-pressed', 'true');
