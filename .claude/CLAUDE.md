@@ -16,16 +16,17 @@ Every technical choice must work on GitHub Pages as-is. See `docs/adr/0001-stati
 - `src/` is published verbatim by `.github/workflows/deploy-pages.yml`: no build step, no bundler, no generated files.
 - Static files only: HTML, CSS, vanilla JS (ES modules), JSON, assets. No server runtime, no server-side redirects, rewrites or custom headers.
 - Third-party code only via CDN `<script>`/`<link>`, never via an npm install that `src/` depends on.
-- All paths relative (the site is served from a project subpath, not the domain root).
+- All paths relative (the site is served from a project subpath, not the domain root). Exception: Open Graph `og:url` and `og:image` are absolute.
 
 ## Commands
 
-- `npm test`: placeholder script, currently just exits with an error. No test suite, build step, or linter is configured yet.
+- `npm start`: serves `src/` locally on http://127.0.0.1:8080.
+- `npm test`: Playwright suite (`tests/`). No build step or linter is configured.
 
 ## Architecture
 
 - `src/`: the published site. `index.html`, `css/` (`tokens.css`, `base.css`, `components.css`, `animations.css`), `js/main.js`, `img/`.
-- `resources/`: source material not published (LinkedIn export, profile PDF).
+- `resources/`: versioned source material, not published. `og-card/` renders `src/img/og-card.png` (`node resources/og-card/render.js`).
 - `.github/workflows/deploy-pages.yml`: deploys `./src` to GitHub Pages on every push to `main`.
 
 Since this is a static HTML/CSS CV site, any frontend/UI work must follow the Design Standard below.

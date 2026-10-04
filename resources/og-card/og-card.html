@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>OG card source</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../src/css/tokens.css">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 55% 70% at 18% 0%, var(--accent-muted), transparent 65%),
+      var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+  }
+
+  .card {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 72px;
+    padding: 72px 80px;
+    align-items: center;
+  }
+
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .name {
+    margin-top: 28px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+
+  .tagline {
+    margin-top: 32px;
+    font-size: 30px;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--text-secondary);
+    max-width: 22ch;
+    text-wrap: balance;
+  }
+
+  .url {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 18px;
+    color: var(--text-tertiary);
+  }
+
+  .url span { color: var(--accent); }
+
+  .frame {
+    position: relative;
+    height: 480px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--bg-inset);
+  }
+
+  .frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+    filter: brightness(0.78) contrast(1.1);
+  }
+
+  /* Same tinted monochrome as the site's credential photo */
+  .frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: oklch(0.45 0.035 240);
+    mix-blend-mode: color;
+  }
+
+  .frame::before {
+    --c: var(--accent);
+    --l: 26px;
+    --w: 2px;
+    content: "";
+    position: absolute;
+    inset: 14px;
+    z-index: 2;
+    background:
+      linear-gradient(var(--c), var(--c)) top left / var(--l) var(--w),
+      linear-gradient(var(--c), var(--c)) top left / var(--w) var(--l),
+      linear-gradient(var(--c), var(--c)) top right / var(--l) var(--w),
+      linear-gradient(var(--c), var(--c)) top right / var(--w) var(--l),
+      linear-gradient(var(--c), var(--c)) bottom left / var(--l) var(--w),
+      linear-gradient(var(--c), var(--c)) bottom left / var(--w) var(--l),
+      linear-gradient(var(--c), var(--c)) bottom right / var(--l) var(--w),
+      linear-gradient(var(--c), var(--c)) bottom right / var(--w) var(--l);
+    background-repeat: no-repeat;
+  }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div>
+      <p class="kicker">Tech Lead IAM · Cloud Security</p>
+      <h1 class="name">Florian<br>Daniels</h1>
+      <p class="tagline">I design, build and run identity platforms.</p>
+      <p class="url"><span>https://</span>studioflow.github.io/its-a-me</p>
+    </div>
+    <div class="frame">
+      <img src="../../src/img/me-800.webp" alt="">
+    </div>
+  </main>
+</body>
+</html>

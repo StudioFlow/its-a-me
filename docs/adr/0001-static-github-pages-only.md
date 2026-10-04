@@ -12,7 +12,8 @@ The site is a public professional profile hosted on GitHub Pages. GitHub Pages o
 
 - Allowed: HTML, CSS, vanilla JavaScript (native ES modules), JSON, fonts, images, PDFs.
 - Third-party code is loaded from a CDN via `<script>` or `<link>`, never installed through npm for use by `src/`.
-- Every path is relative, because the site is served from a project subpath rather than the domain root.
+- Every path is relative, because the site is served from a project subpath rather than the domain root. Exception: Open Graph `og:url` and `og:image` are absolute, because link-preview crawlers ignore relative URLs.
+- Committed assets produced offline (e.g. `src/img/og-card.png`, rendered from `resources/og-card/`) are regular static files, not build output.
 - Anything that needs to happen at request time (locale negotiation, redirects) happens client-side in JavaScript.
 
 ## Consequences
@@ -20,4 +21,5 @@ The site is a public professional profile hosted on GitHub Pages. GitHub Pages o
 - Features that would normally rely on a build or a server must be designed client-side. Example: i18n loads its JSON with a relative `fetch()` (or inlines it by hand), and language detection uses `navigator.languages` rather than the `Accept-Language` header.
 - `fetch()` of local files does not work over `file://`, so local preview needs a static HTTP server (e.g. `python3 -m http.server -d src`).
 - Dev-only tooling (tests, linters) is acceptable as long as `src/` never depends on it at runtime.
+- The absolute Open Graph URLs in `src/index.html` must be updated by hand if the site's URL changes (e.g. a custom domain). Re-run `node resources/og-card/render.js` after editing the card.
 - Revisit this decision only if the site outgrows a single hand-written page.
